@@ -1,9 +1,6 @@
+/* Imagenes */
 .logo{
     height: 10vh;
-}
-
-.color-navbar{
-    background-color: #ffe3b3!important;
 }
 
 .img-carousel{
@@ -15,4 +12,9 @@
     object-fit: cover;
     width: 25vh;
     height: 25vh;
+}
+
+/* Colores */
+.color-navbar{
+    background-color: #ffe3b3!important;
 }
