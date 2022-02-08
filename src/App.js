@@ -1,17 +1,22 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './components/layout/Navigation';
-import Home from './components/Home/Home.js'
-import Footer from './components/layout/Footer'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navigation from "./components/layout/Navigation";
+import Home from "./components/Home/Home.js";
+import Footer from "./components/layout/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Navigation />
-      <main>
-        <Home />
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <Navigation />
+        <main>
+          <Routes>
+            <Route exact path="/" element={ <Home /> }/>
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
