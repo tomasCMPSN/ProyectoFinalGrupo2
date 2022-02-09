@@ -5,13 +5,13 @@
 
 .img-carousel{
     object-fit: cover;
-    height: 45vh;
+    height: 70vh;
 }
 
 .img-profesionales{
     object-fit: cover;
-    width: 25vh;
-    height: 25vh;
+    width: 45vh;
+    height: 45vh;
 }
 
 /* Colores */

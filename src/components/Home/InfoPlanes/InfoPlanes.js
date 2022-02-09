@@ -5,7 +5,7 @@ const InfoPlanes = () => {
   return (
     <Container>
       <Row>
-        <Col sm={12} md={4}>
+        <Col sm={12} md={4} className="mb-3">
           <Card className="text-center">
             <Card.Body>
               <Card.Title>PRIMEROS PASOS</Card.Title>
@@ -16,7 +16,7 @@ const InfoPlanes = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col sm={12} md={4}>
+        <Col sm={12} md={4} className="mb-3">
           <Card className="text-center">
             <Card.Body>
               <Card.Title>MADURANDO</Card.Title>
@@ -27,7 +27,7 @@ const InfoPlanes = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col sm={12} md={4}>
+        <Col sm={12} md={4} className="mb-3">
           <Card className="text-center">
             <Card.Body>
               <Card.Title>ADULTOS</Card.Title>
