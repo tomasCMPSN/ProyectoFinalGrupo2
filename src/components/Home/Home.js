@@ -3,6 +3,7 @@ import CarouselHome from "./CarouselHome/CarouselHome";
 import InfoPlanes from "./InfoPlanes/InfoPlanes";
 import Profesionales from "./Profesionales/Profesionales";
 
+
 const Home = () => {
   return (
     <div>
