@@ -5,7 +5,7 @@ const Profesionales = () => {
   return (
     <Container className="mb-3">
       <Row>
-        <Col xs={12} md={6} className="mb-4">
+        <Col md={12} lg={6} className="mb-4">
           <Col xs={12} className="text-center">
             <img
               className="rounded img-profesionales"
@@ -14,11 +14,11 @@ const Profesionales = () => {
             />
           </Col>
           <Col xs={12} className="text-center">
-            <p className="display-6">Marta Minujin</p>
-            <p className="lead">8 años de experiencia</p>
+            <p className="display-4">Marta Minujin</p>
+            <p className="lead fs-4">8 años de experiencia</p>
           </Col>
         </Col>
-        <Col xs={12} md={6} className="mb-4">
+        <Col md={12} lg={6} className="mb-4">
           <Col xs={12} className="text-center">
             <img
               className="rounded img-profesionales"
@@ -27,8 +27,8 @@ const Profesionales = () => {
             />
           </Col>
           <Col xs={12} className="text-center">
-            <p className="display-6">Jorge Ignacio</p>
-            <p className="lead">12 años de experiencia</p>
+            <p className="display-4">Jorge Ignacio</p>
+            <p className="lead fs-4">12 años de experiencia</p>
           </Col>
         </Col>
       </Row>
