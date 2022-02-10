@@ -1,3 +1,4 @@
+
 .logo{
     height: 10vh;
 }
@@ -16,3 +17,33 @@
     width: 25vh;
     height: 25vh;
 }
+
+/* ESTILOS PARA LA PAGINA DE TURNOS */
+
+
+
+.form_style_t{
+    width: 70%;
+    border: solid 1px #ffc872 ;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 20px #ffc872;
+  
+    background-color: #ffe3b3;
+}
+
+
+
+.btn-save{
+    background-color: #31b189;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 6px 10px;
+    width: 100%;
+    
+
+}
+
+
+
