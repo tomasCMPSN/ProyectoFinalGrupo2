@@ -22,4 +22,3 @@ Librerisa en este proyecto:
 - Ezequiel Garcia
 - Luciana Medina
 - Ignacio Vargas
-- Solana Loza
