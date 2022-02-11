@@ -1,24 +1,23 @@
 import React from "react";
 import admin_paciente from "../../img/admin_paciente.jpg";
+import {Card,Button} from "react-bootstrap";
 
-const Card = () => {
+const CardAd = () => {
   return (
-      <div className="">
-
-    <div className="card">
-      <img src={admin_paciente} alt="Foto paciente" className="w-100" />
-      <div className="card-body">
-        <h4 className="card-title">My Tittle</h4>
-        <p className="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-          quod expedita praesentium fugit repellat asperiores animi doloribus
-          blanditiis fugiat quas modi vero minima quibusdam soluta aspernatur
-          temporibus, magnam cupiditate earum!
-        </p>
-      </div>
+    <div className="text-center">
+      <Card style={{ width: "18rem" }} className="bg-dark">
+        <Card.Img variant="top" src={admin_paciente} />
+        <Card.Body>
+          <Card.Title className="text-white">Card Title</Card.Title>
+          <Card.Text className="text-secondary">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </Card.Text>
+          <Button variant="btn btn-outline-secondary rounded-0">Go somewhere</Button>
+        </Card.Body>
+      </Card>
     </div>
-      </div>
   );
 };
 
-export default Card;
+export default CardAd;
