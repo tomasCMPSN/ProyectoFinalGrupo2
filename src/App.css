@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
 
-=======
-/* Imagenes */
->>>>>>> 10a10cd93d3b858a6a45bc5355e86528b65142bf
 .logo{
     height: 10vh;
 }
@@ -18,39 +16,93 @@
     height: 25vh;
 }
 
-<<<<<<< HEAD
 /* ESTILOS PARA LA PAGINA DE TURNOS */
 
 
 
-.form_style_t{
-    width: 70%;
-    border: solid 1px #ffc872 ;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 10px 20px #ffc872;
-  
-    background-color: #ffe3b3;
-}
 
 
 
-.btn-save{
-    background-color: #31b189;
+.form-style-btn{
+    background-color: #7280ff;
     color: #fff;
     border-radius: 10px;
     border: none;
     padding: 6px 10px;
-    width: 100%;
+    width: 20%;
+    width: 20%;
+    font-size: 20px;
+    box-shadow: 2px 2px 10px #7280ff;
     
 
 }
 
 
+  .form-style-btn:hover{
+      color: #000000;
+      width: 100%;
+      transition: 1s;
+  }
+  
 
-=======
-/* Colores */
-.color-navbar{
-    background-color: #ffe3b3!important;
-}
->>>>>>> 10a10cd93d3b858a6a45bc5355e86528b65142bf
+.form_style {
+    width: 70%;
+    border: solid 1px #ffc872;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 20px 4px 4px #ffc872;
+  
+    background-color: #ffe3b3; 
+    font-family: "Nunito", sans-serif;
+  }
+  
+  .form-style-title {
+      
+      font-weight: bolder;
+      font-size: 40px;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      
+      border: none;
+      color: white;
+      border-radius: 20px;
+      
+      padding: 25px;
+      background-color: #31b189;
+      font-family: 'Jost', sans-serif;
+  }
+  
+  @media (max-width: 576px)  { 
+  
+      .form_style{
+          width: 95%;
+          box-shadow: none;
+      }
+      .form-style-title{
+          font-size: 30px;
+      }
+      .form-style-btn{
+          width: 100%;
+      }
+   }
+
+
+   .form-stle-inner{
+       text-decoration: none ;
+       border: none ;
+       border-left: 3px solid #ffc872;
+
+       display:block;
+       width:100%;
+       margin-top: 3px;
+       padding: 5px;
+  
+    
+
+   }
+
+   .form-style-inner:focus{
+       outline: none;
+       border-bottom: 2px solid #7280ff;
+    
+   }
