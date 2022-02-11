@@ -22,7 +22,7 @@ const Turnos = () => {
 
         <Form className="mb-5 form_style">
           <Form.Group className="mb-3 " controlId="formBasicEmail">
-            <Form.Label>🐶Nombre de la mascota *</Form.Label>
+            <Form.Label>🐶Nombre del paciente*</Form.Label>
             <input className='form-stle-inner' type="text"  placeholder="Puki" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -40,7 +40,7 @@ const Turnos = () => {
           </Form.Group>
          
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>🐰Mascota*</Form.Label>
+            <Form.Label>🐰Especie*</Form.Label>
             <select className='form-stle-inner' >
               <option value="">Seleccione una especie</option>
               <option value="ave">Ave</option>
