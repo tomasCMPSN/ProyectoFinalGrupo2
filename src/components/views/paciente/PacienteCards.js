@@ -6,17 +6,26 @@ import Masonry from 'react-masonry-css'
 
 
 const PacienteCards = () => {
+
+    const breakpointColumnsObj = {
+        default: 3,
+        1100: 3,
+        700: 2,
+        500: 1
+      };
+      
   return (
     <section>
       <Container>
         <article>
-          <h1 className="form-style-title mt-3">Lista de pacientes</h1>
+          <h1 className="mt-3">Lista de pacientes</h1>
 
         </article>
           <article className='my-5'>
               <input type="text" className='form-stle-inner' placeholder='Buscar'/>
           </article>
         <Masonry  breakpointCols={3}
+        breakpointCols={breakpointColumnsObj}
   className="my-masonry-grid"
   columnClassName="my-masonry-grid_column">
         
