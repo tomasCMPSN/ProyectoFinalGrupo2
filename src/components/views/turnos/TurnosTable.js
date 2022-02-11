@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import './Turnos.css'
+
 
 const TurnosTable = () => {
     return (
@@ -10,9 +12,10 @@ const TurnosTable = () => {
             <h1 >Turnos asignados:</h1>
           </div>
           <hr />
-        <input placeholder='Buscar' className='form-stle-inner'/>
-            <Link to='/turnoscreate'className=" form-style-btn text-decoration-none text-center d-flex justify-content-center my-3 ">Asignar un turno </Link>
-          
+        <input placeholder='Buscar' className='form-stle-inner mb-5'/>
+        <div className='d-flex justify-content-end'>
+            <Link to='/turnoscreate'className=" form-style-newbtn ">Asignar un turno </Link>
+            </div>
           <Table bordered hover responsive className="table-style mt-3">
           
             <thead>

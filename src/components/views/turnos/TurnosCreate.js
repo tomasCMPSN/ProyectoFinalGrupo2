@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import {validateNames, validateVet} from '../../helpers/ValidateForms'
+import './Turnos.css'
 
 const Turnos = () => {
   
