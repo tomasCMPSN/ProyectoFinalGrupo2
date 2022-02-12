@@ -5,7 +5,7 @@ import logo from "../../components/img/logo.png";
 
 const Navigation = () => {
   return (
-    <div>
+    
       <Navbar expand="lg" className="color-navbar">
         <Container>
           <Navbar.Brand href="#home" className="fs-2">
@@ -25,7 +25,7 @@ const Navigation = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    
   );
 };
 

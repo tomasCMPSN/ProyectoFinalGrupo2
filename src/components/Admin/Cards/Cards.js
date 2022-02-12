@@ -1,21 +1,21 @@
 import React from "react";
 import Card from "./Card";
+import { Container, Col, Row , CardGroup} from "react-bootstrap";
 
 const Cards = () => {
   return (
-    <div className="container d-flex">
-      <div className="row ">
-        <div className="col-sm-12 col-md-4">
-          <Card />
-        </div>
-        <div className="col-sm-12 col-md-4 ">
-          <Card />
-        </div>
-        <div className="col-sm-12 col-md-4">
-          <Card />
-        </div>
-      </div>
-    </div>
+   
+
+<Row xs={1} md={3} className="g-4">
+{Array.from({ length: 3 }).map((_, idx) => (
+  <Card></Card>
+  
+))}
+</Row>
+
+    
+
+    
   );
 };
 

@@ -4,8 +4,8 @@ import {Card,Button} from "react-bootstrap";
 
 const CardAd = () => {
   return (
-    <div className="text-center">
-      <Card style={{ width: "18rem" }} className="bg-dark">
+    
+      <Card style={{ width: "" }} className="bg-dark">
         <Card.Img variant="top" src={admin_paciente} />
         <Card.Body>
           <Card.Title className="text-white">Card Title</Card.Title>
@@ -16,7 +16,7 @@ const CardAd = () => {
           <Button variant="btn btn-outline-secondary rounded-0">Go somewhere</Button>
         </Card.Body>
       </Card>
-    </div>
+    
   );
 };
 
