@@ -19,7 +19,7 @@ const Navigation = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="#home" className="fs-4">Login</Nav.Link>
-              <Nav.Link href="#link" className="fs-4">Admin</Nav.Link>
+              <Nav.Link href="../Admin/AdminHome.js" className="fs-4">Admin</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

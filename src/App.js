@@ -12,7 +12,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Navigation />
-        <main>
+        <main className="m-1">
           <Routes>
             <Route exact path="/" element={ <Home /> }/>
             <Route exact path="/admin" element={ <AdminHome /> }/>
