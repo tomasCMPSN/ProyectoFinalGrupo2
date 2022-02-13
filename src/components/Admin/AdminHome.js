@@ -1,9 +1,16 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
+import Cards from './Card/Cards'
 
 const AdminHome = () => {
   return (
-    <Container></Container>
+    
+      <Container>
+        {/* <CardUI></CardUI> */}
+        <Cards></Cards>
+
+      </Container>
+    
   );
 };
 
