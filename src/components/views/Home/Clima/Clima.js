@@ -1,18 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 
 const Clima = () => {
+  const [clima, setClima] = useState([]);
+  const [icono, setIcono] = useState({});
+  const [temperatura, setTemperatura] = useState("");
+
+  window.addEventListener("load", () => {
+    let long;
+    let lat;
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        long = position.coords.longitude;
+        lat = position.coords.latitude;
+
+        const api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=d500a2c7d60e12d182ae94e55b3fcf60`;
+
+        fetch(api)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            setClima(data);
+            setIcono(data.weather[0]);
+            setTemperatura(Math.round(data.main.feels_like-273));
+          });
+      });
+    }
+  });
+
   return (
     <Container className="d-flex justify-content-center">
       <Row className="align-items-center">
         <Col>
-          <p className="mt-3">Belgrano</p>
+          <p className="mt-3">{clima.name}</p>
         </Col>
         <Col>
-          <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="Clima" />
+          <img
+            src={`http://openweathermap.org/img/wn/${icono.icon}@2x.png`}
+            alt="Clima"
+          />
         </Col>
-        <Col>25ºC</Col>
-        <Col>Sunny</Col>
+        <Col>{temperatura}ºC</Col>
+        <Col>{icono.main}</Col>
       </Row>
     </Container>
   );
