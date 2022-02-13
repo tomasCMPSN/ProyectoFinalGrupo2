@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from '../../components/img/logo.png'
+import {Link} from "react-router-dom"
 
 const Navigation = () => {
   return (
@@ -18,7 +19,9 @@ const Navigation = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home" className="fs-4">Login</Nav.Link>
+
+               <Link className="nav-link fs-4" to="/login">Login</Link> 
+               <Link className="nav-link fs-4" to="/contacto">Contacto</Link> 
               <Nav.Link href="#link" className="fs-4">Admin</Nav.Link>
             </Nav>
           </Navbar.Collapse>
