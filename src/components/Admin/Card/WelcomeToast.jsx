@@ -5,7 +5,7 @@ import ToastContainer from "react-bootstrap/ToastContainer";
 
 
 const WelcomeToast = () => {
-  const [show, setShow] = useState(false);
+  
   const [showA, setShowA] = useState(true);
   const toggleShowA = () => setShowA(!showA);
 
