@@ -5,7 +5,8 @@ import "./card-style.css";
 
 const CardUI = (props) => {
   return (
-    
+    <Container className='d-flex justify-content-center'>
+
       <Card className="text-center">
         
           <Card.Img src={props.img} variant='top' className='' />
@@ -19,6 +20,7 @@ const CardUI = (props) => {
         </Card.Body>
       </Card>
     
+    </Container>
   );
 };
 

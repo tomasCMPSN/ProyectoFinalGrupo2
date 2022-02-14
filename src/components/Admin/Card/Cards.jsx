@@ -26,7 +26,7 @@ const arrayCard = [
 
 const Cards = () => {
     return (
-        <Container className='container d-flex justify-content-center '>
+        <Container className=''>
 
             <Row sm={1} md={2} className="g-2 ">
   {arrayCard.map((item, idx) => (
