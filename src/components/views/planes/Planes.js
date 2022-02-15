@@ -6,7 +6,7 @@ const Planes = () => {
     <section className="container">
       {/* cards */}
       <article className="mt-3 article-form">
-        <h1 className="text-center">Tenes dudas sobre que plan contratar?</h1>
+        <h1 className="text-center  form-style-t">Tenes dudas sobre que plan contratar?</h1>
         <div className='d-flex justify-content-center'>
         <p className='form-style-p w-75'>
         Estamos aca para ayudarte, dejanos tus datos y un mensaje, y

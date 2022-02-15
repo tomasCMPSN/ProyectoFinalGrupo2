@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 /* 📌ESTILOS PARA LA PAGINA DE TURNOS📌 */
 
@@ -148,10 +148,14 @@
 /* ESTILOS PARA PAGINA PLANES */
 
 .form-style-p{
-  font-family: "Jost", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 25px;
 }
 
+.form-style-t{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+}
 
 /*📌 MEDIA QUERYS 📌 */
 @media (max-width: 576px) {
