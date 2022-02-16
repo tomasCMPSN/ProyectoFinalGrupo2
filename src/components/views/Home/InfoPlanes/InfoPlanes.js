@@ -39,6 +39,7 @@ const InfoPlanes = () => {
           </Card>
         </Col>
       </Row>
+   
     </Container>
   );
 };

@@ -102,7 +102,7 @@
 
 .card-style-title {
   background-color: #7280ff;
-  font-family: "Jost", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-align: center;
   padding: 5px;
   color: #fff;
@@ -145,7 +145,7 @@
 }
 
 
-/* ESTILOS PARA PAGINA PLANES */
+/* 📌 ESTILOS PARA PAGINA DE PLANES📌 */
 
 .form-style-p{
   font-family: "Nunito", sans-serif;
@@ -155,6 +155,31 @@
 .form-style-t{
   font-family: 'Montserrat', sans-serif;
   font-size: 60px;
+
+}
+
+.form-style-img{
+  position: relative;
+  opacity:0.8;
+
+
+  width: 100%;
+
+}
+
+.form-style-mainT{
+  position: absolute;
+  margin-top: -20%;
+  margin-left: 27%;
+  color: #ffffff;
+  font-size: 60px;
+  text-shadow:3px 5px 8px#000000  ;
+ 
+
+}
+
+.card-plan-style{
+  font-family: "Nunito", sans-serif;
 }
 
 /*📌 MEDIA QUERYS 📌 */

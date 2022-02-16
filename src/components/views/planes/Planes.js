@@ -1,18 +1,91 @@
 import React from "react";
-import { Form, FormControl } from "react-bootstrap";
+import {
+  Form,
+  FormControl,
+  Row,
+  Card,
+  Col,
+  ListGroup,
+  ListGroupItem,
+} from "react-bootstrap";
 
 const Planes = () => {
   return (
-    <section className="container">
+    <section>
+      <article>
+        <img src="https://petdoctors.co.uk/wp-content/uploads/sites/5/2018/04/springer-spaniel-cross-with-vet.jpg" className="form-style-img" alt="" />
+        <h1 className="form-style-mainT">Conoce nuestros planes</h1>
+      </article>
+
+      <article className="container mt-5 card-plan-style">
+        <Row xs={1} md={3} className="g-4 ">
+          <Col>
+            <Card className="text-center">
+              <Card.Body>
+                <Card.Title>Primeros pasos</Card.Title>
+                <Card.Text>Para mascotas de 0 a 5 años</Card.Text>
+                <ListGroup>
+                  <ListGroupItem>Internacion</ListGroupItem>
+                  <ListGroupItem>Consultas clinicas</ListGroupItem>
+                  <ListGroupItem>Responsabilidad civil</ListGroupItem>
+                  <ListGroupItem>Estudios</ListGroupItem>
+                  <ListGroupItem>Intervenciones quirurgicas</ListGroupItem>
+                  <ListGroupItem>Tratamientos</ListGroupItem>
+                  <ListGroupItem>Emergencias</ListGroupItem>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col>
+            <Card className="text-center">
+              <Card.Body>
+                <Card.Title>Madurando</Card.Title>
+                <Card.Text>Para mascotas de 5 a 10 años</Card.Text>
+                <ListGroup>
+                  <ListGroupItem>Internacion</ListGroupItem>
+                  <ListGroupItem>Consultas clinicas</ListGroupItem>
+                  <ListGroupItem>Responsabilidad civil</ListGroupItem>
+                  <ListGroupItem>Estudios</ListGroupItem>
+                  <ListGroupItem>Intervenciones quirurgicas</ListGroupItem>
+                  <ListGroupItem>Tratamientos</ListGroupItem>
+                  <ListGroupItem>Emergencias</ListGroupItem>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col>
+            <Card className="text-center">
+              <Card.Body>
+                <Card.Title>Adultos</Card.Title>
+                <Card.Text>Para mascotas de mas de 10 años</Card.Text>
+                <ListGroup>
+                  <ListGroupItem>Internacion</ListGroupItem>
+                  <ListGroupItem>Consultas clinicas</ListGroupItem>
+                  <ListGroupItem>Responsabilidad civil</ListGroupItem>
+                  <ListGroupItem>Estudios</ListGroupItem>
+                  <ListGroupItem>Intervenciones quirurgicas</ListGroupItem>
+                  <ListGroupItem>Tratamientos</ListGroupItem>
+                  <ListGroupItem>Emergencias</ListGroupItem>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </article>
+
       {/* cards */}
-      <article className="mt-3 article-form">
-        <h1 className="text-center  form-style-t">Tenes dudas sobre que plan contratar?</h1>
-        <div className='d-flex justify-content-center'>
-        <p className='form-style-p w-75'>
-        Estamos aca para ayudarte, dejanos tus datos y un mensaje, y
-          en breve alguien de nuestro equipo se pondra en contacto con vos para ayudarte a
-          elegir el plan que mejor se ajuste a vos y tu mascota.
-        </p>
+      <article className="mt-5 article-form">
+        <h1 className="text-center  form-style-t">
+          Tenes dudas sobre que plan contratar?
+        </h1>
+        <div className="d-flex justify-content-center">
+          <p className="form-style-p w-75">
+            Estamos aca para ayudarte! Dejanos tus datos y tu consulta, y en
+            breve alguien de nuestro equipo te contactara para ayudarte a elegir
+            el plan que mejor se ajuste a vos y tu mascota.
+          </p>
         </div>
       </article>
       <article className="d-flex justify-content-center">
@@ -59,7 +132,7 @@ const Planes = () => {
             <Form.Label>Consulta*</Form.Label>
 
             <FormControl
-            className='form-stle-inner'
+              className="form-stle-inner"
               as="textarea"
               aria-label="With textarea"
               placeholder="Ingrese su consulta"
