@@ -14,7 +14,7 @@ const Turnos = () => {
     <section className='container mt-5 '>
         <article >
         <h1 className='form-style-title '>Administrador de turnos 📝</h1>
-        <hr />
+      
 
         </article>
         
