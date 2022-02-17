@@ -1,18 +1,20 @@
 {
-  "date": [
+  "appointment": [
     {
-      "id": 1,
+      
       "petName": "Firulais",
       "name": "Jose Hernandez ",
+      "dni": "39698833",
       "vet": "Dra. Emilse Arias",
-      "especie": "Perro"
+      "specie": "Perro"
     },
     {
-      "id": 2,
+     
       "petName": "Pipi",
       "name": "Natalia Sanchez",
+      "dni": "40678833",
       "vet": "Dr. Jonathan Plodzien ",
-      "especie": "Perro"
+      "specie": "Perro"
     }
   ]
 }

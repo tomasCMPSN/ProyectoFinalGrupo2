@@ -30,6 +30,10 @@ const Turnos = () => {
             <Form.Label>👨🏽‍🎤Nombre del dueño *</Form.Label>
             <input  type="text" placeholder="Lucas" className='form-stle-inner'/>
           </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>👨🏽‍🎤DNI *</Form.Label>
+            <input  type="text" placeholder="Lucas" className='form-stle-inner'/>
+          </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Label >👩🏻‍⚕️Veterinario*</Form.Label>
@@ -52,7 +56,7 @@ const Turnos = () => {
               <option value="roedor">Roedor</option>
             </select>
           </Form.Group>
-          <Form.Group className="mb-3"  controlId="formBasicEmail">
+          {/* <Form.Group className="mb-3"  controlId="formBasicEmail">
             <Form.Label>📅 Fecha </Form.Label>
             <input className='form-stle-inner' type="date" />
           </Form.Group>
@@ -83,7 +87,7 @@ const Turnos = () => {
             </select>
  
            
-          </Form.Group>
+          </Form.Group> */}
 
         
         <div className="text-center mt-4">

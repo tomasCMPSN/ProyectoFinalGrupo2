@@ -2,9 +2,10 @@ import React from 'react';
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Turnos.css'
+import Turno from './Turno'
 
 
-const TurnosTable = () => {
+const TurnosTable = ({turnos}) => {
     return (
         <div>
         <Container className="py-5">
@@ -20,24 +21,20 @@ const TurnosTable = () => {
           
             <thead>
               <tr>
-                <th>🐶Nombre del paciente</th>
-                <th>👨🏽‍🎤Nombre del dueño</th>
-                <th>👩🏻‍⚕️Veterinario</th>
-                <th>🐰Especie</th>
-                <th>📅Fecha</th>
-                <th>⏰Hora</th>
+                <th>🐶 Nombre del paciente</th>
+                <th>👨🏽‍🎤 Nombre del dueño</th>
+                <th>🆔 DNI</th>
+                <th>👩🏻‍⚕️ Veterinario</th>
+                <th>🐰 Especie</th>
+                {/* <th>📅Fecha</th>
+                <th>⏰Hora</th> */}
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Firulais</td>
-                <td>Marta</td>
-                <td>Dra. Emilse Arias</td>
-                <td>Perro</td>
-                <td>07/03/2022</td>
-                <td>18:30</td>
-              </tr>
+            {turnos.map((turnos)=> (
+            <Turno key={turnos.dni} turnos={turnos}/>))}
               
+             
             </tbody>
           </Table>
 
