@@ -1,16 +1,18 @@
+import "./Contacto.css"
 import React from 'react';
 import { Form } from "react-bootstrap";
+
 
 const Contacto = () => {
     return (
         <div>
-        <Form className="my-5 container">
+        <Form className="my-5 container  ">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label className="fw-bold">Nombre y Apellido</Form.Label>
+            <Form.Label className="fw-bold ">Nombre y Apellido</Form.Label>
             <Form.Control type="text" placeholder="Nombre y Apellido" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label className="fw-bold">Correo Electronico</Form.Label>
+            <Form.Label className="fw-bold ">Correo Electronico</Form.Label>
             <Form.Control
               type="email"
               placeholder="email@ejemplo.com"
@@ -21,7 +23,7 @@ const Contacto = () => {
             <Form.Label className="fw-bold">Dejanos tu Consulta</Form.Label>
             <Form.Control as="textarea" rows={3} />
           </Form.Group>
-          <button className="btn btn-primary" type="submit">
+          <button className="btn-neon" type="submit">  
             Enviar
           </button>
         </Form>

@@ -1,3 +1,4 @@
+import "./Login.css" 
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
@@ -13,10 +14,10 @@ const Login = () => {
   
   return (
     <div>
-        <h3>Ingrese aquí como Administrador</h3>
-      <Form onSubmit = {hundleSubmit}>
+        <h3>Bienvenido Tomás</h3>
+      <Form className="my-5 container" onSubmit = {hundleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Dirección</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             placeholder="Inserte su e-mail"
@@ -30,18 +31,17 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder="Contraseña"
              onChange={(e) => {
               setImput(e.target.value);
             }} 
           />
-          <Button variant="primary" type="submit">
+          </Form.Group>
+          
+        <button className="btn-neon" type="submit">  
             Ingresar
-          </Button>
-        </Form.Group>
-        <Button variant="danger" type="button">
-          Salir
-        </Button>
+          </button>
+          
       </Form>
     </div>
   );
