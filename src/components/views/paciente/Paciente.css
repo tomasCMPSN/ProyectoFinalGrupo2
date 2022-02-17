@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 
 /* 📌ESTILOS PARA LA PAGINA DE TURNOS📌 */
 
@@ -181,6 +183,10 @@
 .card-plan-style{
   font-family: "Nunito", sans-serif;
 }
+
+
+
+
 
 /*📌 MEDIA QUERYS 📌 */
 @media (max-width: 576px) {
