@@ -14,7 +14,12 @@ const Login = () => {
   
   return (
     <div>
-        <h3>Bienvenido Tomás</h3>
+        
+     <div className="animación my-5">
+      <h1 className="text1">Bienvenido</h1>
+      <h1 className="text2">.</h1>
+      <h1 className="text3">Tomás</h1>
+     </div>
       <Form className="my-5 container" onSubmit = {hundleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
