@@ -1,11 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/layout/Navigation";
-import Home from "./components/Home/Home.js";
+import Home from "./components/views/Home/Home";
 import Footer from "./components/layout/Footer";
-import Login from "./components/Home/Login/Login";
-import Contacto from "./components/Home/Contacto/Contacto"
+import Login from "./components/views/Home/Login/Login";
+import Contacto from "./components/views/Home/Contacto/Contacto"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 
 function App() {
