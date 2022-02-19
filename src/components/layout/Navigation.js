@@ -22,7 +22,7 @@ const Navigation = () => {
 
                <Link className="nav-link fs-4" to="/login">Login</Link> 
                <Link className="nav-link fs-4" to="/contacto">Contacto</Link> 
-              <Nav.Link href="#link" className="fs-4">Admin</Nav.Link>
+              <Link to="/admin" className="nav-link fs-4" >Admin</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
