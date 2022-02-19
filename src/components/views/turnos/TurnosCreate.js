@@ -28,8 +28,8 @@ const handleSubmit = (e)=>{
 
 
   return (
-    <section className='container mt-5 '>
-        <article >
+    <section className='container mt-5  '>
+        <article className="text-center" >
         <h1 className='form-style-title '>Administrador de turnos 📝</h1>
         </article>
         
