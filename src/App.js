@@ -4,7 +4,7 @@ import Navigation from "./components/layout/Navigation";
 import Home from "./components/Home/Home.js";
 import Footer from "./components/layout/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Turnos from './components/views/turnos/TurnosCreate'
+import TurnosCreate from './components/views/turnos/TurnosCreate'
 import TurnosTable from './components/views/turnos/TurnosTable'
 import TurnosEdit from './components/views/turnos/TurnosEdit'
 import {useState,useEffect} from 'react'
@@ -43,9 +43,10 @@ const DB = process.env.REACT_APP_APPI_APPOINTMENT;
         <main>
           <Routes>
             <Route exact path="/" element={ <Home /> }/>
-            <Route exact path="/turnoscreate" element={ <Turnos /> }/>
+            <Route exact path="/turnoscreate" element={ <TurnosCreate DB={DB}/> }/>
             <Route exact path="/turnostable" element={ <TurnosTable turnos={turnos} /> }/>
             <Route exact path="/turnosedit" element={ <TurnosEdit /> }/>
+           
             
           </Routes>
         </main>

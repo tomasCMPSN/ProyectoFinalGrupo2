@@ -26,8 +26,8 @@ const TurnosTable = ({turnos}) => {
                 <th>🆔 DNI</th>
                 <th>👩🏻‍⚕️ Veterinario</th>
                 <th>🐰 Especie</th>
-                {/* <th>📅Fecha</th>
-                <th>⏰Hora</th> */}
+                <th>📅Fecha</th>
+                 {/*<th>⏰Hora</th> */}
               </tr>
             </thead>
             <tbody>

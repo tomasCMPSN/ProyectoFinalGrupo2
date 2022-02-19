@@ -11,6 +11,7 @@ const Turno = ({ turnos }) => {
         <td>{turnos.dni}</td>
         <td>{turnos.vet}</td>
         <td> {turnos.specie}</td>
+        <td> {turnos.date}</td>
         
       </tr>
  

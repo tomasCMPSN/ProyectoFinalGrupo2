@@ -2,17 +2,20 @@
 const regEx4Names = /^[A-Za-z\s?]+$/;
 const regEx4Selector = /^[A-Za-z\-\s?]+$/;
 const regEx4Number = /[0-9]+$/;
+const regExp4Date = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+
+
 
 export const validateNames = (campo) => {
-  if (regEx4Names.test(campo) && campo.trim().length<23&& campo.trim().length>0 && campo !== "") {
+  if (
+    regEx4Names.test(campo) &&
+    campo.trim().length < 23 &&
+    campo.trim().length > 0 &&
+    campo !== ""
+  ) {
     return true;
-    
   } else {
-      
     return false;
-    
-
-
   }
 };
 
@@ -21,7 +24,6 @@ export const validateVet = (campo) => {
     return true;
   } else {
     return false;
-    
   }
 };
 
@@ -30,13 +32,12 @@ export const validateDni = (campo) => {
     regEx4Number.test(campo) &&
     campo.trim() !== "" &&
     campo.trim() > 0 &&
-    campo.trim() < 99999999&&
-    campo.trim().length>=7
+    campo.trim() < 99999999 &&
+    campo.trim().length >= 7
   ) {
     return true;
   } else {
     return false;
-    
   }
 };
 
@@ -52,6 +53,12 @@ export const validateSpecie = (campo) => {
     return true;
   } else {
     return false;
- 
   }
 };
+
+
+export const validateDate = (campo)=>{
+  if(regExp4Date.test(campo)) {
+    return true
+  }else{return false}
+}
