@@ -20,35 +20,24 @@ const Login = () => {
       <h1 className="text2">.</h1>
       <h1 className="text3">Tomás</h1>
      </div>
-      <Form className="my-5 container" onSubmit = {hundleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Inserte su e-mail"
-            onChange={(e) => {
-             setArregloLogin(e.target.value);
-            }}
-          />
-          <Form.Text className="text-muted"></Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Contraseña"
-             onChange={(e) => {
-              setImput(e.target.value);
-            }} 
-          />
+     <Form className="mb-5 form_style container" >
+          <Form.Group className="mb-3 " controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <input className='form-stle-inner' type="email"  placeholder="@pawsclaws.com" />
           </Form.Group>
-          
-        <button className="btn-neon" type="submit">  
-            Ingresar
-          </button>
-          
-      </Form>
-    </div>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Contraseña</Form.Label>
+            <input  type="text" placeholder="********" className='form-stle-inner' />
+          </Form.Group>
+          <div className="text-center mt-4">
+            <button className="form-style-btn "> Ingresar 🐾</button>
+          </div>
+          </Form>
+
+
+  </div>
+
+      
   );
 };
 
