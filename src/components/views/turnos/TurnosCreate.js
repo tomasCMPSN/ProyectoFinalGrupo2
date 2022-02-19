@@ -3,9 +3,10 @@ import { Form } from "react-bootstrap";
 import {validateNames, validateVet, validateDni, validateSpecie, validateDate} from '../../helpers/ValidateForms'
 import './Turnos.css'
 import Swal from 'sweetalert2'
+import {useNavigate} from 'react-router-dom'
 
 
-const TurnosCreate = ({DB}) => {
+const TurnosCreate = ({DB, getApi}) => {
   // States
 
   const [petName, setPetName]= useState('');
@@ -14,6 +15,9 @@ const TurnosCreate = ({DB}) => {
   const [vet, setVet]= useState('');
   const [specie, setSpecie]= useState('');
   const [date, setDate]= useState('');
+  
+  //Use navigate
+  const navigate = useNavigate();
 
   const newAppointment = {
    petName,
@@ -48,17 +52,36 @@ const handleSubmit = (e)=>{
            body: JSON.stringify(newAppointment)
           })
           console.log(res)
+          if(res.status === 201){
+            Swal.fire(
+              'Confirmado!',
+              'Turno asignado con exito!',
+              'success'
+            )
+            getApi();
+            navigate("/turnostable")
+
+          }else if(res.status===500){
+            Swal.fire({ 
+              icon: 'error',
+              title: 'Oops...Error de servidor',
+              text: 'Hubo un error al intentar asignar el turno. Intentelo mas tarde.'}
+            )
+         
+
+          }
           
         } catch (error) {
           console.log(error)
+         
+            
+            
+          }
+
           
         }
-        Swal.fire(
-          'Confirmado!',
-          'Turno asignado con exito!',
-          'success'
-        )
-      }
+       
+      
     })
 
 

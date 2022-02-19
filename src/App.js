@@ -43,7 +43,7 @@ const DB = process.env.REACT_APP_APPI_APPOINTMENT;
         <main>
           <Routes>
             <Route exact path="/" element={ <Home /> }/>
-            <Route exact path="/turnoscreate" element={ <TurnosCreate DB={DB}/> }/>
+            <Route exact path="/turnoscreate" element={ <TurnosCreate DB={DB} getApi={getApi}/> }/>
             <Route exact path="/turnostable" element={ <TurnosTable turnos={turnos} /> }/>
             <Route exact path="/turnosedit" element={ <TurnosEdit /> }/>
            
