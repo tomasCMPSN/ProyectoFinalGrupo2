@@ -5,10 +5,11 @@ import WelcomeToast from "./Card/WelcomeToast";
 
 const AdminHome = () => {
   return (
-    <Container>
+    <Container className="mb-1 mt-1">
       <WelcomeToast />
-
-      <Cards></Cards>
+      <div className="media-card">
+        <Cards></Cards>
+      </div>
     </Container>
   );
 };
