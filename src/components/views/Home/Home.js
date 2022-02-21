@@ -3,6 +3,7 @@ import CarouselHome from "./CarouselHome/CarouselHome";
 import Clima from "./Clima/Clima";
 import InfoPlanes from "./InfoPlanes/InfoPlanes";
 import Profesionales from "./Profesionales/Profesionales";
+import Productos from "./Productos/Productos"
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <InfoPlanes />
       <h1 className="text-center display-2 mb-3 mt-3">Nuestros profesionales</h1>
       <Profesionales />
+      <Productos />
       <Clima />
     </div>
   );

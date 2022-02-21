@@ -17,11 +17,11 @@ const Planes = () => {
         <h1 className="form-style-mainT">Conoce nuestros planes</h1>
       </article>
 
-      <article className="container mt-5 card-plan-style">
-        <Row xs={1} md={3} className="g-4 my-5 ">
-          <Col >
-            <Card className="text-center">
-              <Card.Body>
+      <article className="container mt-5 card-plan-style ">
+        <Row xs={1} md={3} className="g-4 my-5  ">
+          <Col  >
+            <Card className="text-center ">
+              <Card.Body className="" >
                 <Card.Title>Primeros pasos</Card.Title>
                 <Card.Text>Para mascotas de 0 a 5 años</Card.Text>
                 <ListGroup>
@@ -37,9 +37,9 @@ const Planes = () => {
             </Card>
           </Col>
 
-          <Col >
-            <Card className="text-center ">
-              <Card.Body className="m-2">
+          <Col className="mx-5" >
+            <Card className="text-center  ">
+              <Card.Body >
                 <Card.Title>Madurando</Card.Title>
                 <Card.Text>Para mascotas de 5 a 10 años</Card.Text>
                 <ListGroup>
@@ -56,8 +56,8 @@ const Planes = () => {
           </Col>
 
           <Col>
-            <Card className="text-center">
-              <Card.Body>
+            <Card className="text-center  ">
+              <Card.Body >
                 <Card.Title>Adultos</Card.Title>
                 <Card.Text>Para mascotas de mas de 10 años</Card.Text>
                 <ListGroup>
