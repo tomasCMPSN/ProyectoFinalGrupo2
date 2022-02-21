@@ -11,6 +11,8 @@ import Turnos from './components/views/turnos/TurnosCreate'
 import TurnosTable from './components/views/turnos/TurnosTable'
 import TurnosEdit from './components/views/turnos/TurnosEdit'
 import {useState,useEffect} from 'react'
+import InfoPlanes from "./components/views/Home/InfoPlanes/InfoPlanes";
+import Planes from "./components/views/planes/Planes"
 
 
 
@@ -55,6 +57,7 @@ const DB = process.env.REACT_APP_APPI_APPOINTMENT;
             <Route exact path="/turnoscreate" element={ <Turnos /> }/>
             <Route exact path="/turnostable" element={ <TurnosTable turnos={turnos} /> }/>
             <Route exact path="/turnosedit" element={ <TurnosEdit /> }/>
+            <Route exact path="/Planes" element={ <Planes/> }/>
             
           </Routes>
         </main>

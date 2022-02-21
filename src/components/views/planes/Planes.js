@@ -18,8 +18,8 @@ const Planes = () => {
       </article>
 
       <article className="container mt-5 card-plan-style">
-        <Row xs={1} md={3} className="g-4 ">
-          <Col>
+        <Row xs={1} md={3} className="g-4 my-5 ">
+          <Col >
             <Card className="text-center">
               <Card.Body>
                 <Card.Title>Primeros pasos</Card.Title>
@@ -37,9 +37,9 @@ const Planes = () => {
             </Card>
           </Col>
 
-          <Col>
-            <Card className="text-center">
-              <Card.Body>
+          <Col >
+            <Card className="text-center ">
+              <Card.Body className="m-2">
                 <Card.Title>Madurando</Card.Title>
                 <Card.Text>Para mascotas de 5 a 10 años</Card.Text>
                 <ListGroup>
