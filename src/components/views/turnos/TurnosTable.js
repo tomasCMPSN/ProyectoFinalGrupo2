@@ -17,6 +17,7 @@ const TurnosTable = ({turnos, DB, getApi}) => {
         <div className='d-flex justify-content-end'>
             <Link to='/turnoscreate'className=" form-style-newbtn ">Asignar un turno </Link>
             </div>
+            {turnos.length>0 ?
           <Table bordered hover responsive className="table-style mt-3">
           
             <thead>
@@ -37,12 +38,12 @@ const TurnosTable = ({turnos, DB, getApi}) => {
           </Table>
 
           
-       
+       :
          
            <div className="no-products-found d-flex align-items-center justify-content-center">
             <h1> No hay turnos asignados por el momento</h1>
           </div> 
-
+}
   
         </Container>
       </div>
