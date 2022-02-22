@@ -1,93 +1,157 @@
-import React from 'react';
+import React , {useRef} from "react";
 import { Form } from "react-bootstrap";
-import './Turnos.css'
+import "./Turnos.css";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {
+  validateNames,
+  validateVet,
+  validateDate,
+} from "../../helpers/ValidateForms";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
-const TurnosEdit = () => {
-    return (
-        <section className='container mt-5 '>
-        <article >
-        <h1 className='form-style-title '>Administrador de turnos 📝</h1>
-      
+const TurnosEdit = ({ DB, getApi }) => {
+  // state
+  const [turno, setTurno] = useState({});
+  //Parametros
+  const { id } = useParams();
+  // Use ref
+  const petNameRef = useRef("");
+  const vetRef = useRef("");
+  const dateRef = useRef("");
+  // Navigate
+  const navigate = useNavigate()
 
-        </article>
-        
-     
-     <article className='d-flex justify-content-center mb-5 ' >
+  useEffect(async () => {
+    try {
+      const res = await fetch(`${DB}/${id}`);
+      const appointmentAppi = await res.json();
+      setTurno(appointmentAppi);
+    
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
-        <Form className="mb-5 form_style">
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Validaciones
+
+    if (!validateNames(petNameRef.current.value) || !validateVet(vetRef.current.value) || !validateDate(dateRef.current.value)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ingreso algun dato incorrecto, por favor revise el formulario",
+      });
+      return;
+    } 
+
+    const appUpdated = {
+
+      petName: petNameRef.current.value,
+      vet: vetRef.current.value,
+      date: dateRef.current.value
+    }
+
+
+    Swal.fire({
+      title: "Esta seguro que quiere editar este turno?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#56ced6",
+      cancelButtonColor: "#ffc872",
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Si",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const res = await fetch(`${DB}/${id}`,{
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(appUpdated)
+
+          });
+          if (res.status === 200) {
+            Swal.fire(
+              "Modificado!",
+              "Su turno fue modificado correctamente",
+              "success"
+            );
+            getApi();
+            navigate('../../turnostable')
+
+
+
+            
+            
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
+
+
+  }
+  return (
+    <section className="container mt-5 ">
+      <article>
+        <h1 className="form-style-title ">Editor de turnos 📝</h1>
+      </article>
+
+      <article className="d-flex justify-content-center mb-5 ">
+        <Form className="mb-5 form_style" onSubmit={handleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>🐶Nombre del paciente*</Form.Label>
-            <input className='form-stle-inner' type="text"  placeholder="Puki" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>👨🏽‍🎤Nombre del dueño *</Form.Label>
-            <input  type="text" placeholder="Lucas" className='form-stle-inner'/>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label >👩🏻‍⚕️Veterinario*</Form.Label>
-            <select className='form-stle-inner' >
-              <option value="">Seleccione un profesional </option>
-              <option value="emilse">Dra. Emilse Arias</option>
-              <option value="jony">Dr. Jonathan Plodzien </option>
-            </select>
-          </Form.Group>
-         
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>🐰Especie*</Form.Label>
-            <select className='form-stle-inner' >
-              <option value="">Seleccione una especie</option>
-              <option value="ave">Ave</option>
-              <option value="gato">Gato</option>
-              <option value="perro">Perro</option>
-              <option value="pez">Pez</option>
-              <option value="reptil">Reptil</option>
-              <option value="roedor">Roedor</option>
-            </select>
-          </Form.Group>
-          <Form.Group className="mb-3"  controlId="formBasicEmail">
-            <Form.Label>📅 Fecha </Form.Label>
-            <input className='form-stle-inner' type="date" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>⏰ Horario </Form.Label>
-            <select className='form-stle-inner' >
-              <option value="">Seleccione un horario</option>
-              <option value="">08:00</option>
-              <option value="">08:30</option>
-              <option value="">09:00</option>
-              <option value="">09:30</option>
-              <option value="">10:00</option>
-              <option value="">10:30</option>
-              <option value="">11:00</option>
-              <option value="">11:30</option>
-              <option value="">12:00</option>
-              <option value="">12:30</option>
-              <option value="">13:00</option>
-              <option value="">17:00</option>
-              <option value="">17:30</option>
-              <option value="">18:00</option>
-              <option value="">18:30</option>
-              <option value="">19:00</option>
-              <option value="">19:30</option>
-              <option value="">20:00</option>
-       
+            <input
+              className="form-stle-inner"
+              type="text"
+              defaultValue={turno.petName}
+              placeholder="Puki"
+              ref ={petNameRef}
               
-            </select>
- 
-           
+            />
           </Form.Group>
 
-        
-        <div className="text-center mt-4">
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Label>👩🏻‍⚕️Veterinario*</Form.Label>
+            <select
+            ref={vetRef}
+              className="form-stle-inner"
+              value={turno.vet}
+           
+              onChange={({ target }) =>
+                setTurno({ ...turno, vet: target.value })
+              }
+            >
+              <option value="">Seleccione un profesional </option>
+
+              <option value="Dr Jorge Ignacio">Dr. Jorge Ignacio</option>
+              <option value="Dra Marta Minujin">Dra. Marta Minujin </option>
+            </select>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>📅 Fecha </Form.Label>
+            <input
+             ref={dateRef}
+              className="form-stle-inner"
+              defaultValue={turno.date}
+              placeholder="Ingrese la fecha para el turno dd/mm/yyyy"
+            />
+          </Form.Group>
+
+          <div className="text-center mt-4">
             <button className="form-style-btn ">Cargar 🐾</button>
           </div>
         </Form>
-        </article>
-     
+      </article>
     </section>
-    );
+  );
 };
 
 export default TurnosEdit;

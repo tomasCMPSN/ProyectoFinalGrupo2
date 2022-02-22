@@ -5,7 +5,7 @@ import './Turnos.css'
 import Turno from './Turno'
 
 
-const TurnosTable = ({turnos}) => {
+const TurnosTable = ({turnos, DB, getApi}) => {
     return (
         <div>
         <Container className="py-5">
@@ -17,34 +17,33 @@ const TurnosTable = ({turnos}) => {
         <div className='d-flex justify-content-end'>
             <Link to='/turnoscreate'className=" form-style-newbtn ">Asignar un turno </Link>
             </div>
+            {turnos.length>0 ?
           <Table bordered hover responsive className="table-style mt-3">
           
             <thead>
               <tr>
                 <th>🐶 Nombre del paciente</th>
-                <th>👨🏽‍🎤 Nombre del dueño</th>
-                <th>🆔 DNI</th>
                 <th>👩🏻‍⚕️ Veterinario</th>
-                <th>🐰 Especie</th>
-                {/* <th>📅Fecha</th>
-                <th>⏰Hora</th> */}
+               <th>📅 Fecha</th>
+                <th>Acciones</th>
+                 {/*<th>⏰Hora</th> */}
               </tr>
             </thead>
             <tbody>
-            {turnos.map((turnos)=> (
-            <Turno key={turnos.dni} turnos={turnos}/>))}
+            {turnos.map((turno)=> (
+            <Turno key={turno.id} turno={turno} DB={DB} getApi={getApi}/>))}
               
              
             </tbody>
           </Table>
 
           
-       
+       :
          
            <div className="no-products-found d-flex align-items-center justify-content-center">
             <h1> No hay turnos asignados por el momento</h1>
           </div> 
-
+}
   
         </Container>
       </div>
