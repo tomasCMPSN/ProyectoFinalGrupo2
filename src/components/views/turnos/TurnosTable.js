@@ -22,17 +22,15 @@ const TurnosTable = ({turnos}) => {
             <thead>
               <tr>
                 <th>🐶 Nombre del paciente</th>
-                <th>👨🏽‍🎤 Nombre del dueño</th>
-                <th>🆔 DNI</th>
                 <th>👩🏻‍⚕️ Veterinario</th>
-                <th>🐰 Especie</th>
-                <th>📅Fecha</th>
+               <th>📅 Fecha</th>
+                <th>Acciones</th>
                  {/*<th>⏰Hora</th> */}
               </tr>
             </thead>
             <tbody>
-            {turnos.map((turnos)=> (
-            <Turno key={turnos.dni} turnos={turnos}/>))}
+            {turnos.map((turno)=> (
+            <Turno key={turno.id} turno={turno}/>))}
               
              
             </tbody>

@@ -1,17 +1,33 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 
 
-const Turno = ({ turnos }) => {
+const Turno = ({ turno }) => {
   return (
 
       <tr>
-        <td>{turnos.petName}</td>
-        <td>{turnos.name}</td>
-        <td>{turnos.dni}</td>
-        <td>{turnos.vet}</td>
-        <td> {turnos.specie}</td>
-        <td> {turnos.date}</td>
+        <td>{turno.petName}</td>
+    
+        <td>{turno.vet}</td>
+     
+        <td> {turno.date}</td>
+        <td className="w-25">
+        <div className="d-flex justify-content-center">
+          <Link
+            to={`/turnosedit/${turno.id}`}
+            
+          >
+            Editar
+          </Link>
+          <button
+            
+           
+          >
+            Borrar
+          </button>
+        </div>
+      </td>
         
       </tr>
  

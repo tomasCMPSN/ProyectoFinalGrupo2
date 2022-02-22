@@ -1,13 +1,35 @@
 import React from 'react';
 import { Form } from "react-bootstrap";
 import './Turnos.css'
+import {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom';
 
 
-const TurnosEdit = () => {
+const TurnosEdit = ({DB}) => {
+  // state
+  const [turno, setTurno] = useState({});
+  //Parametros
+  const {dni} = useParams();
+  
+
+
+  useEffect(async()=>{
+    try {
+      const res = await fetch(`${DB}/${dni}`)
+   console.log(res)
+    //  const appointmentAppi= await res.json();
+    // console.log(appointmentAppi)
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+
+  }, [])
     return (
         <section className='container mt-5 '>
         <article >
-        <h1 className='form-style-title '>Administrador de turnos 📝</h1>
+        <h1 className='form-style-title '>Editor de turnos 📝</h1>
       
 
         </article>
@@ -48,9 +70,9 @@ const TurnosEdit = () => {
           </Form.Group>
           <Form.Group className="mb-3"  controlId="formBasicEmail">
             <Form.Label>📅 Fecha </Form.Label>
-            <input className='form-stle-inner' type="date" />
+            <input className='form-stle-inner' />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          {/* <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>⏰ Horario </Form.Label>
             <select className='form-stle-inner' >
               <option value="">Seleccione un horario</option>
@@ -74,10 +96,10 @@ const TurnosEdit = () => {
               <option value="">20:00</option>
        
               
-            </select>
+            </select> */}
  
            
-          </Form.Group>
+          {/* </Form.Group> */}
 
         
         <div className="text-center mt-4">
