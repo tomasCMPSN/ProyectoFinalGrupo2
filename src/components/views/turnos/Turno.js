@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Turno = ({ turno,DB, getApi }) => {
+const Turno = ({ turno, DB, getApi }) => {
 
 
   const handleDelete = (id) => {
@@ -26,10 +26,11 @@ const Turno = ({ turno,DB, getApi }) => {
           }
           
         })
+        
         if(res.status===200){
           Swal.fire(
-            "Modificado!",
-            "Su turno fue modificado correctamente",
+            "Eliminado!",
+            "Su turno fue eliminado correctamente",
             "success"
           );
           getApi()

@@ -43,12 +43,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/contacto" element={<Contacto />} />
             <Route exact path="/admin" element={<AdminHome />} />
-            <Route exact path="/turnoscreate" element={<Turnos />} />
-            <Route
-              exact
-              path="/turnostable"
-              element={<TurnosTable turnos={turnos} />}
-            />
+           
             <Route exact path="/turnosedit" element={<TurnosEdit />} />
 
         

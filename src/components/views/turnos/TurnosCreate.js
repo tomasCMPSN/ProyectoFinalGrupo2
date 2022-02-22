@@ -60,6 +60,8 @@ const TurnosCreate = ({ DB, getApi }) => {
             },
             body: JSON.stringify(newAppointment),
           });
+          
+          console.log(res)
           if (res.status === 201) {
             Swal.fire(
               "Creado!",
@@ -76,20 +78,10 @@ const TurnosCreate = ({ DB, getApi }) => {
     });
   };
   return (
-<<<<<<< HEAD
-    <section className='container mt-5  '>
-        <article className="text-center" >
-        <h1 className='form-style-title '>Administrador de turnos 📝</h1>
-        </article>
-        
-     
-     <article className='d-flex justify-content-center mb-5 ' >
-=======
     <section className="container mt-5 ">
       <article>
         <h1 className="form-style-title ">Administrador de turnos 📝</h1>
       </article>
->>>>>>> adminTurnos
 
       <article className="d-flex justify-content-center mb-5 ">
         <Form className="mb-5 form_style" onSubmit={handleSubmit}>
