@@ -13,13 +13,12 @@ const Login = () => {
 };
   
   return (
-    <div>
-        
-     <div className="animación my-5">
-      <h1 className="text1">Bienvenido</h1>
-      <h1 className="text2">.</h1>
-      <h1 className="text3">Tomás</h1>
-     </div>
+
+  <div class="wrapper ">
+    <div class ="typing-demo my-4">
+      Bienvenido a Paws🐾Claws. 
+    </div>
+     
      <Form className="mb-5 form_style container" onSubmit = {hundleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
@@ -38,10 +37,8 @@ const Login = () => {
           </div>
           </Form>
 
-
-  </div>
-
-      
+</div>
+       
   );
 };
 

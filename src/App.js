@@ -16,6 +16,7 @@ import Planes from "./components/views/planes/Planes"
 
 
 
+
 function App() {
   //  states para la logica
 
@@ -58,6 +59,7 @@ const DB = process.env.REACT_APP_APPI_APPOINTMENT;
             <Route exact path="/turnostable" element={ <TurnosTable turnos={turnos} /> }/>
             <Route exact path="/turnosedit" element={ <TurnosEdit /> }/>
             <Route exact path="/Planes" element={ <Planes/> }/>
+           
             
           </Routes>
         </main>

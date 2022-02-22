@@ -3,10 +3,13 @@ import CarouselHome from "./CarouselHome/CarouselHome";
 import Clima from "./Clima/Clima";
 import InfoPlanes from "./InfoPlanes/InfoPlanes";
 import Profesionales from "./Profesionales/Profesionales";
-import Productos from "./Productos/Productos"
+import Publicidad from "./Publicidad/Publicidad"
 
 
 const Home = () => {
+
+
+  //la logica
   return (
     <div>
       
@@ -16,9 +19,9 @@ const Home = () => {
       </p>
       <h1 className="text-center display-2 mb-3">Planes</h1>
       <InfoPlanes />
-      <h1 className="text-center display-2 mb-3 mt-3">Nuestros profesionales</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt-3">Nuestros profesionales</h1>
       <Profesionales />
-      <Productos />
+      <Publicidad/>
       <Clima />
     </div>
   );
