@@ -1,40 +1,22 @@
 {
   "appointment": [
     {
-      "petName": "Duga",
-      "vet": "Dr Jorge Ignacio",
-      "date": "23/09/2022",
-      "id": "1"
-    },
-    {
       "petName": "Pipi",
       "vet": "Dr Jorge Ignacio",
-      "date": "25/02/2023",
+      "date": "25/02/2022",
       "id": "2"
-    },
-    {
-      "petName": "Peque",
-      "vet": "Dr Jorge Ignacio",
-      "dat": "23/03/2022",
-      "id": "ymgR66Y"
-    },
-    {
-      "petName": "dsfsaf",
-      "vet": "Dra Marta Minujin",
-      "dat": "23/09/2002",
-      "id": "2pNOQxY"
-    },
-    {
-      "petName": "dsfdsf",
-      "vet": "Dr Jorge Ignacio",
-      "date": "23/09/2002",
-      "id": "JjlpEc_"
     },
     {
       "petName": "Waffle",
       "vet": "Dra Marta Minujin",
       "date": "24/02/2022",
       "id": "qhzNHTF"
+    },
+    {
+      "petName": "Lulu",
+      "vet": "Dr Jorge Ignacio",
+      "date": "23/09/2022",
+      "id": "Rqv7l5W"
     }
   ]
 }

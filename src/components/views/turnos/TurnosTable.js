@@ -5,7 +5,7 @@ import './Turnos.css'
 import Turno from './Turno'
 
 
-const TurnosTable = ({turnos}) => {
+const TurnosTable = ({turnos, DB, getApi}) => {
     return (
         <div>
         <Container className="py-5">
@@ -30,7 +30,7 @@ const TurnosTable = ({turnos}) => {
             </thead>
             <tbody>
             {turnos.map((turno)=> (
-            <Turno key={turno.id} turno={turno}/>))}
+            <Turno key={turno.id} turno={turno} DB={DB} getApi={getApi}/>))}
               
              
             </tbody>

@@ -45,7 +45,7 @@ function App() {
             <Route
               exact
               path="/turnostable"
-              element={<TurnosTable turnos={turnos} />}
+              element={<TurnosTable turnos={turnos} DB={DB} getApi={getApi}/>}
             />
             <Route
               exact
