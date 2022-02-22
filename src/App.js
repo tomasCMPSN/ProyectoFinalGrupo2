@@ -49,8 +49,8 @@ function App() {
             />
             <Route
               exact
-              path="/turnosedit/:dni"
-              element={<TurnosEdit DB={DB} />}
+              path="/turnosedit/:id"
+              element={<TurnosEdit DB={DB} getApi={getApi} />}
             />
           </Routes>
         </main>
