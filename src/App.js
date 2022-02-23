@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TurnosCreate from "./components/views/turnos/TurnosCreate";
 import TurnosTable from "./components/views/turnos/TurnosTable";
 import TurnosEdit from "./components/views/turnos/TurnosEdit";
+import Planes from "./components/views/planes/Planes"
 import { useState, useEffect } from "react";
 
 function App() {
@@ -43,8 +44,9 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/contacto" element={<Contacto />} />
             <Route exact path="/admin" element={<AdminHome />} />
+            <Route exact path="/planes" element={<Planes />} />
            
-            <Route exact path="/turnosedit" element={<TurnosEdit />} />
+            
 
         
             <Route
