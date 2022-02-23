@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import {Link} from 'react-router-dom'
 
 const InfoPlanes = () => {
   return (
@@ -12,7 +13,7 @@ const InfoPlanes = () => {
               <Card.Text>
                 Servicios para mascotas de 0 a 5 años.
               </Card.Text>
-              <Button variant="light" className="color-navbar">Contratar</Button>
+              <Link to='../planes' variant="light" className="color-navbar">Contratar</Link>
             </Card.Body>
           </Card>
         </Col>
@@ -23,7 +24,7 @@ const InfoPlanes = () => {
               <Card.Text>
                 Servicios para mascotas de 5 a 10 años.
               </Card.Text>
-              <Button variant="light" className="color-navbar">Contratar</Button>
+              <Link to='../planes' variant="light" className="color-navbar">Contratar</Link>
             </Card.Body>
           </Card>
         </Col>
@@ -34,7 +35,7 @@ const InfoPlanes = () => {
               <Card.Text>
                 Servicios para mascotas de más de 10 años.
               </Card.Text>
-              <Button variant="light" className="color-navbar">Contratar</Button>
+              <Link to='../planes' variant="light" className="color-navbar">Contratar</Link>
             </Card.Body>
           </Card>
         </Col>

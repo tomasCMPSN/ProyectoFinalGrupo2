@@ -2,17 +2,20 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/layout/Navigation";
 import Home from "./components/views/Home/Home";
-import AdminHome from "./components/views/Admin/AdminHome"
+import AdminHome from "./components/views/Admin/AdminHome";
 import Footer from "./components/layout/Footer";
 import Login from "./components/views/Home/Login/Login";
-import Contacto from "./components/views/Home/Contacto/Contacto"
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Turnos from './components/views/turnos/TurnosCreate'
+import Contacto from "./components/views/Home/Contacto/Contacto";
+import TurnosCreate from './components/views/turnos/TurnosCreate'
 import TurnosTable from './components/views/turnos/TurnosTable'
 import TurnosEdit from './components/views/turnos/TurnosEdit'
 import {useState,useEffect} from 'react'
 import InfoPlanes from "./components/views/Home/InfoPlanes/InfoPlanes";
 import Planes from "./components/views/planes/Planes"
+import Error404 from "./components/views/Error404/Error404"
+import SobreNosotros from "./components/views/SobreNosotros/SobreNostros"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 
 
@@ -20,53 +23,63 @@ import Planes from "./components/views/planes/Planes"
 function App() {
   //  states para la logica
 
-   const [turnos, setTurno] = useState([]);
-  
-  useEffect(()=>{
+  const [turnos, setTurnos] = useState([]);
+  const DB = process.env.REACT_APP_APPI_APPOINTMENT;
 
+  useEffect(() => {
     getApi();
-  },[])
+  }, []);
 
-const DB = process.env.REACT_APP_APPI_APPOINTMENT;
+  const getApi = async () => {
+    try {
+      const res = await fetch(DB);
+      const appApi = await res.json();
+      setTurnos(appApi);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-   const getApi =async () =>{
-   try {
-
-     const res = await fetch(DB)
-     const appApi =  await res.json();
-     setTurno(appApi)
-    
-      
-   } catch (error) {
-     console.log(error)
-      
-   }
-
- }
-
-  return (
+  { return (
     <div>
       <BrowserRouter>
         <Navigation />
-      
+
         <main>
           <Routes>
-            <Route exact path="/" element={ <Home /> }/>
-            <Route exact path="/login" element ={<Login />}/>
+          
             <Route exact path="/contacto" element ={<Contacto />}/>
             <Route exact path="/admin" element={ <AdminHome /> }/>
-            <Route exact path="/turnoscreate" element={ <Turnos /> }/>
-            <Route exact path="/turnostable" element={ <TurnosTable turnos={turnos} /> }/>
-            <Route exact path="/turnosedit" element={ <TurnosEdit /> }/>
-            <Route exact path="/Planes" element={ <Planes/> }/>
+                  <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />                 
+            <Route exact path="/planes" element={<Planes />} />
+            <Route exact path="*" element={<Error404 />} />
+            <Route exact path="/SobreNosotros" element={<SobreNosotros />} />
            
             
+            <Route
+              exact
+              path="/turnoscreate"
+              element={<TurnosCreate DB={DB} getApi={getApi} />}
+            />
+            <Route
+              exact
+              path="/turnostable"
+              element={<TurnosTable turnos={turnos} DB={DB} getApi={getApi} />}
+            />
+            <Route
+              exact
+              path="/turnosedit/:id"
+              element={<TurnosEdit DB={DB} getApi={getApi} />}
+            />
           </Routes>
+          {/* <SobreNostros /> */}
+          <Error404 />
         </main>
         <Footer />
       </BrowserRouter>
     </div>
   );
-}
+  }}
 
-export default App;
+export default App.js;

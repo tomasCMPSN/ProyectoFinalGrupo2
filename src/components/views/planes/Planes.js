@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Form,
   FormControl,
@@ -8,8 +8,43 @@ import {
   ListGroup,
   ListGroupItem,
 } from "react-bootstrap";
+import {useState} from 'react'
+import emailjs from '@emailjs/browser';
+import{ init } from '@emailjs/browser';
+init("user_dvnJ38dESp4bV8SdcMD30");
 
 const Planes = () => {
+
+  // States
+
+  const [name, setName] = useState('');
+  const [email, setEmail]=useState('');
+  const [consulta, setConsulta]=useState('');
+  const [phone, setPhone]= useState('');
+
+
+  // EmailJs
+const form =useRef()
+   
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      // validamos datos
+
+      // Email js
+      emailjs.sendForm('service_5kuzhii', 'template_t9etbyq', form.current)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
+  
+    }
+
+  
+
+
   return (
     <section>
       <article>
@@ -89,10 +124,11 @@ const Planes = () => {
         </div>
       </article>
       <article className="d-flex justify-content-center">
-        <Form className="my-5 form_style ">
+        <Form className="my-5 form_style " onSubmit={handleSubmit} ref={form}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Nombre y apellido*</Form.Label>
             <input
+            name='user_name'
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su nombre y apellido"
@@ -104,6 +140,7 @@ const Planes = () => {
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su email"
+              name='user_email'
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
