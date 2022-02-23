@@ -7,12 +7,8 @@ import Footer from "./components/layout/Footer";
 import Login from "./components/views/Home/Login/Login";
 import Contacto from "./components/views/Home/Contacto/Contacto"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Turnos from './components/views/turnos/TurnosCreate'
-import TurnosTable from './components/views/turnos/TurnosTable'
-import TurnosEdit from './components/views/turnos/TurnosEdit'
-import {useState,useEffect} from 'react'
-
-
+import SobreNostros from "./components/SobreNosotros/SobreNostros";
+import Error404 from "./components/Error404/Error404";
 
 function App() {
   //  states para la logica
@@ -41,27 +37,22 @@ const DB = process.env.REACT_APP_APPI_APPOINTMENT;
 
  }
 
-  return (
+  { return (
     <div>
       <BrowserRouter>
         <Navigation />
       
         <main>
           <Routes>
-            <Route exact path="/" element={ <Home /> }/>
-            <Route exact path="/login" element ={<Login />}/>
-            <Route exact path="/contacto" element ={<Contacto />}/>
-            <Route exact path="/admin" element={ <AdminHome /> }/>
-            <Route exact path="/turnoscreate" element={ <Turnos /> }/>
-            <Route exact path="/turnostable" element={ <TurnosTable turnos={turnos} /> }/>
-            <Route exact path="/turnosedit" element={ <TurnosEdit /> }/>
-            
+            {/* <Route exact path="/" element={ <Home /> }/> */}
           </Routes>
+          {/* <SobreNostros /> */}
+          <Error404 />
         </main>
         <Footer />
       </BrowserRouter>
     </div>
   );
-}
+  }}
 
-export default App;
+export default App.js;
