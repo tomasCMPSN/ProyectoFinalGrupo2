@@ -11,7 +11,14 @@ import TurnosCreate from "./components/views/turnos/TurnosCreate";
 import TurnosTable from "./components/views/turnos/TurnosTable";
 import TurnosEdit from "./components/views/turnos/TurnosEdit";
 import Planes from "./components/views/planes/Planes"
+import Error404 from './components/views/Error404/Error404'
+import SobreNosotros from './components/SobreNosotros/SobreNostros'
 import { useState, useEffect } from "react";
+
+
+import React from 'react';
+
+
 
 function App() {
   //  states para la logica
@@ -40,11 +47,13 @@ function App() {
 
         <main>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home/>} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/contacto" element={<Contacto />} />
             <Route exact path="/admin" element={<AdminHome />} />
             <Route exact path="/planes" element={<Planes />} />
+            <Route exact path="/error404" element={<Error404 />} />
+            <Route exact path="/sobrenosotros" element={<SobreNosotros />} />
            
             
 
@@ -65,8 +74,7 @@ function App() {
               element={<TurnosEdit DB={DB} getApi={getApi} />}
             />
           </Routes>
-          {/* <SobreNostros /> */}
-          <Error404 />
+          
         </main>
         <Footer />
       </BrowserRouter>
@@ -74,4 +82,4 @@ function App() {
   );
   }}
 
-export default App.js;
+export default App;

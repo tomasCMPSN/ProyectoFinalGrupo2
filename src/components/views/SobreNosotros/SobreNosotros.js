@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 
-const SobreNostros = () => {
+const SobreNosotros = () => {
   return (
     <>
       <div className="container my-5">
@@ -45,4 +45,4 @@ const SobreNostros = () => {
   );
 };
 
-export default SobreNostros;
+export default SobreNosotros;
