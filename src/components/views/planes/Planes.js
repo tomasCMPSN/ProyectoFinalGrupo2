@@ -11,6 +11,7 @@ import {
 import {useState} from 'react'
 import emailjs from '@emailjs/browser';
 import{ init } from '@emailjs/browser';
+import { validateEmail, validateNames, validateNumber, validateMesage } from "../../helpers/ValidateForms";
 init("user_dvnJ38dESp4bV8SdcMD30");
 
 const Planes = () => {
@@ -19,7 +20,7 @@ const Planes = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail]=useState('');
-  const [consulta, setConsulta]=useState('');
+  const [mesage, setMesage]=useState('');
   const [phone, setPhone]= useState('');
 
 
@@ -30,6 +31,12 @@ const form =useRef()
       e.preventDefault();
 
       // validamos datos
+      if(validateNames(name)&&validateEmail(email)&& validateNumber(phone) && validateMesage(mesage)){
+        console.log('paso la validacion')
+        
+      }else{console.log('no paso la validacion')
+    return}
+ 
 
       // Email js
       emailjs.sendForm('service_5kuzhii', 'template_t9etbyq', form.current)
@@ -132,6 +139,7 @@ const form =useRef()
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su nombre y apellido"
+              onChange={(e)=>setName(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
@@ -141,6 +149,7 @@ const form =useRef()
               type="text"
               placeholder="Ingrese su email"
               name='user_email'
+              onChange={(e)=>setEmail(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
@@ -149,6 +158,7 @@ const form =useRef()
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su numero de telefono"
+              onChange={({target})=>setPhone(target.value)}
             />
           </Form.Group>
 
@@ -173,6 +183,7 @@ const form =useRef()
               as="textarea"
               aria-label="With textarea"
               placeholder="Ingrese su consulta"
+              onChange={(e)=>setMesage(e.target.value)}
             />
           </Form.Group>
 
