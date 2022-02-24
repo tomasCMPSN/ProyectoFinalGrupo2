@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from "react-bootstrap";
-import Card from './index'
+import Card from './Prueba'
 import Admin_pacientes from "../../../img/admin_pacientes.jpg";
 import Admin_turnos from '../../../img/vet_office.jpeg'
 

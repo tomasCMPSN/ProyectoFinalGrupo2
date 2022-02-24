@@ -22,7 +22,7 @@ body{
 
 .content-carrousel{
     width: 100%;
-    position: absolute;
+    position: relative;
     animation: rotar 20s infinite linear;
     transform-style: preserve-3d;
 }

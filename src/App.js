@@ -14,10 +14,8 @@ import InfoPlanes from "./components/views/Home/InfoPlanes/InfoPlanes";
 import Planes from "./components/views/planes/Planes"
 import Error404 from "./components/views/Error404/Error404"
 import SobreNosotros from "./components/views/SobreNosotros/SobreNostros"
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-
-
 
 
 function App() {
@@ -50,11 +48,12 @@ function App() {
           
             <Route exact path="/contacto" element ={<Contacto />}/>
             <Route exact path="/admin" element={ <AdminHome /> }/>
-                  <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />                 
             <Route exact path="/planes" element={<Planes />} />
             <Route exact path="*" element={<Error404 />} />
             <Route exact path="/SobreNosotros" element={<SobreNosotros />} />
+            
            
             
             <Route
@@ -73,8 +72,8 @@ function App() {
               element={<TurnosEdit DB={DB} getApi={getApi} />}
             />
           </Routes>
-          {/* <SobreNostros /> */}
-          <Error404 />
+          
+        
         </main>
         <Footer />
       </BrowserRouter>
@@ -82,4 +81,4 @@ function App() {
   );
   }}
 
-export default App.js;
+export default App  ;

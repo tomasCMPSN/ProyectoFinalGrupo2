@@ -5,7 +5,7 @@ import "./Error404.css"
 const Error404 = () => {
     return (
         <div>
-            <Image src='img/Error404.png' className='error img-responsive'  alt='' />
+            <Image src='img/Error404.png' className='error img-responsive'  alt='jjjjj' />
         </div>
     );
 };
