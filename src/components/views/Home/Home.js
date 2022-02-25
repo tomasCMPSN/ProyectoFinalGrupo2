@@ -5,6 +5,7 @@ import InfoPlanes from "./InfoPlanes/InfoPlanes";
 import Productos from "./Productos/Productos";
 import Profesionales from "./Profesionales/Profesionales";
 import Publicidad from "./Publicidad/Publicidad"
+import Comentarios from "./Comentarios/Comentarios"
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
       <Productos />
       <h1 className="text-center display-2 my-5 mb-3 mt-3">Nuestros profesionales</h1>
       <Profesionales />
+      <Comentarios/>
       <Publicidad/>
       <Clima />
     </div>
