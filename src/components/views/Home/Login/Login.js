@@ -30,7 +30,7 @@ const Login = () => {
             <input  type="text" placeholder="********" className='form-stle-inner' />
           </Form.Group>
           <div className="text-center mt-4">
-            <button className="form-style-btn "> Ingresar 🐾</button>
+            <Button className="form-style-btn "> Ingresar 🐾</Button>
           </div>
           </Form>
 
