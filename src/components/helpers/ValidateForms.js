@@ -37,10 +37,10 @@ export const validateVet = (campo) => {
 
 
 
-export const validateDate = (campo) => {
-  if (regExp4Date.test(campo)) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// export const validateDate = (campo) => {
+//   if (regExp4Date.test(campo)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };

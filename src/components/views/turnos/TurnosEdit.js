@@ -39,7 +39,7 @@ const TurnosEdit = ({ DB, getApi }) => {
     e.preventDefault();
     // Validaciones
 
-    if (!validateNames(petNameRef.current.value) || !validateVet(vetRef.current.value) || !validateDate(dateRef.current.value)) {
+    if (!validateNames(petNameRef.current.value) || !validateVet(vetRef.current.value)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -155,3 +155,5 @@ const TurnosEdit = ({ DB, getApi }) => {
 };
 
 export default TurnosEdit;
+
+

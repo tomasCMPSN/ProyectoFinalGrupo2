@@ -2,12 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Turno = ({ turno,DB, getApi }) => {
-
-
+const Turno = ({ turno, DB, getApi }) => {
   const handleDelete = (id) => {
-
-
     Swal.fire({
       title: "Esta seguro que quiere editar este turno?",
       icon: "warning",
@@ -18,34 +14,25 @@ const Turno = ({ turno,DB, getApi }) => {
       confirmButtonText: "Si",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        try {const res= await fetch(`${DB}/${id}`,
-        {
-          method:"DELETE",
-          headers:{
-            "Content-Type":"application/json"
+        try {
+          const res = await fetch(`${DB}/${id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (res.status === 200) {
+            Swal.fire(
+              "Modificado!",
+              "Su turno fue modificado correctamente",
+              "success"
+            );
+            getApi();
           }
-          
-        })
-        if(res.status===200){
-          Swal.fire(
-            "Modificado!",
-            "Su turno fue modificado correctamente",
-            "success"
-          );
-          getApi()
-
-
-        }
-          
-        } catch (error) {
-          
-        }
-
-
-  }})
-}
-    
-
+        } catch (error) {}
+      }
+    });
+  };
 
   return (
     <tr>
@@ -54,6 +41,7 @@ const Turno = ({ turno,DB, getApi }) => {
       <td>{turno.vet}</td>
 
       <td> {turno.date}</td>
+      <td> {turno.time}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">
           <Link to={`/turnosedit/${turno.id}`}>Editar</Link>

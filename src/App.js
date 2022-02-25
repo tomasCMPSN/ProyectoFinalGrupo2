@@ -24,6 +24,7 @@ function App() {
     try {
       const res = await fetch(DB);
     const appApi = await res.json();
+    
     setTurnos(appApi);
     } catch (error) {
       console.log(error);

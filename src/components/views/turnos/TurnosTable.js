@@ -3,6 +3,7 @@ import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Turnos.css'
 import Turno from './Turno'
+import TurnoInput from './TurnoInput'
 
 
 const TurnosTable = ({turnos, DB, getApi}) => {
@@ -13,7 +14,11 @@ const TurnosTable = ({turnos, DB, getApi}) => {
             <h1 >Turnos asignados:</h1>
           </div>
           <hr />
-        <input placeholder='Buscar' className='form-stle-inner mb-5'/>
+        
+        <article>
+            <TurnoInput DB={DB} ></TurnoInput>
+        </article>
+        
         <div className='d-flex justify-content-end'>
             <Link to='/turnoscreate'className=" form-style-newbtn ">Asignar un turno </Link>
             </div>
@@ -26,12 +31,12 @@ const TurnosTable = ({turnos, DB, getApi}) => {
                 <th>👩🏻‍⚕️ Veterinario</th>
                <th>📅 Fecha</th>
                 <th>Acciones</th>
-                 {/*<th>⏰Hora</th> */}
+                 <th>⏰Hora</th>
               </tr>
             </thead>
             <tbody>
             {turnos.map((turno)=> (
-            <Turno key={turno.id} turno={turno} DB={DB} getApi={getApi}/>))}
+              <Turno key={turno.id} turno={turno} DB={DB} getApi={getApi}/>))}
               
              
             </tbody>
