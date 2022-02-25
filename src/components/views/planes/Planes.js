@@ -8,7 +8,8 @@ import {
   ListGroup,
   ListGroupItem,
 } from "react-bootstrap";
-import {useState} from 'react'
+import {useState} from 'react';
+import Swal from "sweetalert2";
 import emailjs from '@emailjs/browser';
 import{ init } from '@emailjs/browser';
 import { validateEmail, validateNames, validateNumber, validateMesage } from "../../helpers/ValidateForms";
@@ -22,6 +23,7 @@ const Planes = () => {
   const [email, setEmail]=useState('');
   const [mesage, setMesage]=useState('');
   const [phone, setPhone]= useState('');
+  const [specie, setSpecie]= useState('');
 
 
   // EmailJs
@@ -31,11 +33,14 @@ const form =useRef()
       e.preventDefault();
 
       // validamos datos
-      if(validateNames(name)&&validateEmail(email)&& validateNumber(phone) && validateMesage(mesage)){
-        console.log('paso la validacion')
+      if(!validateNames(name)|| !validateEmail(email)|| !validateNumber(phone) || !validateMesage(mesage)){
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ingreso algun dato incorrecto, por favor revise el formulario",
+        });
         
-      }else{console.log('no paso la validacion')
-    return}
+      }else {
  
 
       // Email js
@@ -45,8 +50,22 @@ const form =useRef()
       }, (error) => {
           console.log(error.text);
       });
+      setName('')
+      setEmail('')
+      setPhone('')
+      setMesage('')
+      setSpecie('')
+      
 
-  
+      Swal.fire({
+        icon: "succes",
+        title: "Yay!",
+        text: "Gracias por tu consulta, pronto nos pondremos en contacto con vos",
+      });
+      
+
+
+    }
     }
 
   
@@ -135,6 +154,7 @@ const form =useRef()
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Nombre y apellido*</Form.Label>
             <input
+            value={name}
             name='user_name'
               className="form-stle-inner"
               type="text"
@@ -145,6 +165,7 @@ const form =useRef()
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Email*</Form.Label>
             <input
+            value={email}
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su email"
@@ -159,12 +180,13 @@ const form =useRef()
               type="text"
               placeholder="Ingrese su numero de telefono"
               onChange={({target})=>setPhone(target.value)}
+              value={phone}
             />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Label>Mascota</Form.Label>
-            <select className="form-stle-inner">
+            <select className="form-stle-inner" value={specie}>
               <option value="">Seleccione una especie</option>
               <option value="ave">Ave</option>
               <option value="gato">Gato</option>
@@ -179,6 +201,7 @@ const form =useRef()
             <Form.Label>Consulta*</Form.Label>
 
             <FormControl
+            value={mesage}
               className="form-stle-inner"
               as="textarea"
               aria-label="With textarea"
