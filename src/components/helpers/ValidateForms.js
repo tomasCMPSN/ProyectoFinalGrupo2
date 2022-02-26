@@ -2,7 +2,7 @@
 const regEx4Names = /^[A-Za-z\s?]+$/;
 const regEx4Selector = /^[A-Za-z\-\s?]+$/;
 
-const regExp4Date = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+
 
 export const validateNames = (campo) => {
   if (
@@ -37,10 +37,10 @@ export const validateVet = (campo) => {
 
 
 
-// export const validateDate = (campo) => {
-//   if (regExp4Date.test(campo)) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
+//  export const validateTime = (campo) => {
+//    if (campo.value !== campo) {
+//      return true;
+//    } else {
+//      return false;
+//    }
+//  };

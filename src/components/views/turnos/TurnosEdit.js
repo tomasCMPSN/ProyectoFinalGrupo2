@@ -1,4 +1,4 @@
-import React , {useRef} from "react";
+import React, { useRef } from "react";
 import { Form } from "react-bootstrap";
 import "./Turnos.css";
 import { useState, useEffect } from "react";
@@ -10,51 +10,97 @@ import {
 } from "../../helpers/ValidateForms";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-
+import Time from "./Time";
 
 const TurnosEdit = ({ DB, getApi }) => {
   // state
   const [turno, setTurno] = useState({});
+  const [date, setDate] = useState("");
+
+  const [turnos, setTurnos] = useState([]);
+  const [horas, setHoras] = useState([]);
+
+  const timePicker = [
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+  ];
+
   //Parametros
   const { id } = useParams();
   // Use ref
   const petNameRef = useRef("");
   const vetRef = useRef("");
   const dateRef = useRef("");
+  const timeRef = useRef("");
   // Navigate
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(async () => {
     try {
       const res = await fetch(`${DB}/${id}`);
       const appointmentAppi = await res.json();
       setTurno(appointmentAppi);
-    
+      console.log(appointmentAppi);
+      console.log(turno.time);
     } catch (error) {
       console.log(error);
     }
   }, []);
 
+  const handleDateChange = async (e) => {
+    // Traemos  la base de datos
+
+    try {
+      const res = await fetch(DB);
+      const resultado = await res.json();
+
+      setTurnos(resultado);
+    } catch (error) {
+      console.log(error);
+    }
+
+    // Filtramos de la db, las fechas que coincidan con el valor guardado en el state de fechas
+    const busquedaFechas = turnos.filter(
+      (fechas) => fechas.date === e.target.value
+    );
+    const buscarHoras = busquedaFechas.map((turno) => turno.time);
+    const filtradoHoras = timePicker.filter(
+      (hora) => !buscarHoras.includes(hora)
+    );
+    setHoras(filtradoHoras);
+
+    console.log(filtradoHoras);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Validaciones
 
-    if (!validateNames(petNameRef.current.value) || !validateVet(vetRef.current.value)) {
+    if (
+      !validateNames(petNameRef.current.value) ||
+      !validateVet(vetRef.current.value)
+    ) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Ingreso algun dato incorrecto, por favor revise el formulario",
       });
       return;
-    } 
-
-    const appUpdated = {
-
-      petName: petNameRef.current.value,
-      vet: vetRef.current.value,
-      date: dateRef.current.value
     }
 
+    const appUpdated = {
+      petName: petNameRef.current.value,
+      vet: vetRef.current.value,
+      date: dateRef.current.value,
+      time: timeRef.current.value,
+    };
 
     Swal.fire({
       title: "Esta seguro que quiere editar este turno?",
@@ -67,13 +113,12 @@ const TurnosEdit = ({ DB, getApi }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`${DB}/${id}`,{
+          const res = await fetch(`${DB}/${id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
-          },
-          body: JSON.stringify(appUpdated)
-
+            },
+            body: JSON.stringify(appUpdated),
           });
           if (res.status === 200) {
             Swal.fire(
@@ -82,21 +127,14 @@ const TurnosEdit = ({ DB, getApi }) => {
               "success"
             );
             getApi();
-            navigate('../../turnostable')
-
-
-
-            
-            
+            navigate("../../turnostable");
           }
         } catch (error) {
           console.log(error);
         }
       }
     });
-
-
-  }
+  };
   return (
     <section className="container mt-5 ">
       <article>
@@ -112,18 +150,16 @@ const TurnosEdit = ({ DB, getApi }) => {
               type="text"
               defaultValue={turno.petName}
               placeholder="Puki"
-              ref ={petNameRef}
-              
+              ref={petNameRef}
             />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Label>👩🏻‍⚕️Veterinario*</Form.Label>
             <select
-            ref={vetRef}
+              ref={vetRef}
               className="form-stle-inner"
               value={turno.vet}
-           
               onChange={({ target }) =>
                 setTurno({ ...turno, vet: target.value })
               }
@@ -138,11 +174,29 @@ const TurnosEdit = ({ DB, getApi }) => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>📅 Fecha </Form.Label>
             <input
-             ref={dateRef}
+              type="date"
+              ref={dateRef}
               className="form-stle-inner"
               defaultValue={turno.date}
               placeholder="Ingrese la fecha para el turno dd/mm/yyyy"
+              onChange={handleDateChange}
             />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>⏰ Horario </Form.Label>
+
+            <select
+              ref={timeRef}
+              className="form-stle-inner"
+           
+            >
+              <option value="">Seleccione una opcion</option>
+
+              {horas.map((hora, index) => {
+                return <Time hora={hora} key={index} />;
+              })}
+            </select>
           </Form.Group>
 
           <div className="text-center mt-4">
@@ -155,5 +209,3 @@ const TurnosEdit = ({ DB, getApi }) => {
 };
 
 export default TurnosEdit;
-
-
