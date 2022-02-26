@@ -6,7 +6,7 @@ import Productos from "./Productos/Productos";
 import Profesionales from "./Profesionales/Profesionales";
 import Publicidad from "./Publicidad/Publicidad"
 import Comentarios from "./Comentarios/Comentarios"
-
+import Servicios from "./Servicios/Servicios"
 
 const Home = () => {
 
@@ -23,6 +23,8 @@ const Home = () => {
       <InfoPlanes />
       <h1 className="text-center display-2 my-5 mb-3 mt-3">productos</h1>
       <Productos />
+      <h1 className="text-center display-2 my-5 mb-3 mt-3">Tambien contamos con esto servicios</h1>
+      <Servicios />
       <h1 className="text-center display-2 my-5 mb-3 mt-3">Nuestros profesionales</h1>
       <Profesionales />
       <h1 className="text-center display-2 my-5 mb-3 mt-3">Ellos ya nos eligieron</h1>

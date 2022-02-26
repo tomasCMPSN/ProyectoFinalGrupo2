@@ -1,12 +1,21 @@
 import React from 'react';
 import "./Publicidad.css"
+import { Container, Row, Col,  } from "react-bootstrap";
 
 
 const Publicidad = () => {
     return (
+        
+        <div className='banner'>
+
+        </div>
+         /*
+        <Container >
+      <Row>
+        
         <body>
 			
-		
+		<Col sm={12} md={6} className="mb-2">
 		<div className="content-all">
         <div className="content-carrousel">
             <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOWgVHI59S_q54Kz8g_4eyxc4gnzDf8hDjQQ&usqp=CAU"/></figure>
@@ -22,7 +31,14 @@ const Publicidad = () => {
             
         </div>
     </div>
+    </Col>
+    <Col sm={12} md={6} className="mb-2">  
+    <h1>hola</h1>
+    </Col>
 	</body>
+    </Row>
+    </Container>
+    */
     );
 };
 

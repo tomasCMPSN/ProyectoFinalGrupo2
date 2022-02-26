@@ -12,7 +12,7 @@ const Comentarios = () => {
         <Col sm={12} md={4}>
           <div className="text-center container-fluid">
             {" "}
-            <img src= "https://drive.google.com/uc?export=download&id=1ErWDjD-VQDgHY4SqAUiFLT58lBt6jo7d" alt="foto de Romina" className=" w-75 img img-fluid rounded-circle" />{" "}
+            <img src= "https://drive.google.com/uc?export=download&id=1ErWDjD-VQDgHY4SqAUiFLT58lBt6jo7d" alt="foto de Romina" className=" w-75 img img-fluid rounded-circle sombras" />{" "}
           </div>
 
           <Card.Body>
@@ -29,7 +29,7 @@ const Comentarios = () => {
         <Col sm={12} md={4}>
           <div className="text-center container-fluid">
             {" "}
-            <img src= "https://drive.google.com/uc?export=download&id=1ZTvNq0PbOQtRh_uiRFeV45pdPL2XBuF4" alt="foto de Bautista" className="w-75 opacity img img-fluid rounded-circle" />{" "}
+            <img src= "https://drive.google.com/uc?export=download&id=1ZTvNq0PbOQtRh_uiRFeV45pdPL2XBuF4" alt="foto de Bautista" className="w-75 opacity img img-fluid rounded-circle sombras" />{" "}
           </div>
 
           <Card.Body>
@@ -45,7 +45,7 @@ const Comentarios = () => {
         <Col sm={12} md={4}>
           <div className="text-center container-fluid">
             {" "}
-            <img src= "https://drive.google.com/uc?export=download&id=1V_W92wbqQ7qSilKkAKHwkTXVpVG4vM_O" alt="foto de lorena" className="w-75 img img-fluid rounded-circle" />{" "}
+            <img src= "https://drive.google.com/uc?export=download&id=1V_W92wbqQ7qSilKkAKHwkTXVpVG4vM_O" alt="foto de lorena" className="w-75 img img-fluid rounded-circle sombras" />{" "}
           </div>
 
           <Card.Body>
