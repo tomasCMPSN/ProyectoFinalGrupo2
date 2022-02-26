@@ -25,6 +25,7 @@ const Home = () => {
       <Productos />
       <h1 className="text-center display-2 my-5 mb-3 mt-3">Nuestros profesionales</h1>
       <Profesionales />
+      <h1 className="text-center display-2 my-5 mb-3 mt-3">Ellos ya nos eligieron</h1>
       <Comentarios/>
       <Publicidad/>
       <Clima />

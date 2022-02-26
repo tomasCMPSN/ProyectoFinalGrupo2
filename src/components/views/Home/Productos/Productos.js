@@ -70,7 +70,7 @@ const Productos = () => {
           <Card className="text-center">
             <Card.Body>
               
-              <img className= "img-responsive"src="https://m.media-amazon.com/images/I/81gwu8FWUPL._AC_SX466_.jpg"></img>
+              <img className= "img-fluid "src="https://m.media-amazon.com/images/I/81gwu8FWUPL._AC_SX466_.jpg"></img>
               <Card.Text>
                 Servicios para mascotas de más de 10 años.
               </Card.Text>

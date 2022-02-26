@@ -8,11 +8,11 @@ import "./Comentarios.css";
 const Comentarios = () => {
   return (
     <Container>
-      <Row className="justify-content-around ">
+      <Row className="justify-content-around  ">
         <Col sm={12} md={4}>
-          <div className="text-center">
+          <div className="text-center container-fluid">
             {" "}
-            <img src= "https://drive.google.com/uc?export=download&id=1ErWDjD-VQDgHY4SqAUiFLT58lBt6jo7d" alt="foto de Romina" className="rounded-circle" />{" "}
+            <img src= "https://drive.google.com/uc?export=download&id=1ErWDjD-VQDgHY4SqAUiFLT58lBt6jo7d" alt="foto de Romina" className=" w-75 img img-fluid rounded-circle" />{" "}
           </div>
 
           <Card.Body>
@@ -27,9 +27,9 @@ const Comentarios = () => {
           </Card.Body>
         </Col>
         <Col sm={12} md={4}>
-          <div className="text-center">
+          <div className="text-center container-fluid">
             {" "}
-            <img src= "https://drive.google.com/uc?export=download&id=1ZTvNq0PbOQtRh_uiRFeV45pdPL2XBuF4" alt="foto de Bautista" className="rounded-circle" />{" "}
+            <img src= "https://drive.google.com/uc?export=download&id=1ZTvNq0PbOQtRh_uiRFeV45pdPL2XBuF4" alt="foto de Bautista" className="w-75 opacity img img-fluid rounded-circle" />{" "}
           </div>
 
           <Card.Body>
@@ -43,9 +43,9 @@ const Comentarios = () => {
           </Card.Body>
         </Col>
         <Col sm={12} md={4}>
-          <div className="text-center">
+          <div className="text-center container-fluid">
             {" "}
-            <img src= "https://drive.google.com/uc?export=download&id=1V_W92wbqQ7qSilKkAKHwkTXVpVG4vM_O" alt="foto de lorena" className="rounded-circle" />{" "}
+            <img src= "https://drive.google.com/uc?export=download&id=1V_W92wbqQ7qSilKkAKHwkTXVpVG4vM_O" alt="foto de lorena" className="w-75 img img-fluid rounded-circle" />{" "}
           </div>
 
           <Card.Body>
