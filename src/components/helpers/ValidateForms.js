@@ -46,6 +46,8 @@ export const validateEmail = (campo)=>{
   }
 }
 
+
+
 export const validateMesage = (campo)=>{
   if (campo.length < 300 && campo.length > 0){
     return true
