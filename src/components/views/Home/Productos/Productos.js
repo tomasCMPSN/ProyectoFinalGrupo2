@@ -24,7 +24,7 @@ const Productos = () => {
               </Card.Text>
               <Link to='*' variant="light" >
               
-              <button className="btn"> Ingresar 🐾</button>
+              <button className="btn"> Comprar🐾</button>
               </Link>
               
             </Card.Body>
@@ -45,7 +45,7 @@ const Productos = () => {
               </Card.Text>
               <Link to='*' variant="light" >
               
-              <button className="btn"> Ingresar 🐾</button>
+              <button className="btn"> Comprar🐾</button>
               </Link>
             </Card.Body>
           </Card>
@@ -55,7 +55,7 @@ const Productos = () => {
             <Card.Body>
               <Card.Img
               variant="top"
-              src="https://img.bestdealplus.com/ae04/kf/HTB18qSicBGw3KVjSZFDq6xWEpXa6.jpg"
+              src="https://ae01.alicdn.com/kf/Hc744d7197a90439299938fb58982fd54S/S-3XL-cachorro-coj-n-de-cama-de-perro-sof-camas-para-mascotas-para-perros-impermeable.jpg"
               alt='perro mirando al frente del Plan Madurando'
               ClassName= "img-responsive"
             />
@@ -65,14 +65,20 @@ const Productos = () => {
               </Card.Text>
               <Link to='*' variant="light" >
               
-              <button className="btn"> Ingresar 🐾</button>
+              <button className="btn"> Comprar🐾</button>
               </Link>
             </Card.Body>
           </Card>
+          
         </Col>
       </Row>
    
-      
+      <div ClassName="">
+          <Link to='*' variant="light" >
+              
+              <button className="btn"> Ver más productos🐾</button>
+              </Link>
+              </div>
 
 
         </div>

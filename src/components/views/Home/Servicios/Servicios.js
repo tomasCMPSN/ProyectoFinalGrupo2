@@ -22,7 +22,7 @@ const Servicios = () => {
               </Card.Text>
               <Link to='*' variant="light" >
               
-              <button className="btn"> Ingresar 🐾</button>
+              <button className="btn"> Ver más🐾</button>
               </Link>
             </Card.Body>
           </Card>
@@ -41,7 +41,7 @@ const Servicios = () => {
               </Card.Text>
               <Link to='*' variant="light" >
               
-              <button className="btn"> Ingresar 🐾</button>
+              <button className="btn"> Ver más🐾</button>
               </Link>
             </Card.Body>
           </Card>
