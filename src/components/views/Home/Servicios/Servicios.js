@@ -20,7 +20,10 @@ const Servicios = () => {
               <Card.Text>
                 hdfjhfjhf
               </Card.Text>
-              <Link to="/planes/primerospasos"> <Button variant="danger" className="color-navbar rounded-pill">Contratar</Button></Link>
+              <Link to='*' variant="light" >
+              
+              <button className="btn"> Ingresar 🐾</button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
@@ -36,7 +39,10 @@ const Servicios = () => {
               <Card.Text>
                 gdgdsgsg
               </Card.Text>
-              <Link to="/planes/madurando"> <Button variant="danger" className="color-navbar rounded-pill">Contratar</Button></Link>
+              <Link to='*' variant="light" >
+              
+              <button className="btn"> Ingresar 🐾</button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>

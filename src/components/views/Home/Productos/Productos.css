@@ -1,3 +1,8 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 .sombras{
 border: solid 1px #ffe3b3;
 padding: 30px;
@@ -6,6 +11,16 @@ box-shadow: 10px 20px 4px 4px #ffe3b3;
 font-family: 'Patrick Hand', cursive;
 font-family: "Nunito", sans-serif;
 }
+
+.btn {
+    background-color: rgb(54, 168, 140);
+    color: rgb(238, 227, 227);
+    font-family: 'Patrick Hand', cursive;
+}
+  
+
+    
+
 
 
 

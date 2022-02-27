@@ -20,7 +20,11 @@ const Productos = () => {
               <Card.Text>
                 Servicios para mascotas de 0 a 5 años.
               </Card.Text>
-              <Link to='*' variant="light" className="color-navbar">Contratar</Link>
+              <Link to='*' variant="light" >
+              
+              <button className="btn"> Ingresar 🐾</button>
+              </Link>
+              
             </Card.Body>
           </Card>
         </Col>
@@ -31,7 +35,10 @@ const Productos = () => {
               <Card.Text>
                 Servicios para mascotas de 5 a 10 años.
               </Card.Text>
-              <Link to='/*' variant="light" className="color-navbar">Contratar</Link>
+              <Link to='*' variant="light" >
+              
+              <button className="btn"> Ingresar 🐾</button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
@@ -42,7 +49,10 @@ const Productos = () => {
               <Card.Text>
                 Servicios para mascotas de más de 10 años.
               </Card.Text>
-              <Link to='/*' variant="light" className="color-navbar">Contratar</Link>
+              <Link to='*' variant="light" >
+              
+              <button className="btn"> Ingresar 🐾</button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>

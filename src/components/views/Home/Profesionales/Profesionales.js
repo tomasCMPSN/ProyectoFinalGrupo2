@@ -10,6 +10,7 @@ import {
 import "./Profesionales.css"
 
 
+
 const Profesionales = () => {
   return (
     
@@ -29,6 +30,7 @@ const Profesionales = () => {
   
                 
               </Card.Text>
+             
               
             </Card.Body>
 
