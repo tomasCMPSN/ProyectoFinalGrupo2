@@ -4,12 +4,13 @@ import {
   validateNames,
   validateVet,
   validateTime,
+  validateDate,
 } from "../../helpers/ValidateForms";
 import "./Turnos.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import TurnoInput from "./TurnoInput";
-import Time from './Time'
+import Time from "./Time";
 
 const TurnosCreate = ({ DB, getApi }) => {
   // States
@@ -19,12 +20,14 @@ const TurnosCreate = ({ DB, getApi }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
-
-   //State para trabajar fechas
+  //State para trabajar fechas
   const [turnos, setTurnos] = useState([]);
-  const [horas, setHoras]= useState([])
+  const [horas, setHoras] = useState([]);
   // Ref
   const timeRef = useRef();
+  const martaRef = useRef();
+  const ignacioRef = useRef();
+  const vetRef = useRef();
 
   //Use navigate
   const navigate = useNavigate();
@@ -43,61 +46,72 @@ const TurnosCreate = ({ DB, getApi }) => {
     "20:00",
   ];
 
-  // UseEffect para deshabilitar horas
+  // veterinarios
+  const marta = "Dra Marta Minujin";
+  const ignacio = "Dr Jorge Ignacio";
+
+  // UseEffect
 
   useEffect(() => {
     timeRef.current.disabled = true;
-    
-    
+    vetRef.current.disabled = true;
   }, []);
 
-  // Funcion para preguntarle los horarios a la bd 
-  
-  const handleDateChange = async (e) => {
-  
-    // Traemos  la base de datos
-
+  useEffect(async () => {
     try {
       const res = await fetch(DB);
       const resultado = await res.json();
-     
-
       // Guardamos la db en un state
-
       setTurnos(resultado);
     } catch (error) {
       console.log(error);
     }
+  }, []);
 
-    // Filtramos de la db, las fechas que coincidan con el valor guardado en el state de fechas
+  const handleDateChange = (e) => {
+    // Realizamos filtrado de fecha
+    const busquedaFechas = turnos.filter(
+      (fechas) => fechas.date === e.target.value
+    );
 
+    // Buscamos por veterinario en esa fecha
+    const buscarveterio = busquedaFechas.map((turno) => turno.vet);
+    console.log(buscarveterio);
 
-    const busquedaFechas = turnos.filter((fechas) => fechas.date === e.target.value);
-    const buscarHoras = busquedaFechas.map((turno) => turno.time)
-    const filtradoHoras = timePicker.filter((hora)=>!buscarHoras.includes(hora));
+    const filtradovet1 = buscarveterio.filter((buscada) => {
+      return buscada === marta;
+    });
+    console.log(filtradovet1);
 
-    
-  
-    setHoras(filtradoHoras)
+    const filtradovet2 = buscarveterio.filter((buscado) => {
+      return buscado === ignacio;
+    });
+    console.log(filtradovet2);
 
-     
+    if (filtradovet1.length >= 8) {
+      martaRef.current.disabled = true;
+    } else if (filtradovet2.length >= 8) {
+      ignacioRef.current.disabled = true;
+    }
 
+    // Buscammos horas disponibles para ese dia
+    const buscarHoras = busquedaFechas.map((turno) => turno.time);
+    const filtradoHoras = timePicker.filter(
+      (hora) => !buscarHoras.includes(hora)
+    );
+
+    setHoras(filtradoHoras);
 
     //  Habilitar el input de horas
     timeRef.current.disabled = false;
-    
-    console.log(date)
-
-
-  
-    
+    vetRef.current.disabled = false;
   };
 
   //Funcion para crear un turno
   const handleSubmit = (e) => {
     e.preventDefault();
     // validar datos
-    if (!validateNames(petName) || !validateVet(vet))  {
+    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date) ) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -145,9 +159,9 @@ const TurnosCreate = ({ DB, getApi }) => {
         } catch (error) {
           console.log(error);
         }
+        console.log(newAppointment.time)
       }
     });
-    
   };
 
   return (
@@ -170,20 +184,6 @@ const TurnosCreate = ({ DB, getApi }) => {
               onChange={(e) => setPetName(e.target.value)}
             />
           </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>👩🏻‍⚕️ Veterinario*</Form.Label>
-            <select
-              className="form-stle-inner"
-              onChange={({ target }) => setVet(target.value)}
-            >
-              <option >Seleccione un profesional </option>
-
-              <option value="Dr Jorge Ignacio">Dr. Jorge Ignacio</option>
-              <option value="Dra Marta Minujin">Dra. Marta Minujin </option>
-            </select>
-          </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>📅 Fecha </Form.Label>
             <input
@@ -191,26 +191,43 @@ const TurnosCreate = ({ DB, getApi }) => {
               className="form-stle-inner"
               placeholder="Ingrese la fecha para el turno dd/mm/yyyy"
               onBlur={handleDateChange}
-              onChange={(e)=>setDate(e.target.value)}
-             
-            
-           
+              onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Label>👩🏻‍⚕️ Veterinario*</Form.Label>
+            <select
+              ref={vetRef}
+              className="form-stle-inner"
+              onChange={({ target }) => setVet(target.value)}
+            >
+              <option>Seleccione un profesional </option>
+
+              <option ref={ignacioRef} value="Dr Jorge Ignacio">
+                Dr. Jorge Ignacio
+              </option>
+              <option ref={martaRef} value="Dra Marta Minujin">
+                Dra. Marta Minujin{" "}
+              </option>
+            </select>
+          </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>⏰ Horario </Form.Label>
-            
+
             <select
-             
               ref={timeRef}
               className="form-stle-inner"
               onChange={({ target }) => setTime(target.value)}
+            >
 
-             >
-              <option value=''>Seleccione una opcion</option>
+            
+              
+              <option disabled  >Seleccione una opcion</option>
               {horas.map((hora, index) => {
-                 return <Time hora={hora} key={index}/>
-             })}
+                return <Time hora={hora} key={index} />;
+              })}
             </select>
           </Form.Group>
 
