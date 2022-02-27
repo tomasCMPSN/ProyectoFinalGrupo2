@@ -9,7 +9,7 @@ import {
 import "./Turnos.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import TurnoInput from "./TurnoInput";
+
 import Time from "./Time";
 
 const TurnosCreate = ({ DB, getApi }) => {
@@ -73,6 +73,7 @@ const TurnosCreate = ({ DB, getApi }) => {
     const busquedaFechas = turnos.filter(
       (fechas) => fechas.date === e.target.value
     );
+    
 
     // Buscamos por veterinario en esa fecha
     const buscarveterio = busquedaFechas.map((turno) => turno.vet);
@@ -111,7 +112,7 @@ const TurnosCreate = ({ DB, getApi }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // validar datos
-    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date) ) {
+    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date)  ) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -169,10 +170,7 @@ const TurnosCreate = ({ DB, getApi }) => {
       <article>
         <h1 className="form-style-title ">Administrador de turnos 📝</h1>
       </article>
-      <article>
-        <TurnoInput></TurnoInput>
-      </article>
-
+     
       <article className="d-flex justify-content-center mb-5 ">
         <Form className="mb-5 form_style" onSubmit={handleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
@@ -224,7 +222,7 @@ const TurnosCreate = ({ DB, getApi }) => {
 
             
               
-              <option disabled  >Seleccione una opcion</option>
+              <option value='s'  >Seleccione una opcion</option>
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}

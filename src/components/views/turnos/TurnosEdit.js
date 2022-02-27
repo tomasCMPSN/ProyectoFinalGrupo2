@@ -16,10 +16,10 @@ const TurnosEdit = ({ DB, getApi }) => {
   
   // state
   const [turno, setTurno] = useState({});
-  
-
   const [turnos, setTurnos] = useState([]);
   const [horas, setHoras] = useState([]);
+  
+  const actHora = []
 
   const timePicker = [
     "08:00",
@@ -49,38 +49,77 @@ const TurnosEdit = ({ DB, getApi }) => {
   const marta = "Dra Marta Minujin";
   const ignacio = "Dr Jorge Ignacio";
 
+
+
   useEffect(async () => {
     try {
-      const res = await fetch(`${DB}/${id}`);
-      const appointmentAppi = await res.json();
-      setTurno(appointmentAppi);
+    const res = await fetch(`${DB}/${id}`);
+    const  appointmentAppi = await res.json();
+    setTurno(appointmentAppi);
+ searchAtDb()
 
-    
-    
     } catch (error) {
       console.log(error);
     }
   }, []);
 
+
+
+const searchAtDb=( async ()=>{
+
+  try {
+    const res = await fetch(DB);
+    const resultado= await res.json()
+    setTurnos(resultado);
+    const busquedaFechas = turnos.filter(
+      (fechas) => fechas.date === dateRef.current.value );
+      console.log(dateRef.current.value)
+      console.log(busquedaFechas)
+     
+      const buscarveterio = busquedaFechas.map((turnos) => turnos.vet);
+      console.log(buscarveterio)
+     
+      const filtradovet1 = buscarveterio.filter((buscada) => {
+        return buscada === marta;
+      });
+     
+      const filtradovet2 = buscarveterio.filter((buscado) => {
+        return buscado === ignacio;
+      });
+     
+      if (filtradovet1.length >= 8) {
+        martaRef.current.disabled = true;
+      } else if (filtradovet2.length >= 8) {
+        ignacioRef.current.disabled = true;
+      }
+     
+      const buscarHoras = busquedaFechas.map((turno) => turno.time);
+      const filtradoHoras = timePicker.filter(
+        (hora) => !buscarHoras.includes(hora)
+      );
+      console.log(filtradoHoras)
+       
+     
+      setHoras(filtradoHoras);
  
 
-
-  const handleDateChange = async (e) => {
-
-    try {
-      const res = await fetch(DB);
-      const resultado = await res.json();
-     setTurnos(resultado)
   
-    } catch (error) {
-      console.log(error);
-    }
-    
+  } catch (error) {
+    console.log(error);
+  }
+
+
+ })
+
+
+
+  const handleDateChange =  (e) => {
+    console.log(turnos)
+
     const busquedaFechas = turnos.filter(
       (fechas) => fechas.date === e.target.value
     );
    
-
     // Buscamos por veterinario en esa fecha
     const buscarveterio = busquedaFechas.map((turno) => turno.vet);
 
@@ -208,7 +247,7 @@ const TurnosEdit = ({ DB, getApi }) => {
                 Dr. Jorge Ignacio
               </option>
               <option ref={martaRef} value="Dra Marta Minujin">
-                Dra. Marta Minujin{" "}
+                Dra. Marta Minujin
               </option>
             </select>
           </Form.Group>
@@ -217,9 +256,12 @@ const TurnosEdit = ({ DB, getApi }) => {
             <Form.Label>⏰ Horario </Form.Label>
 
             <select ref={timeRef}
+            value={turno.time}
+            onChange={({ target }) =>
+                setTurno({ ...turno, time: target.value })
+              }
              className="form-stle-inner">
               <option>Seleccione una opcion</option>
-      
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}

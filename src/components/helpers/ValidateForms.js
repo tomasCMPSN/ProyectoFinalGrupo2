@@ -36,8 +36,7 @@ export const validateVet = (campo) => {
 
 let date = new Date();
 let output = String( date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' +date.getDate()).padStart(2, '0');
-console.log(output);
-console.log(output);
+
 
 
 
@@ -48,7 +47,6 @@ export const validateDate =(campo)=>{
     return false
   }
 }
-
 
 
 

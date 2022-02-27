@@ -18,6 +18,7 @@ function App() {
 
   useEffect(() => {
     getApi();
+  
   }, []);
 
   const getApi = async () => {
@@ -26,6 +27,7 @@ function App() {
     const appApi = await res.json();
     
     setTurnos(appApi);
+    console.log(turnos)
     } catch (error) {
       console.log(error);
     }
