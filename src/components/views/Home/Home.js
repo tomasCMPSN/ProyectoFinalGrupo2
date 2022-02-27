@@ -7,6 +7,7 @@ import Profesionales from "./Profesionales/Profesionales";
 import Publicidad from "./Publicidad/Publicidad"
 import Comentarios from "./Comentarios/Comentarios"
 import Servicios from "./Servicios/Servicios"
+import "./Home.css"
 
 const Home = () => {
 
@@ -16,18 +17,19 @@ const Home = () => {
     <div>
       
       <CarouselHome />
-      <p className="lead display-1 text-center mb-3 mt-2">
-        "Cuidando a tus mascotas por más de 45 años."
+      <p className="lead display-3 text-center mb-3 mt-2 letra">
+        Cuidando a tus mascotas por más de 45 años
+        
       </p>
-      <h1 className="text-center display-2 mb-3">Planes</h1>
+      <h1 className="text-center display-2 mb-3 letra">Planes</h1>
       <InfoPlanes />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3">productos</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">productos</h1>
       <Productos />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3">Tambien contamos con esto servicios</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Tambien contamos con esto servicios</h1>
       <Servicios />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3">Nuestros profesionales</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt- letra">Nuestros profesionales</h1>
       <Profesionales />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3">Ellos ya nos eligieron</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Ellos ya nos eligieron</h1>
       <Comentarios/>
       <Publicidad/>
       <Clima />
