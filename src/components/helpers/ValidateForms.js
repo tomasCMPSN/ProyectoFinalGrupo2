@@ -65,3 +65,10 @@ export const validateMesage = (campo)=>{
 }
 
 
+export const validateNumber = (campo)=>{
+  if(regExp4Number.test(campo) && campo.length < 13){
+    return true
+  } else{
+    return false
+  }
+}
