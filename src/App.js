@@ -28,6 +28,7 @@ function App() {
 
   useEffect(() => {
     getApi();
+  
   }, []);
 
   const getApi = async () => {

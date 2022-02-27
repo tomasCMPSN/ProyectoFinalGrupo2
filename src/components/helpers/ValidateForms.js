@@ -1,7 +1,6 @@
 // Regular expressions
 const regEx4Names = /^[A-Za-z\s?]+$/;
 const regEx4Selector = /^[A-Za-z\-\s?]+$/;
-const regExp4Date = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
 const regExp4Email = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 const regExp4Number = /^([0-9])*$/
 
@@ -29,18 +28,27 @@ export const validateVet = (campo) => {
   }
 };
 
-export const validateDate = (campo) => {
-  if (regExp4Date.test(campo)) {
-    return true;
-  } else {
-    return false;
-  }
-};
 
 
 export const validateEmail = (campo)=>{
   if(regExp4Email.test(campo)){
     return true
+  }else{
+    return false
+  };
+
+}
+
+
+let date = new Date();
+let output = String( date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' +date.getDate()).padStart(2, '0');
+
+
+
+
+export const validateDate =(campo)=>{
+  if(campo > output){
+  return true
   }else{
     return false
   }
@@ -56,10 +64,4 @@ export const validateMesage = (campo)=>{
   }
 }
 
-export const validateNumber= (campo)=>{
-  if(regExp4Number.test(campo)&& campo.length<13){
-    return true
-  }else{
-    return false
-  }
-}
+

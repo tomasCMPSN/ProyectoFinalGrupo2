@@ -6,10 +6,8 @@ const Turno = ({ turno, DB, getApi }) => {
 
 
   const handleDelete = (id) => {
-
-
     Swal.fire({
-      title: "Esta seguro que quiere editar este turno?",
+      title: "Esta seguro que quiere eliminar este turno?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#56ced6",
@@ -18,27 +16,27 @@ const Turno = ({ turno, DB, getApi }) => {
       confirmButtonText: "Si",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        try {const res= await fetch(`${DB}/${id}`,
-        {
-          method:"DELETE",
-          headers:{
-            "Content-Type":"application/json"
+        try {
+          const res = await fetch(`${DB}/${id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (res.status === 200) {
+            Swal.fire(
+              "Eliminado",
+              "Su turno fue eliminado correctamente",
+              "success"
+            );
+            getApi();
           }
           
-        })
+ 
         
-        if(res.status===200){
-          Swal.fire(
-            "Eliminado!",
-            "Su turno fue eliminado correctamente",
-            "success"
-          );
-          getApi()
-
-
-        }
-          
+        
         } catch (error) {
+          console.log(error)
           
         }
 
@@ -55,6 +53,7 @@ const Turno = ({ turno, DB, getApi }) => {
       <td>{turno.vet}</td>
 
       <td> {turno.date}</td>
+      <td> {turno.time}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">
           <Link to={`/turnosedit/${turno.id}`}>Editar</Link>
