@@ -12,7 +12,7 @@ const arrayCard = [
         title: 'Pacientes',
         description: 'Listado de Pacientes registrados',
         img: Admin_pacientes,
-        url: "/",
+        url: "/paciente/table",
         
     },
     {
@@ -20,7 +20,7 @@ const arrayCard = [
         title: 'Turnos',
         description: 'Listado de Turnos',
         img: Admin_turnos,
-        url: "/",
+        url: "/turnostable",
     }
 ]
 

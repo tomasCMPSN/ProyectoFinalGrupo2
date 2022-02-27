@@ -8,7 +8,7 @@ const Navigation = () => {
     <div>
       <Navbar expand="lg"  className="color-navbar">
         <Container>
-          <Navbar.Brand href="#home" className="fs-2">
+          <Navbar.Brand href="/" className="fs-2">
             <img
               alt="logo"
               src={logo}
