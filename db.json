@@ -160,6 +160,13 @@
       "date": "2022-03-17",
       "time": "12:00",
       "id": 25
+    },
+    {
+      "petName": "pipo",
+      "vet": "Dr Jorge Ignacio",
+      "date": "2022-03-02",
+      "time": "08:00",
+      "id": 26
     }
   ]
 }
