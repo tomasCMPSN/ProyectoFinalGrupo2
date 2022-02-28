@@ -49,13 +49,7 @@ export const validateDate =(campo)=>{
   }
 }
 
-export const validateMesage = (campo)=>{
-  if (campo.length < 300 && campo.length > 0){
-    return true
-  } else {
-    return false
-  }
-}
+
 
 export const validateNumber= (campo)=>{
   if(regExp4Number.test(campo)&& campo.length<13){
@@ -78,5 +72,13 @@ export const validatePaciente = (field) => {
 
 
 
+
+export const validateMesage = (campo)=>{
+  if (campo.length < 300 && campo.length > 0){
+    return true
+  } else {
+    return false
+  }
+}
 
 

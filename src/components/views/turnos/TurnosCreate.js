@@ -99,8 +99,14 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
 
     if (filtradovet1.length >= 8) {
       martaRef.current.disabled = true;
-    } else if (filtradovet2.length >= 8) {
+    } else {
+      martaRef.current.disabled = false;
+    }
+    
+    if (filtradovet2.length >= 8) {
       ignacioRef.current.disabled = true;
+    }else{
+      ignacioRef.current.disabled = false;
     }
 
     // Buscammos horas disponibles para ese dia
