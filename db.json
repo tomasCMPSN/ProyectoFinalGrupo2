@@ -71,30 +71,5 @@
       "id": 7
     }
   ],
-  "patients": [
-    {
-      "paciente": "Leia",
-      "especie": "perro",
-      "raza": "caniche",
-      "edad": "2",
-      "peso": "3",
-      "duenio": "nicolas",
-      "dni": "34285409",
-      "telefono": "4202023",
-      "email": "nicolas@can.com",
-      "id": 1
-    },
-    {
-      "paciente": "PruebaDNI",
-      "especie": "Conejo",
-      "raza": "uno",
-      "edad": "4",
-      "peso": "4545",
-      "duenio": "pruebasdos",
-      "dni": "12345678",
-      "telefono": "44444",
-      "email": "prueba@pruebas.com",
-      "id": 2
-    }
-  ]
+  "patients": []
 }

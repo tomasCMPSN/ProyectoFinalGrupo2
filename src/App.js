@@ -74,7 +74,7 @@ function App() {
               <Route
                 exact
                 path="/paciente/table"
-                element={<PacienteTable patients={patients} getPatient={getPatient} />}
+                element={<PacienteTable patients={patients} getPatient={getPatient} DBP={DBP} />}
               />
               <Route
                 exact

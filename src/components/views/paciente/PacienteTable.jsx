@@ -7,10 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import "./Paciente.css";
 
-const PacienteTable = ({ patients }) => {
+const PacienteTable = ({ patients, DBP , getPatient}) => {
   return (
     <div>
-      <Container className="py-5 media-patient">
+      <Container className="py-5 media-patient ">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Pacientes</h1>
 
@@ -40,7 +40,7 @@ const PacienteTable = ({ patients }) => {
             </tr>
           </thead>
           <tbody>
-              {patients.map((paciente)=> <Paciente key={paciente.id} paciente={paciente}/> )}
+              {patients.map((paciente)=> <Paciente key={paciente.id} paciente={paciente} DBP={DBP} getPatient={getPatient}/> )}
           </tbody>
           
         </Table>
