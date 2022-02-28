@@ -15,8 +15,54 @@ const Profesionales = () => {
   return (
     
     <Container className="mb-3">
-      <Row className="d-flex justify-content-around">
-      <Col sm={12} md={6} className="mb-2">
+      <Row>
+      <Col sm={12} md={3} className="mb-2">
+        <Card border="light" style={{ width: "18rem", height: "35rem" }} className="sombras">
+            <Card.Img
+              variant="top"
+              src="https://images.pexels.com/photos/7474560/pexels-photo-7474560.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="perrito siendo acariciado por una mujer"
+              img="img-responsive"
+            />
+            <Card.Body>
+              <Card.Title className="text-center text-black letra ">Dra. Marta Minujin </Card.Title>
+              <Card.Text className="text-center">
+                Más de 5 años de experiencia en oncología.
+  
+                
+              </Card.Text>
+             
+              
+            </Card.Body>
+
+          </Card>
+          
+        </Col>
+
+        <Col sm={12} md={3} className="mb-2">
+        <Card border="light" style={{ width: "18rem", height: "35rem" }} className="sombras">
+            <Card.Img
+              variant="top"
+              src="https://images.pexels.com/photos/7474560/pexels-photo-7474560.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="perrito siendo acariciado por una mujer"
+              img="img-responsive"
+            />
+            <Card.Body>
+              <Card.Title className="text-center text-black letra ">Dra. Marta Minujin </Card.Title>
+              <Card.Text className="text-center">
+                Más de 5 años de experiencia en oncología.
+  
+                
+              </Card.Text>
+             
+              
+            </Card.Body>
+
+          </Card>
+          
+        </Col>
+
+        <Col sm={12} md={3} className="mb-2">
         <Card border="light" style={{ width: "18rem", height: "35rem" }} className="sombras">
             <Card.Img
               variant="top"
@@ -41,7 +87,8 @@ const Profesionales = () => {
        
        
 
-        <Col sm={12} md={6} className="mb-2">
+        <Col sm={12} md={3} className="mb-2">
+          
         <Card border="light" style={{ width: "18rem", height: "35rem" }} className="sombras">
             <Card.Img
               variant="top"
@@ -56,8 +103,10 @@ const Profesionales = () => {
               </Card.Text>
               
             </Card.Body>
+            
 
           </Card>
+          
           </Col>
           </Row>
     </Container>

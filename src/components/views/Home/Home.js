@@ -17,20 +17,20 @@ const Home = () => {
     <div>
       
       <CarouselHome />
-      <p className="lead display-3 text-center mb-3 mt-2 letra">
+      <p className="lead display-3 text-center my-5 letra">
       Cuidando a tus mascotas por más de 45 años
         
       </p>
       <Profesionales />
-      <h1 className="text-center display-2 mb-3 letra">Planes</h1>
+      <h1 className="text-center display-2 my-5 letra">Planes</h1>
       <InfoPlanes />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Productos</h1>
+      <h1 className="text-center display-2 my-5  letra">Productos</h1>
       <Productos />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Servicios</h1>
+      <h1 className="text-center display-2 my-5   letra">Servicios</h1>
       <Servicios />
       
       
-      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Ellos nos siguen elijiendo</h1>
+      <h1 className="text-center display-2 my-5  letra">Ellos nos siguen elijiendo</h1>
       <Comentarios/>
       <Publicidad/>
       <Clima />

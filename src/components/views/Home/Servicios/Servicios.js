@@ -6,9 +6,10 @@ import "./Servicios.css"
 
 const Servicios = () => {
     return (
-        <Container >
-      <Row>
+       
+      <Row className="bg-primary">
         <Col sm={12} md={6} className="mb-2">
+        <div className="d-flex justify-content-center">
           <Card className="text-center sombras">
             <Card.Body>
             <Card.Img
@@ -26,8 +27,10 @@ const Servicios = () => {
               </Link>
             </Card.Body>
           </Card>
+          </div>
         </Col>
-        <Col sm={12} md={6} className="mb-2">
+        <Col sm={12} md={6} className="mb-2 bg-danger">
+        <div className="d-flex justify-content-center">
           <Card className="text-center  sombras">
             <Card.Body>
             <Card.Img
@@ -45,9 +48,10 @@ const Servicios = () => {
               </Link>
             </Card.Body>
           </Card>
+          </div>
         </Col>
         </Row>
-    </Container>
+    
     );
 };
 

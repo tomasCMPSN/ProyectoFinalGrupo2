@@ -6,8 +6,9 @@ import "./InfoPlanes.css"
 const InfoPlanes = () => {
   return (
     
-      <Row>
-        <Col sm={12} md={4} className="mb-3 ">
+      <Row className="bg-primary">
+        <Col sm={12} md={4} className="mb-3 bg-danger ">
+        <div className="d-flex justify-content-center">
           <Card className="text-center sombras">
             <Card.Body>
             <Card.Img
@@ -16,7 +17,7 @@ const InfoPlanes = () => {
               alt='perro mirando al frente del Plan Madurando'
               ClassName= "img-responsive"
             />
-              <Card.Title className="letra f1">Cachorro</Card.Title>
+              <Card.Title className="letra">Cachorro</Card.Title>
               <Card.Text>
                 Servicios para mascotas de 0 a 5 años.
               </Card.Text>
@@ -26,8 +27,14 @@ const InfoPlanes = () => {
               </Link>
             </Card.Body>
           </Card>
+          </div>
         </Col>
-        <Col sm={12} md={4} className="mb-3">
+        <Col sm={12} md={4} className="mb-3 bg-warning ">
+
+          <div className="d-flex justify-content-center">
+
+          
+
           <Card className="text-center sombras">
             <Card.Body>
             <Card.Img
@@ -36,7 +43,7 @@ const InfoPlanes = () => {
               alt='perro mirando al frente del Plan Madurando'
               ClassName= "img-responsive"
             />
-              <Card.Title ClassName="letra">Adulto</Card.Title>
+              <Card.Title className="letra">Adulto</Card.Title>
               <Card.Text>
                 Servicios para mascotas de 5 a 10 años.
               </Card.Text>
@@ -46,8 +53,11 @@ const InfoPlanes = () => {
               </Link>
             </Card.Body>
           </Card>
+          </div>
         </Col>
-        <Col sm={12} md={4} className="mb-3">
+        <Col sm={12} md={4} className="mb-3 bg-secondary">
+
+        <div className="d-flex justify-content-center">
           <Card className="text-center sombras">
             <Card.Body>
             <Card.Img
@@ -56,7 +66,7 @@ const InfoPlanes = () => {
               alt='perro mirando al frente del Plan Madurando'
               ClassName= "img-responsive"
             />
-              <Card.Title ClassName="letra">Mayor</Card.Title>
+              <Card.Title className="letra">Mayor</Card.Title>
               <Card.Text>
                 Servicios para mascotas de más de 10 años.
               </Card.Text>
@@ -66,6 +76,7 @@ const InfoPlanes = () => {
               </Link>
             </Card.Body>
           </Card>
+          </div>
         </Col>
       </Row>
     

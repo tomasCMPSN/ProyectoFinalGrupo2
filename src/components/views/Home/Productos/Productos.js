@@ -9,6 +9,7 @@ const Productos = () => {
   
       <Row>
         <Col sm={12} md={4} className="mb-3">
+        <div className="d-flex justify-content-center">
           <Card className="text-center sombras">
             <Card.Body >
             <Card.Img
@@ -29,8 +30,10 @@ const Productos = () => {
               
             </Card.Body>
           </Card>
+          </div>
         </Col>
         <Col sm={12} md={4} className="mb-3 ">
+        <div className="d-flex justify-content-center">
           <Card className="text-center sombras ">
             <Card.Body>
             <Card.Img
@@ -43,14 +46,16 @@ const Productos = () => {
               <Card.Text>
                 Servicios para mascotas de 5 a 10 años.
               </Card.Text>
-              <Link to='*' variant="light" >
+              <Link to='*' >
               
               <button className="btn"> Comprar🐾</button>
               </Link>
             </Card.Body>
           </Card>
+          </div>
         </Col>
         <Col sm={12} md={4} className="mb-3">
+        <div className="d-flex justify-content-center">
           <Card className="text-center sombras">
             <Card.Body>
               <Card.Img
@@ -63,20 +68,20 @@ const Productos = () => {
               <Card.Text>
                 Servicios para mascotas de más de 10 años.
               </Card.Text>
-              <Link to='*' variant="light" >
+              <Link to='*' >
               
               <button className="btn"> Comprar🐾</button>
               </Link>
             </Card.Body>
           </Card>
-          
+          </div>
         </Col>
       </Row>
    
-      <div ClassName="">
-          <Link to='*' variant="light" >
+      <div className="mt-5 text-center">
+          <Link to='*' >
               
-              <button className="btn"> Ver más productos🐾</button>
+              <button className="btn btn-large "> Ver más productos🐾</button>
               </Link>
               </div>
 
