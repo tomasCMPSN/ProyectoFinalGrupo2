@@ -1,3 +1,21 @@
+@media only screen and (min-width: 767px) {
+  .media-patient{
+      margin-bottom: 6%;
+      
+  }
+
+  
+}
+
+@media only screen and (max-width: 844px) {
+  .media-patient{
+      margin-bottom: 10%;
+      
+  }
+
+  
+}
+
 
 .btn-yellow {
   min-width: 130px;
@@ -33,4 +51,75 @@
   width: 0;
   height: 100%;
   background: rgb(54, 168, 140);
+}
+
+.btn-addplus{
+  min-width: 50px;
+  height: 20px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #7280ff;
+  color: #7280ff;
+}
+.btn-addplus:hover{
+  background: rgb(54, 168, 140);
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-addsave{
+  min-width: 50px;
+  height: 50px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #7280ff;
+  color: #7280ff;
+}
+.btn-addsave:hover{
+  background: rgb(54, 168, 140);
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-addback{
+  min-width: 50px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #7280ff;
+  color: #7280ff;
+}
+.btn-addback:hover{
+  background: rgb(54, 168, 140);
+  color: #fff;
+  border: 2px solid #fff;
 }

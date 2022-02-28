@@ -27,18 +27,16 @@ function App() {
   const [patients, setPatients] = useState([]);
 
   const DB = process.env.REACT_APP_APPI_APPOINTMENT;
-  const DBPATIENTS = process.env.REACT_APP_APPI_PATIENTS;
-
+  const DBP = process.env.REACT_APP_APPI_PATIENTS;
+  
   useEffect(() => {
     getApi();
     getPatient();
   }, []);
 
-  
-
   const getPatient = async () => {
     try {
-      const res = await fetch(DBPATIENTS);
+      const res = await fetch(DBP);
       const patientApi = await res.json();
       setPatients(patientApi);
     } catch (error) {
@@ -71,13 +69,21 @@ function App() {
               <Route exact path="/planes" element={<Planes />} />
               <Route exact path="/error404" element={<Error404 />} />
               <Route exact path="/sobrenosotros" element={<SobreNosotros />} />
-              <Route exact path="/paciente/table" element={<PacienteTable patients={patients} />} />
+              <Route
+                exact
+                path="/paciente/table"
+                element={<PacienteTable patients={patients} getPatient={getPatient} />}
+              />
               <Route
                 exact
                 path="/paciente/create"
-                element={<PacienteCreate />}
+                element={
+                  <PacienteCreate DBP={DBP}
+                    getPatient={getPatient}
+                  />
+                }
               />
-              <Route exact path="/paciente/edit" element={<PacienteEdit />} />
+              <Route exact path="/paciente/edit/:id" element={<PacienteEdit DBP={DBP} getPatient={getPatient}/>} />
 
               <Route
                 exact

@@ -2,25 +2,33 @@ import React from "react";
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Paciente from "./Paciente";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import "./Paciente.css";
 
 const PacienteTable = ({ patients }) => {
   return (
     <div>
-      <Container className="py-5">
+      <Container className="py-5 media-patient">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Pacientes</h1>
-          <Link
-            to="/paciente/create"
-            className="btn-yellow text-decoration-none text-center"
-          >
-            Nuevo Paciente
-          </Link>
+
+          <div >
+              <Link 
+          to="/paciente/create">
+
+          <FontAwesomeIcon icon={faUserPlus}
+            className="btn-addplus text-decoration-none text-center"
+            />        
+            </Link>
+          
+              </div>
         </div>
         <hr />
         {/* Table of products */}
 
-        <Table bordered hover responsive className="align-middle mt-3">
+        <Table bordered hover responsive className="align-middle mt-3 text-center">
           <thead>
             <tr>
               <th>Id</th>
@@ -32,7 +40,7 @@ const PacienteTable = ({ patients }) => {
             </tr>
           </thead>
           <tbody>
-              {patients.map((paciente)=> <Paciente paciente={paciente}/> )}
+              {patients.map((paciente)=> <Paciente key={paciente.id} paciente={paciente}/> )}
           </tbody>
           
         </Table>

@@ -61,3 +61,12 @@ export const validateNumber= (campo)=>{
     return false
   }
 }
+
+// Validacion Pacientes
+export const validatePaciente = (field) => {
+  if (regEx4Names.test(field) && field.trim() !== "") {
+    return true;
+  } else {
+    return false;
+  }
+};
