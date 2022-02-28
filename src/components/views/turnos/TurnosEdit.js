@@ -204,8 +204,9 @@ const searchAtDb=( async ()=>{
   };
   return (
     <section className="container mt-5 ">
-      <article>
-        <h1 className="form-style-title ">Editor de turnos 📝</h1>
+      <article className='my-5'>
+        <h1 >Editor de turnos </h1>
+        <hr/>
       </article>
 
       <article className="d-flex justify-content-center mb-5 ">

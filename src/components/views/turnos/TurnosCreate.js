@@ -219,7 +219,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   return (
     <section className="container mt-5 ">
       <article>
-        <h1 className="form-style-title ">Administrador de turnos 📝</h1>
+        <h1 >Administrador de turnos 📝</h1>
         <hr />
       </article>
       <article>
