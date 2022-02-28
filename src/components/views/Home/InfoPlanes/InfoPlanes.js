@@ -16,7 +16,7 @@ const InfoPlanes = () => {
               alt='perro mirando al frente del Plan Madurando'
               ClassName= "img-responsive"
             />
-              <Card.Title>PRIMEROS PASOS</Card.Title>
+              <Card.Title className="letra f1">Cachorro</Card.Title>
               <Card.Text>
                 Servicios para mascotas de 0 a 5 años.
               </Card.Text>
@@ -36,7 +36,7 @@ const InfoPlanes = () => {
               alt='perro mirando al frente del Plan Madurando'
               ClassName= "img-responsive"
             />
-              <Card.Title>MADURANDO</Card.Title>
+              <Card.Title ClassName="letra">Adulto</Card.Title>
               <Card.Text>
                 Servicios para mascotas de 5 a 10 años.
               </Card.Text>
@@ -56,7 +56,7 @@ const InfoPlanes = () => {
               alt='perro mirando al frente del Plan Madurando'
               ClassName= "img-responsive"
             />
-              <Card.Title>ADULTOS</Card.Title>
+              <Card.Title ClassName="letra">Mayor</Card.Title>
               <Card.Text>
                 Servicios para mascotas de más de 10 años.
               </Card.Text>

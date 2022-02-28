@@ -25,7 +25,7 @@ const Profesionales = () => {
               img="img-responsive"
             />
             <Card.Body>
-              <Card.Title className="text-center text-danger fw-bold">Dra Liza Morgan </Card.Title>
+              <Card.Title className="text-center text-black letra ">Dra. Marta Minujin </Card.Title>
               <Card.Text className="text-center">
                 Más de 5 años de experiencia en oncología.
   
@@ -50,7 +50,7 @@ const Profesionales = () => {
               img="img-responsive"
             />
             <Card.Body>
-              <Card.Title className="text-center text-danger fw-bold">Dr Adrián Muñoz</Card.Title>
+              <Card.Title className="text-center text-black letra">Dr. Ignacio Jorge</Card.Title>
               <Card.Text className="text-center">
               6 años de experiencia en cirugía canina. 
               </Card.Text>

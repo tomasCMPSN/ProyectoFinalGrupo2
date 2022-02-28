@@ -24,13 +24,13 @@ const Home = () => {
       <Profesionales />
       <h1 className="text-center display-2 mb-3 letra">Planes</h1>
       <InfoPlanes />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">productos</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Productos</h1>
       <Productos />
-      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Tambien contamos con esto servicios</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Servicios</h1>
       <Servicios />
       
       
-      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Ellos ya nos eligieron</h1>
+      <h1 className="text-center display-2 my-5 mb-3 mt-3 letra">Ellos nos siguen elijiendo</h1>
       <Comentarios/>
       <Publicidad/>
       <Clima />

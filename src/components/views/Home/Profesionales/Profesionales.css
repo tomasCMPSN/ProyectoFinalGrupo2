@@ -1,3 +1,7 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 .sombras{
     border: solid 1px #ffe3b3;
     padding: 30px;
@@ -6,6 +10,11 @@
     font-family: 'Patrick Hand', cursive;
     font-family: "Nunito", sans-serif;
     }
+
+.letra{
+    font-family: 'Patrick Hand', cursive;
+
+}
 
     
       
