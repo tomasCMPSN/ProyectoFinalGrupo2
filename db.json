@@ -49,14 +49,14 @@
       "id": 2
     },
     {
-      "paciente": "nico",
+      "paciente": "carlos",
       "especie": "Gato",
       "raza": "dasdas",
-      "edad": "1212",
-      "peso": "1000",
       "duenio": "sadasd",
-      "telefono": "12121",
       "email": "nicoa@nicaos.com",
+      "peso": "1000",
+      "telefono": "12121",
+      "edad": "1212",
       "id": 3
     },
     {
@@ -74,11 +74,11 @@
       "paciente": "asdasd",
       "especie": "Gato",
       "raza": "asdasd",
-      "edad": "121",
-      "peso": "1212",
       "duenio": "asdasd",
-      "telefono": "1512121",
       "email": "nicoasd@asdniasd.com",
+      "peso": "1212",
+      "telefono": "1512121",
+      "edad": "121",
       "id": 5
     },
     {
@@ -96,12 +96,23 @@
       "paciente": "Zaia",
       "especie": "Perro",
       "raza": "Caniche",
-      "edad": "7",
-      "peso": "5500",
       "duenio": "sandra",
-      "telefono": "4281367",
       "email": "sandra@sandra.com",
+      "peso": "5500",
+      "telefono": "4281367",
+      "edad": "7",
       "id": 7
+    },
+    {
+      "paciente": "loca",
+      "especie": "Ave",
+      "raza": "ovejero",
+      "edad": "2",
+      "peso": "1000",
+      "duenio": "nico",
+      "telefono": "45454",
+      "email": "nico@nico.com",
+      "id": 8
     }
   ]
 }

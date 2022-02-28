@@ -17,7 +17,6 @@ const PacienteEdit = ({ DBP, getPatient }) => {
 
   //   UseRef
   const pacienteRef = useRef("");
-  const especieRef = useRef("");
   const razaRef = useRef("");
   const duenioRef = useRef("");
   const emailRef = useRef("");
@@ -33,9 +32,10 @@ const PacienteEdit = ({ DBP, getPatient }) => {
     try {
       const res = await fetch(`${DBP}/${id}`);
       const patientApi = await res.json();
+
       setPaciente(patientApi);
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
   }, []);
 
@@ -46,7 +46,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
     //   validaciones
     if (
       !validatePaciente(pacienteRef.current.value) ||
-      !validatePaciente(especieRef.current.value) ||
+      !validatePaciente(paciente.especie) ||
       !validatePaciente(razaRef.current.value) ||
       !validatePaciente(duenioRef.current.value) ||
       !validateEmail(emailRef.current.value) ||
@@ -66,8 +66,8 @@ const PacienteEdit = ({ DBP, getPatient }) => {
       email: emailRef.current.value,
       peso: pesoRef.current.value,
       telefono: telefonoRef.current.value,
-      edad: edadRef.current.value,
-    };
+      edad: edadRef.current.value
+    }
 
     Swal.fire({
       title: "Esta seguro que quiere editar este paciente?",
@@ -147,6 +147,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
               type="text"
               placeholder="..."
               defaultValue={paciente.raza}
+              ref={razaRef}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -155,6 +156,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
               type="text"
               placeholder="..."
               defaultValue={paciente.edad}
+              ref={edadRef}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -163,6 +165,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
               type="text"
               placeholder="Gr"
               defaultValue={paciente.peso}
+              ref={pesoRef}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -171,6 +174,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
               type="text"
               placeholder="..."
               defaultValue={paciente.duenio}
+              ref={duenioRef}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -179,6 +183,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
               type="text"
               placeholder="..."
               defaultValue={paciente.telefono}
+              ref={telefonoRef}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -187,6 +192,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
               type="text"
               placeholder="..."
               defaultValue={paciente.email}
+              ref={emailRef}
             />
           </Form.Group>
 
