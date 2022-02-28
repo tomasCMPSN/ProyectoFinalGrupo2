@@ -47,8 +47,10 @@ function App() {
   const getApi = async () => {
     try {
       const res = await fetch(DB);
-      const appApi = await res.json();
-      setTurnos(appApi);
+    const appApi = await res.json();
+    
+    setTurnos(appApi);
+    console.log(turnos)
     } catch (error) {
       console.log(error);
     }
@@ -88,7 +90,7 @@ function App() {
               <Route
                 exact
                 path="/turnoscreate"
-                element={<TurnosCreate DB={DB} getApi={getApi} />}
+                element={<TurnosCreate DB={DB} getApi={getApi} DBP={DBP} />}
               />
               <Route
                 exact

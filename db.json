@@ -1,28 +1,18 @@
 {
   "appointment": [
     {
-      "petName": "Wafle",
+      "petName": "nuevo",
       "vet": "Dr Jorge Ignacio",
-      "date": "23/02/2022",
-      "id": 2
+      "date": "2022-03-01",
+      "time": "10:00",
+      "id": 6
     },
     {
-      "petName": "pepe",
+      "petName": "pruebados",
       "vet": "Dr Jorge Ignacio",
-      "date": "23/02/2022",
-      "id": 3
-    },
-    {
-      "petName": "loca",
-      "vet": "Dr Jorge Ignacio",
-      "date": "20/10/2022",
-      "id": 4
-    },
-    {
-      "petName": "prueba",
-      "vet": "Dra Marta Minujin",
-      "date": "20/04/1990",
-      "id": 5
+      "date": "2022-03-03",
+      "time": "10:00",
+      "id": 7
     }
   ],
   "patients": [
@@ -33,86 +23,22 @@
       "edad": "2",
       "peso": "3",
       "duenio": "nicolas",
+      "dni": "34285409",
       "telefono": "4202023",
       "email": "nicolas@can.com",
       "id": 1
     },
     {
-      "paciente": "nico",
-      "especie": "Gato",
-      "raza": "dasdas",
-      "edad": "1212",
-      "peso": "1000",
-      "duenio": "sadasd",
-      "telefono": "12121",
-      "email": "nicoa@nicaos.com",
-      "id": 2
-    },
-    {
-      "paciente": "carlos",
-      "especie": "Gato",
-      "raza": "dasdas",
-      "duenio": "sadasd",
-      "email": "nicoa@nicaos.com",
-      "peso": "1000",
-      "telefono": "12121",
-      "edad": "1212",
-      "id": 3
-    },
-    {
-      "paciente": "nico",
-      "especie": "Gato",
-      "raza": "dasdas",
-      "edad": "1212",
-      "peso": "1000",
-      "duenio": "sadasd",
-      "telefono": "12121",
-      "email": "nicoa@nicaos.com",
-      "id": 4
-    },
-    {
-      "paciente": "asdasd",
-      "especie": "Gato",
-      "raza": "asdasd",
-      "duenio": "asdasd",
-      "email": "nicoasd@asdniasd.com",
-      "peso": "1212",
-      "telefono": "1512121",
-      "edad": "121",
-      "id": 5
-    },
-    {
-      "paciente": "Oliva",
-      "especie": "Perro",
-      "raza": "Caniche",
+      "paciente": "PruebaDNI",
+      "especie": "Conejo",
+      "raza": "uno",
       "edad": "4",
-      "peso": "3500",
-      "duenio": "Belen",
-      "telefono": "4202312",
-      "email": "belen@belen.com",
-      "id": 6
-    },
-    {
-      "paciente": "Zaia",
-      "especie": "Perro",
-      "raza": "Caniche",
-      "duenio": "sandra",
-      "email": "sandra@sandra.com",
-      "peso": "5500",
-      "telefono": "4281367",
-      "edad": "7",
-      "id": 7
-    },
-    {
-      "paciente": "loca",
-      "especie": "Ave",
-      "raza": "ovejero",
-      "edad": "2",
-      "peso": "1000",
-      "duenio": "nico",
-      "telefono": "45454",
-      "email": "nico@nico.com",
-      "id": 8
+      "peso": "4545",
+      "duenio": "pruebasdos",
+      "dni": "12345678",
+      "telefono": "44444",
+      "email": "prueba@pruebas.com",
+      "id": 2
     }
   ]
 }

@@ -16,6 +16,7 @@ const PacienteCreate = ({ DBP, getPatient }) => {
   const [edad, setEdad] = useState("");
   const [peso, setPeso] = useState("");
   const [duenio, setDuenio] = useState("");
+  const [dni, setDni] = useState("");
   const [telefono, setTelefono] = useState("");
   const [email, setEmail] = useState("");
 
@@ -32,7 +33,7 @@ const navigate = useNavigate();
       !validatePaciente(duenio) ||
       !validateEmail(email) ||
       !validateNumber(peso) ||
-      !validateNumber(telefono) ||
+      !validateNumber(telefono) || !validateNumber(dni) ||
       !validateNumber(edad)
     ) {
         Swal.fire("Error", "Verificar los datos", "error");
@@ -46,6 +47,7 @@ const navigate = useNavigate();
       edad,
       peso,
       duenio,
+      dni,
       telefono,
       email,
     };
@@ -146,6 +148,14 @@ const navigate = useNavigate();
               type="text"
               placeholder="..."
               onChange={({ target }) => setDuenio(target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Label>Dni*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="..."
+              onChange={({ target }) => setDni(target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">

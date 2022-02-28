@@ -19,6 +19,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
   const pacienteRef = useRef("");
   const razaRef = useRef("");
   const duenioRef = useRef("");
+  const dniRef = useRef("");
   const emailRef = useRef("");
   const pesoRef = useRef("");
   const telefonoRef = useRef("");
@@ -51,7 +52,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
       !validatePaciente(duenioRef.current.value) ||
       !validateEmail(emailRef.current.value) ||
       !validateNumber(pesoRef.current.value) ||
-      !validateNumber(telefonoRef.current.value) ||
+      !validateNumber(telefonoRef.current.value) || !validateNumber(dniRef.current.value) ||
       !validateNumber(edadRef.current.value)
     ) {
       Swal.fire("Error", "Verificar los datos", "error");
@@ -63,6 +64,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
       especie: paciente.especie,
       raza: razaRef.current.value,
       duenio: duenioRef.current.value,
+      dni: dniRef.current.value,
       email: emailRef.current.value,
       peso: pesoRef.current.value,
       telefono: telefonoRef.current.value,
@@ -175,6 +177,15 @@ const PacienteEdit = ({ DBP, getPatient }) => {
               placeholder="..."
               defaultValue={paciente.duenio}
               ref={duenioRef}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Label>Dni*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="..."
+              defaultValue={paciente.dni}
+              ref={dniRef}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
