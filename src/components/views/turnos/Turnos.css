@@ -85,7 +85,6 @@
     text-align: center;
     text-decoration: none;
     border-radius: 20px;
-   
     padding: 10px;
     background-color: #7280ff;
     color: #fff;
@@ -95,9 +94,7 @@
     .form-style-newbtn:hover{
        
         color: #000000;
-  
-        transition: 1s;
-        
+
        color: #d69456;
         
 
