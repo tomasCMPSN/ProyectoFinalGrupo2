@@ -1,62 +1,53 @@
 import React, { useRef } from "react";
-import {
-  Form,
-  FormControl,
-  Row,
-  Card,
-  Col,
-  ListGroup,
-  ListGroupItem,
-} from "react-bootstrap";
-import {useState} from 'react'
-import emailjs from '@emailjs/browser';
-import{ init } from '@emailjs/browser';
+import {Form,FormControl,Row,Card,Col,ListGroup,ListGroupItem,} from "react-bootstrap";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { init } from "@emailjs/browser";
 init("user_dvnJ38dESp4bV8SdcMD30");
 
 const Planes = () => {
-
   // States
 
-  const [name, setName] = useState('');
-  const [email, setEmail]=useState('');
-  const [consulta, setConsulta]=useState('');
-  const [phone, setPhone]= useState('');
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [consulta, setConsulta] = useState("");
+  const [phone, setPhone] = useState("");
 
   // EmailJs
-const form =useRef()
-   
-    const handleSubmit = (e) => {
-      e.preventDefault();
+  const form = useRef();
 
-      // validamos datos
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-      // Email js
-      emailjs.sendForm('service_5kuzhii', 'template_t9etbyq', form.current)
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    // validamos datos
 
-  
-    }
-
-  
-
+    // Email js
+    emailjs.sendForm("service_5kuzhii", "template_t9etbyq", form.current).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
 
   return (
     <section>
       <article>
-        <img src="https://petdoctors.co.uk/wp-content/uploads/sites/5/2018/04/springer-spaniel-cross-with-vet.jpg" className="form-style-img" alt="" />
+        <img
+          src="https://petdoctors.co.uk/wp-content/uploads/sites/5/2018/04/springer-spaniel-cross-with-vet.jpg"
+          className="form-style-img"
+          alt=""
+        />
         <h1 className="form-style-mainT">Conoce nuestros planes</h1>
       </article>
 
       <article className="container mt-5 card-plan-style ">
         <Row xs={1} md={3} className="g-4 my-5  ">
-          <Col  >
+          <Col>
             <Card className="text-center ">
-              <Card.Body className="" >
+              <Card.Body className="">
                 <Card.Title>Primeros pasos</Card.Title>
                 <Card.Text>Para mascotas de 0 a 5 años</Card.Text>
                 <ListGroup>
@@ -72,9 +63,9 @@ const form =useRef()
             </Card>
           </Col>
 
-          <Col className="mx-5" >
+          <Col className="mx-5">
             <Card className="text-center  ">
-              <Card.Body >
+              <Card.Body>
                 <Card.Title>Madurando</Card.Title>
                 <Card.Text>Para mascotas de 5 a 10 años</Card.Text>
                 <ListGroup>
@@ -92,7 +83,7 @@ const form =useRef()
 
           <Col>
             <Card className="text-center  ">
-              <Card.Body >
+              <Card.Body>
                 <Card.Title>Adultos</Card.Title>
                 <Card.Text>Para mascotas de mas de 10 años</Card.Text>
                 <ListGroup>
@@ -128,7 +119,7 @@ const form =useRef()
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Nombre y apellido*</Form.Label>
             <input
-            name='user_name'
+              name="user_name"
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su nombre y apellido"
@@ -140,7 +131,7 @@ const form =useRef()
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su email"
-              name='user_email'
+              name="user_email"
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
