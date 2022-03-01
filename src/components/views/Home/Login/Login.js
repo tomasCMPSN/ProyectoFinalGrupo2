@@ -1,6 +1,7 @@
 import "./Login.css" 
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [arregloLogin, setArregloLogin] = useState([]);
@@ -31,7 +32,9 @@ const Login = () => {
             }} />
           </Form.Group>
           <div className="text-center mt-4">
+            <Link to="/admin">
             <Button className="form-style-btn "> Ingresar 🐾</Button>
+            </Link>
           </div>
           </Form>
 

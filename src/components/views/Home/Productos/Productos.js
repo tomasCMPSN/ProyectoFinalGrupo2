@@ -8,8 +8,8 @@ const Productos = () => {
     <div>
       <Row>
         <Col sm={12} md={4} className="mb-3">
-          <div className="d-flex justify-content-center">
-            <Card className="text-center sombras">
+          <div className="d-flex justify-content-center container">
+            <Card className="text-center sombras-prod">
               <Card.Body>
                 <Card.Img
                   variant="top"
@@ -17,17 +17,17 @@ const Productos = () => {
                   alt="juguetes para mascotas"
                   className="img-responsive"
                 />
-                <Card.Title className="letra m-3"> <h4>Kit de juguetes </h4></Card.Title>
+                <Card.Title className=" m-3"> <h4> <strong>Kit de juguetes</strong>  </h4></Card.Title>
                 <Link to="*">
-                  <button className="btn"> Comprar🐾</button>
+                  <button className="btn-productos"> Comprar🐾</button>
                 </Link>
               </Card.Body>
             </Card>
           </div>
         </Col>
         <Col sm={12} md={4} className="mb-3 ">
-          <div className="d-flex justify-content-center">
-            <Card className="text-center sombras ">
+          <div className="d-flex justify-content-center container">
+            <Card className="text-center sombras-prod ">
               <Card.Body>
                 <Card.Img
                   variant="top"
@@ -35,17 +35,17 @@ const Productos = () => {
                   alt="collar para mascotas"
                   className="img-responsive"
                 />
-                <Card.Title className="letra m-3"> <h4> Collar </h4></Card.Title>
+                <Card.Title className=" m-3"> <h4> <strong>Collar</strong>  </h4></Card.Title>
                 <Link to="*">
-                  <button className="btn"> Comprar🐾</button>
+                  <button className="btn-productos"> Comprar🐾</button>
                 </Link>
               </Card.Body>
             </Card>
           </div>
         </Col>
         <Col sm={12} md={4} className="mb-3">
-          <div className="d-flex justify-content-center">
-            <Card className="text-center sombras">
+          <div className="d-flex justify-content-center container">
+            <Card className="text-center sombras-prod">
               <Card.Body>
                 <Card.Img
                   variant="top"
@@ -53,9 +53,9 @@ const Productos = () => {
                   alt="cama para mascotas"
                   className="img-responsive"
                 />
-                <Card.Title className="letra m-3"> <h4> Cama de algodón</h4></Card.Title>
+                <Card.Title className=" m-3"> <h4> <strong> Cama de algodón</strong> </h4></Card.Title>
                 <Link to="*">
-                  <button className="btn ">  Comprar🐾 </button>
+                  <button className="btn-productos ">  Comprar🐾 </button>
                 </Link>
               </Card.Body>
             </Card>
@@ -65,7 +65,7 @@ const Productos = () => {
 
       <div className="mt-5 text-center">
         <Link to="*">
-          <button className="btn btn-large "> <h4>Ver más productos🐾</h4></button>
+          <button className="btn-productos btn-large "> <h4>Ver más productos🐾</h4></button>
         </Link>
       </div>
     </div>

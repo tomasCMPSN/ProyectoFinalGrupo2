@@ -3,26 +3,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-.sombras{
+.sombras-prod{
 border: solid 1px #ffe3b3;
 padding: 30px;
 border-radius: 10px;
-box-shadow: 10px 20px 4px 4px #ffe3b3;
-font-family: 'Patrick Hand', cursive;
+box-shadow: 5px 10px 4px 4px #ffe3b3;
 font-family: "Nunito", sans-serif;
 }
 
-.btn {
+.btn-productos {
     background-color: rgb(54, 168, 140);
     color: rgb(238, 227, 227);
     font-family: 'Patrick Hand', cursive;
+    border-radius: 10px;
 }
-
-.letra{
-    font-family: 'Patrick Hand', cursive;
-
-}
-
     
 
 

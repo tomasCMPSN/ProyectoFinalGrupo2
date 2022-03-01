@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 
+@media only screen and (max-width: 578px){
+    .img-carousel{
+        object-fit: cover;
+        height: 40vh;
+    }
+}
 
 .logo{
     height: 10vh;
@@ -21,10 +27,4 @@
 /* Colores */
 .color-navbar{
     background-color: #fceacb;
-}
-
-
-main{
-    font-family: 'Patrick Hand', cursive;
-   
 }

@@ -6,93 +6,108 @@ const Profesionales = () => {
   return (
     <Container className="mb-3 ">
       <Row>
-        <Col sm={12} md={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-2">
+          <Container className="d-flex justify-content-center">
+
           <Card
-            style={{ width: "15rem", height: "35rem" }}
-            className="sombras"
-          >
-            <Card.Img
+            style={{ width: "30rem", height: "35rem" }}
+            className="sombras-pro"
+            >
+            <Card.Img 
               variant="top"
-              src="https://images.pexels.com/photos/7474560/pexels-photo-7474560.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src="https://drive.google.com/uc?export=download&id=19nOCM4EBm2SrLT-Gi1UNZh60REO8QnEE"
               alt="Dra.Minujin"
-              className="img-responsive"
-            />
+              className="img-responsive img-card-pro"
+              />
             <Card.Body>
-              <Card.Title className="text-center letra ">
-               <h3> Dra. Marta Minujin </h3>{" "}
+              <Card.Title className="text-center letra-pro ">
+               <h3> <strong>Dra. Marta Minujin</strong>  </h3>
               </Card.Title>
               <Card.Text className="text-center">
               <strong> Apasionada por su profesión, siempre dispuesta a dar lo mejor para tu mascota.</strong>
               </Card.Text>
             </Card.Body>
           </Card>
+            </Container>
         </Col>
 
-        <Col sm={12} md={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-2">
+          <Container className="d-flex justify-content-center">
+
           <Card
-            style={{ width: "15rem", height: "35rem" }}
-            className="sombras"
+            style={{ width: "30rem", height: "35rem" }}
+            className="sombras-pro"
           >
             <Card.Img
               variant="top"
-              src="https://images.pexels.com/photos/7407058/pexels-photo-7407058.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src="https://drive.google.com/uc?export=download&id=1_mHamCsZFmM0fMJTPeD1z8HH8AbrSfqQ"
               alt="Dr.Ignacio Jorge"
-              className="img-responsive"
+              className="img-responsive img-card-pro"
             />
             <Card.Body>
-              <Card.Title className=" text-center letra ">
-                <h3> Dr. Ignacio Jorge </h3>{" "}
+              <Card.Title className=" text-center letra-pro ">
+                <h3><strong>  Dr. Ignacio Jorge</strong> </h3>{" "}
               </Card.Title>
               <Card.Text className="text-center">
-               <strong> El amor por los animales lo llevó a dedicar su vida a ellos, recibe con dulzura a tus mascotas. </strong>
+               <strong> El amor por los animales lo llevó a dedicar su vida a ellos. </strong>
               </Card.Text>
             </Card.Body>
           </Card>
+          </Container>
+
         </Col>
 
-        <Col sm={12} md={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-2">
+          <Container className="d-flex justify-content-center">
+
           <Card
           
-            style={{ width: "15rem", height: "35rem" }}
-            className="sombras"
+            style={{ width: "30rem", height: "35rem" }}
+            className="sombras-pro"
           >
             <Card.Img
               variant="top"
-              src="https://i.pinimg.com/originals/be/70/2b/be702bb57ab80fadc1cf992b4f4d254a.jpg"
+              src="https://drive.google.com/uc?export=download&id=1T3rH4LDE-ZyuEtTRKD2uR75i7mYQT5ib"
               alt="estudiante de veterinaria"
-              className="img-responsive"
+              className="img-responsive img-card-pro"
             />
             <Card.Body>
-              <Card.Title className="text-center letra ">
-                <h3>Paula Medina</h3> {" "}
+              <Card.Title className="text-center letra-pro ">
+                <h3> <strong> Paula Medina</strong> </h3> {" "}
               </Card.Title>
               <Card.Text className="text-center">
               <strong>Estudiante de veterinaria, ama aprender y colaborar en Paws & Claws.</strong> 
               </Card.Text>
             </Card.Body>
           </Card>
+          </Container>
+
         </Col>
 
-        <Col sm={12} md={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-2">
+          <Container className="d-flex justify-content-center">
+
           <Card
-            style={{ width: "15rem", height: "35rem" }}
-            className="sombras"
+            style={{ width: "30rem", height: "35rem" }}
+            className="sombras-pro"
           >
             <Card.Img
               variant="top"
-              src="https://i.pinimg.com/originals/18/2a/e3/182ae3164f00363493af983f07cd9e70.jpg"
+              src="https://drive.google.com/uc?export=download&id=1c4VRqWXe2aAaZT0ZfD974vhkoXzjLPC_"
               alt="estudiante de veterinaria"
               img="img-responsive"
             />
             <Card.Body>
-              <Card.Title className="text-center letra">
-              <h3> Micaela Arana </h3>
+              <Card.Title className="text-center letra-pro">
+              <h3><strong>Micaela Arana </strong>  </h3>
               </Card.Title>
               <Card.Text className="text-center">
                <strong> Estudiante de veterinaria, feliz de seguir aprender día a día en Paws & Claws.</strong>
               </Card.Text>
             </Card.Body>
           </Card>
+          </Container>
+
         </Col>
       </Row>
     </Container>

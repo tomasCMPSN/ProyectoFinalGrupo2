@@ -9,8 +9,8 @@ const Servicios = () => {
        
       <Row >
         <Col sm={12} md={6} className="mb-2">
-        <div className="d-flex justify-content-center">
-          <Card className="text-center sombras">
+        <div className="d-flex justify-content-center container">
+          <Card className="text-center sombras-serv">
             <Card.Body>
             <Card.Img
               variant="top"
@@ -18,19 +18,19 @@ const Servicios = () => {
               alt='perrito bañandose'
               className="img-responsive"
             />
-                <Card.Title className="letra m-3"> <h4> Baño </h4></Card.Title>
+                <Card.Title className=" m-3"> <h4> <strong>Baño</strong>  </h4></Card.Title>
              
               <Link to='*'  >
               
-              <button className="btn"> Ver más🐾</button>
+              <button className="btn-servicios"> Ver más🐾</button>
               </Link>
             </Card.Body>
           </Card>
           </div>
         </Col>
         <Col sm={12} md={6} className="mb-2 ">
-        <div className="d-flex justify-content-center">
-          <Card className="text-center  sombras">
+        <div className="d-flex justify-content-center container">
+          <Card className="text-center sombras-serv ">
             <Card.Body>
             <Card.Img
               variant="top"
@@ -38,10 +38,10 @@ const Servicios = () => {
               alt='perrito con corte de pelo'
               className="img-responsive"
             />
-            <Card.Title className="letra m-3"> <h4> Corte </h4></Card.Title>
+            <Card.Title className=" m-3"> <h4> <strong>Corte</strong>  </h4></Card.Title>
              
               <Link to='*' >
-              <button className="btn"> Ver más🐾</button>
+              <button className="btn-servicios"> Ver más🐾</button>
               </Link>
             </Card.Body>
           </Card>
@@ -49,7 +49,7 @@ const Servicios = () => {
         </Col>
         <div className="mt-5 text-center">
         <Link to="*">
-          <button className="btn btn-large "> <h4>Ver más servicios🐾</h4></button>
+          <button className="btn-servicios btn-large "> <h4>Ver más servicios🐾</h4></button>
         </Link>
       </div>
       

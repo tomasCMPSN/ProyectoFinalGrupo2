@@ -9,22 +9,22 @@ const Navigation = () => {
     <div>
       <Navbar expand="lg"  className="color-navbar">
         <Container>
-          <Navbar.Brand href="/" className="fs-2 letra">
+          <Navbar.Brand href="/" className="fs-2 ">
             <img
               alt="logo"
               src={logo}
-              className="d-inline-block logo letra"
+              className="d-inline-block logo "
             />{" "}
             
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto letra-nav ">
 
-            <Link className="nav-link fs-4 letra" to="/">Home</Link> 
-            <Link className="nav-link fs-4 letra" to="/login">Login</Link> 
-            <Link className="nav-link fs-4 letra" to="/contacto">Contacto</Link> 
-            <Link className="nav-link fs-4 letra" to="/SobreNosotros">Sobre nosotros</Link> 
+            <Link className="nav-link fs-4 " to="/">Home</Link> 
+            <Link className="nav-link fs-4 " to="/login">Login</Link> 
+            <Link className="nav-link fs-4 " to="/contacto">Contacto</Link> 
+            <Link className="nav-link fs-4 " to="/SobreNosotros">Sobre nosotros</Link> 
               
             </Nav>
           </Navbar.Collapse>

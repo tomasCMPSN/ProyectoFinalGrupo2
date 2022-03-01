@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-.letra{
-    font-family: 'Patrick Hand', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Permanent+Marker&display=swap');
+
+
+.letra-nav{
+    font-family: 'Nunito';
+    font-weight: bold;
+    
    
 }

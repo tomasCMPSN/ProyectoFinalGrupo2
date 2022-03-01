@@ -32,7 +32,7 @@ const Clima = () => {
   });
 
   return (
-    <div className="d-flex justify-content-center container-fluid btn">
+    <div className="d-flex justify-content-center container-fluid clima ">
       <Row className="align-items-center">
         <Col>
           <p className="mt-3">{clima.name}</p>

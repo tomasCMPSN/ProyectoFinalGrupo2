@@ -8,73 +8,79 @@ import {
   ListGroup,
   ListGroupItem,
 } from "react-bootstrap";
-import {useState} from 'react';
+import { useState } from "react";
 import Swal from "sweetalert2";
-import emailjs from '@emailjs/browser';
-import{ init } from '@emailjs/browser';
-import { validateEmail, validateNames, validateNumber, validateMesage } from "../../helpers/ValidateForms";
+import emailjs from "@emailjs/browser";
+import { init } from "@emailjs/browser";
+import {
+  validateEmail,
+  validateNames,
+  validateNumber,
+  validateMesage,
+} from "../../helpers/ValidateForms";
 init("user_dvnJ38dESp4bV8SdcMD30");
 
 const Planes = () => {
-
   // States
 
-  const [name, setName] = useState('');
-  const [email, setEmail]=useState('');
-  const [mesage, setMesage]=useState('');
-  const [phone, setPhone]= useState('');
-  const [specie, setSpecie]= useState('');
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mesage, setMesage] = useState("");
+  const [phone, setPhone] = useState("");
+  const [specie, setSpecie] = useState("");
 
   // EmailJs
-const form =useRef()
-   
-    const handleSubmit = (e) => {
-      e.preventDefault();
+  const form = useRef();
 
-      // validamos datos
-      if(!validateNames(name)|| !validateEmail(email)|| !validateNumber(phone) || !validateMesage(mesage)){
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Ingreso algun dato incorrecto, por favor revise el formulario",
-        });
-        
-      }else {
- 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-      // Email js
-      emailjs.sendForm('service_5kuzhii', 'template_t9etbyq', form.current)
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
+    // validamos datos
+    if (
+      !validateNames(name) ||
+      !validateEmail(email) ||
+      !validateNumber(phone) ||
+      !validateMesage(mesage)
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ingreso algun dato incorrecto, por favor revise el formulario",
       });
-      setName('')
-      setEmail('')
-      setPhone('')
-      setMesage('')
-      setSpecie('')
-      
+    } else {
+      // Email js
+      emailjs
+        .sendForm("service_5kuzhii", "template_t9etbyq", form.current)
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMesage("");
+      setSpecie("");
 
       Swal.fire({
         icon: "succes",
         title: "Yay!",
         text: "Gracias por tu consulta, pronto nos pondremos en contacto con vos",
       });
-      
-
-
     }
-    }
-
-  
-
+  };
 
   return (
     <section>
       <article>
-        <img src="https://petdoctors.co.uk/wp-content/uploads/sites/5/2018/04/springer-spaniel-cross-with-vet.jpg" className="form-style-img" alt="" />
+        <img
+          src="https://petdoctors.co.uk/wp-content/uploads/sites/5/2018/04/springer-spaniel-cross-with-vet.jpg"
+          className="form-style-img"
+          alt=""
+        />
         <h1 className="form-style-mainT">Conoce nuestros planes</h1>
       </article>
 
@@ -154,23 +160,23 @@ const form =useRef()
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Nombre y apellido*</Form.Label>
             <input
-            value={name}
-            name='user_name'
+              value={name}
+              name="user_name"
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su nombre y apellido"
-              onChange={(e)=>setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Email*</Form.Label>
             <input
-            value={email}
+              value={email}
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su email"
-              name='user_email'
-              onChange={(e)=>setEmail(e.target.value)}
+              name="user_email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
@@ -179,7 +185,7 @@ const form =useRef()
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su numero de telefono"
-              onChange={({target})=>setPhone(target.value)}
+              onChange={({ target }) => setPhone(target.value)}
               value={phone}
             />
           </Form.Group>
@@ -201,12 +207,12 @@ const form =useRef()
             <Form.Label>Consulta*</Form.Label>
 
             <FormControl
-            value={mesage}
+              value={mesage}
               className="form-stle-inner"
               as="textarea"
               aria-label="With textarea"
               placeholder="Ingrese su consulta"
-              onChange={(e)=>setMesage(e.target.value)}
+              onChange={(e) => setMesage(e.target.value)}
             />
           </Form.Group>
 

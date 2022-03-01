@@ -64,5 +64,18 @@
       "id": 7
     }
   ],
-  "patients": []
+  "patients": [
+    {
+      "paciente": "preuaebrsa",
+      "especie": "Gato",
+      "raza": "asdasd",
+      "edad": "2323",
+      "peso": "23232",
+      "duenio": "sadasd",
+      "dni": "2323232",
+      "telefono": "2323232",
+      "email": "nico@nico.com",
+      "id": 1
+    }
+  ]
 }

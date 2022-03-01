@@ -8,8 +8,8 @@ const InfoPlanes = () => {
     <div className="container-fluid mx-0 "> 
       <Row  >
         <Col sm={12} md={4} className="mb-3 mx-0 ">
-        <div className="d-flex justify-content-center ">
-          <Card className="text-center sombras ">
+        <div className="d-flex justify-content-center container">
+          <Card className="text-center sombras-planes ">
             <Card.Body>
             <Card.Img
               variant="top"
@@ -17,20 +17,20 @@ const InfoPlanes = () => {
               alt='cachorro'
               className= "img-responsive"
             />
-              <Card.Title className="letra"> <h3>Cachorro </h3></Card.Title>
-              <Card.Text>
-               <strong>Plan para mascotas de 0 a 6 años.</strong> 
+              <Card.Title className=""> <h3> Cachorro </h3></Card.Title>
+              <Card.Text> <strong>Plan para mascotas de 0 a 6 años. </strong>
+               
               </Card.Text>
               <Link to='/planes' >
-               <button className="btn"> Ver más🐾</button>
+               <button className="btn-InfoPlanes"> Ver más🐾</button>
               </Link>
             </Card.Body>
           </Card>
           </div>
         </Col>
         <Col sm={12} md={4} className="mb-3 mx-0">
-          <div className="d-flex justify-content-center">
-          <Card className="text-center sombras">
+          <div className="d-flex justify-content-center container">
+          <Card className="text-center sombras-planes">
             <Card.Body>
             <Card.Img
               variant="top"
@@ -38,20 +38,20 @@ const InfoPlanes = () => {
               alt='perro adulto'
               className= "img-responsive"
             />
-              <Card.Title className="letra"> <h3>Adulto </h3></Card.Title>
-              <Card.Text>
-               <strong>Plan para mascotas de 7 a 10 años.</strong> 
+              <Card.Title className=""> <h3>Adulto </h3></Card.Title>
+              <Card.Text> <strong>Plan para mascotas de 7 a 10 años. </strong>
+               
               </Card.Text>
               <Link to='/planes' >         
-              <button className="btn"> Ver más🐾</button>
+              <button className="btn-InfoPlanes"> Ver más🐾</button>
               </Link>
             </Card.Body>
           </Card>
           </div>
         </Col>
         <Col sm={12} md={4} className="mb-3 mx-0">
-     <div className="d-flex justify-content-center">
-          <Card className="text-center sombras">
+     <div className="d-flex justify-content-center container">
+          <Card className="text-center sombras-planes">
             <Card.Body>
             <Card.Img
               variant="top"
@@ -59,12 +59,12 @@ const InfoPlanes = () => {
               alt='perro mayor'
               className= "img-responsive"
             />
-              <Card.Title className="letra"> <h3>Mayor </h3></Card.Title>
+              <Card.Title className=""> <h3>Mayor </h3></Card.Title>
               <Card.Text>
-                <strong> Plan para mascotas de más de 10 años. </strong>
+                <strong> Plan mayores de 10 años. </strong>
               </Card.Text>
               <Link to='/planes' >
-              <button className="btn"> Ver más🐾</button>
+              <button className="btn-InfoPlanes"> Ver más🐾</button>
               </Link>
             </Card.Body>
           </Card>

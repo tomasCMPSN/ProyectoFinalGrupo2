@@ -69,7 +69,7 @@ function App() {
               <Route exact path="/contacto" element={<Contacto />} />
               <Route exact path="/admin" element={<AdminHome />} />
               <Route exact path="/planes" element={<Planes />} />
-              <Route exact path="/error404" element={<Error404 />} />
+              <Route exact path="*" element={<Error404 />} />
               <Route exact path="/sobrenosotros" element={<SobreNosotros />} />
               <Route
                 exact

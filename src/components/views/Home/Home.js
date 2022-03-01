@@ -19,18 +19,18 @@ const Home = () => {
        <Fade bottom>
        <CarouselHome />
        <div className="container ">
-      <p className="lead display-3 text-center my-5 letra">
+      <p className="lead display-3 text-center my-5 letra-titulo">
       Cuidando a tus mascotas por más de 45 años</p>
       
       <Profesionales />
-      <h1 className="text-center display-2 my-5 letra">Planes</h1>
+      <h1 className="text-center display-2 my-5 letra-titulo">Planes</h1>
       
       <InfoPlanes />
-      <h1 className="text-center display-2 my-5  letra">Productos</h1>
+      <h1 className="text-center display-2 my-5  letra-titulo">Productos</h1>
       <Productos />
-      <h1 className="text-center display-2 my-5   letra">Servicios</h1>
+      <h1 className="text-center display-2 my-5   letra-titulo">Servicios</h1>
       <Servicios />    
-      <h1 className="text-center display-2 my-5  letra">Ellos nos siguen elijiendo</h1>
+      <h1 className="text-center display-2 my-5  letra-titulo">Ellos nos siguen elijiendo</h1>
       <Comentarios/>
       <Publicidad/>
       </div> 
