@@ -223,7 +223,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
         <hr />
       </article>
       <article>
-        <p>
+        <p className='form-style-paragraph'>
           Para poder asignar turnos, el paciente debe estar registrado en
           nuestra pagina de adiministrador de pacientes. Ingrese el numero de DNI para buscarlo en la base de datos:
         </p>
