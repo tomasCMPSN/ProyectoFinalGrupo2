@@ -15,7 +15,7 @@ const WelcomeToast = () => {
 
 <Toast show={showA} delay={3000} autohide onClose={toggleShowA} className="bg-success">
   <Toast.Header>
-    <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+    <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="jhjh" />
     <strong className="me-auto ">Bienvenido</strong>
     <small>Paws & Claws</small>
   </Toast.Header>

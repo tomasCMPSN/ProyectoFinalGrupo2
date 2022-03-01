@@ -2,27 +2,30 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from '../../components/img/logo.png'
 import {Link} from "react-router-dom"
+import "./Navigation.css"
 
 const Navigation = () => {
   return (
     <div>
       <Navbar expand="lg"  className="color-navbar">
         <Container>
-          <Navbar.Brand href="/" className="fs-2">
+          <Navbar.Brand href="/" className="fs-2 letra">
             <img
               alt="logo"
               src={logo}
-              className="d-inline-block logo"
+              className="d-inline-block logo letra"
             />{" "}
-            Paws & Claws
+            
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
 
-               <Link className="nav-link fs-4" to="/login">Login</Link> 
-               <Link className="nav-link fs-4" to="/contacto">Contacto</Link> 
-              <Link to="/admin" className="nav-link fs-4" >Admin</Link>
+            <Link className="nav-link fs-4 letra" to="/">Home</Link> 
+            <Link className="nav-link fs-4 letra" to="/login">Login</Link> 
+            <Link className="nav-link fs-4 letra" to="/contacto">Contacto</Link> 
+            <Link className="nav-link fs-4 letra" to="/SobreNosotros">Sobre nosotros</Link> 
+              
             </Nav>
           </Navbar.Collapse>
         </Container>

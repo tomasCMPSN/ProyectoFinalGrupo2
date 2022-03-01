@@ -13,21 +13,22 @@ const Login = () => {
 };
   
   return (
-    <div>
-        
-     <div className="animación my-5">
-      <h1 className="text1">Bienvenido</h1>
-      <h1 className="text2">.</h1>
-      <h1 className="text3">Tomás</h1>
-     </div>
-     <Form className="mb-5 form_style container" >
+
+  <div class="wrapper ">
+      
+    
+     <Form className="m-5 form-style " onSubmit = {hundleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
-            <input className='form-stle-inner' type="email"  placeholder="@pawsclaws.com" />
+            <input className='form-stle-inner' type="email"  placeholder="@pawsclaws.com" onChange={(e) => {
+             setArregloLogin(e.target.value);
+            }} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Contraseña</Form.Label>
-            <input  type="text" placeholder="********" className='form-stle-inner' />
+            <input  type="text" placeholder="********" className='form-stle-inner' onChange={(e) => {
+              setImput(e.target.value);
+            }} />
           </Form.Group>
           <div className="text-center mt-4">
             <Button className="form-style-btn "> Ingresar 🐾</Button>

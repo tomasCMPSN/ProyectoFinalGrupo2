@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
+import "./clima.css"
 
 const Clima = () => {
   const [clima, setClima] = useState([]);
@@ -31,7 +32,7 @@ const Clima = () => {
   });
 
   return (
-    <Container className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center container-fluid btn">
       <Row className="align-items-center">
         <Col>
           <p className="mt-3">{clima.name}</p>
@@ -45,7 +46,7 @@ const Clima = () => {
         <Col>{temperatura}ºC</Col>
         <Col>{icono.main}</Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

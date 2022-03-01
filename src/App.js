@@ -14,7 +14,7 @@ import PacienteTable from "./components/views/paciente/PacienteTable";
 import PacienteCreate from "./components/views/paciente/PacienteCreate";
 import Planes from "./components/views/planes/Planes";
 import Error404 from "./components/views/Error404/Error404";
-import SobreNosotros from "./components/SobreNosotros/SobreNostros";
+import SobreNosotros from "./components/views/SobreNosotros/SobreNostros";
 import { useState, useEffect } from "react";
 
 import React from "react";
