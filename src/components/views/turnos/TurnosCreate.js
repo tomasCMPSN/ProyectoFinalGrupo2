@@ -3,7 +3,6 @@ import { Form } from "react-bootstrap";
 import {
   validateNames,
   validateVet,
-  validateTime,
   validateDate,
 } from "../../helpers/ValidateForms";
 import "./Turnos.css";
@@ -25,16 +24,16 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   const [horas, setHoras] = useState([]);
 
   // State para dni
-   const [dni, setDni] = useState('')
-   const [datosP, setDatosP] = useState([])
-  
+  const [dniBuscado, setDniBuscado] = useState("");
+  const [datosP, setDatosP] = useState([]);
 
   // Ref
   const timeRef = useRef("");
   const martaRef = useRef("");
   const ignacioRef = useRef("");
   const vetRef = useRef("");
-  const formRef = useRef("");
+  const nameRef = useRef("");
+  const dateRef = useRef("");
 
   //Use navigate
   const navigate = useNavigate();
@@ -62,7 +61,8 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   useEffect(() => {
     timeRef.current.disabled = true;
     vetRef.current.disabled = true;
-    formRef.current.disabled = true;
+    dateRef.current.disabled = true;
+    nameRef.current.disabled = true;
   }, []);
 
   useEffect(async () => {
@@ -76,12 +76,47 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
     }
   }, []);
 
+  // Funcio para buscar dni
+
+  useEffect(async () => {
+    try {
+      const res = await fetch(DBP);
+      const resultado = await res.json();
+      setDatosP(resultado);
+      console.log(resultado);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const buscarDni = datosP.filter((paciente) => paciente.dni === dniBuscado);
+
+    console.log(buscarDni);
+    console.log(dniBuscado);
+    console.log(buscarDni.length);
+
+    if (buscarDni.length === 1) {
+      dateRef.current.disabled = false;
+      nameRef.current.disabled = false;
+
+      alert('Cliente encontrado. Ya puede asignarle un turno.')
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text:
+          "No encontramos ningun paciente con ese dni. Registrelo en el administrador de pacientes.",
+      });
+    }
+  };
+
   const handleDateChange = (e) => {
     // Realizamos filtrado de fecha
     const busquedaFechas = turnos.filter(
       (fechas) => fechas.date === e.target.value
     );
-    
 
     // Buscamos por veterinario en esa fecha
     const buscarveterio = busquedaFechas.map((turno) => turno.vet);
@@ -102,10 +137,10 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
     } else {
       martaRef.current.disabled = false;
     }
-    
+
     if (filtradovet2.length >= 8) {
       ignacioRef.current.disabled = true;
-    }else{
+    } else {
       ignacioRef.current.disabled = false;
     }
 
@@ -122,44 +157,11 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
     vetRef.current.disabled = false;
   };
 
-  // Funcio para buscar dni
-
-  useEffect(async()=>{
-    try {
-      const res = await fetch(DBP);
-      const resultado = await res.json();
-      setDatosP(resultado);
-      console.log(resultado)
-    
-      
-    } catch (error) {
-      console.log(error);
-    }
-  },[])
-
-  const handleSearchSubmit = (e)=>{
-    e.preventDefault();
-    const buscarDni = datosP.filter(
-      (paciente) => paciente.dni === dni
-    );
-
-    console.log(buscarDni.length)
-    if(buscarDni.length=1){
-      formRef.current.disabled = false;
-      
-    }else if(buscarDni.length=0){ 
-      // formRef.current.disabled = true;
-      alert('Dueño no existente.')
-    }
-    
-
-  }
-
   //Funcion para crear un turno
   const handleSubmit = (e) => {
     e.preventDefault();
     // validar datos
-    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date)  ) {
+    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -195,8 +197,8 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
             },
             body: JSON.stringify(newAppointment),
           });
-          
-          console.log(res)
+
+          console.log(res);
           if (res.status === 201) {
             Swal.fire(
               "Creado!",
@@ -209,7 +211,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
         } catch (error) {
           console.log(error);
         }
-        console.log(newAppointment.time)
+        console.log(newAppointment.time);
       }
     });
   };
@@ -217,29 +219,34 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   return (
     <section className="container mt-5 ">
       <article>
-        <h1 className="form-style-title ">Administrador de turnos 📝</h1>
+        <h1 >Administrador de turnos 📝</h1>
+        <hr />
+      </article>
+      <article>
+        <p className='form-style-paragraph'>
+          Para poder asignar turnos, el paciente debe estar registrado en
+          nuestra pagina de adiministrador de pacientes. Ingrese el numero de DNI para buscarlo en la base de datos:
+        </p>
       </article>
 
-      <article>
-        <Form onSubmit={handleSearchSubmit}>
-        <input
-              className="form-stle-inner"
-              type="text"
-              placeholder="Ingrese dni del dueño"
-              onChange={(e)=>setDni(e.target.value)}
-            
-            />
-            <button>Buscar</button>
-
+      <article >
+        <Form onSubmit={handleSearchSubmit} className='d-flex my-5 justify-content-center'>
+          <input
+            className=" form-style-input-search"
+            type="text"
+            placeholder="Ingrese dni del dueño"
+            onChange={(e) => setDniBuscado(e.target.value)}
+          />
+          <button className='form-style-btn-search'>🔍</button>
         </Form>
       </article>
 
-     
       <article className="d-flex justify-content-center mb-5 ">
         <Form className="mb-5 form_style" onSubmit={handleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>🐶 Nombre del paciente*</Form.Label>
             <input
+              ref={nameRef}
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese nombre de la mascota"
@@ -249,6 +256,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>📅 Fecha </Form.Label>
             <input
+              ref={dateRef}
               type="date"
               className="form-stle-inner"
               placeholder="Ingrese la fecha para el turno dd/mm/yyyy"
@@ -283,10 +291,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
               className="form-stle-inner"
               onChange={({ target }) => setTime(target.value)}
             >
-
-            
-              
-              <option value='seleccione' >Seleccione una opcion</option>
+              <option value="seleccione">Seleccione una opcion</option>
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}
