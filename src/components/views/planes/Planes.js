@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
 import {Form,FormControl,Row,Card,Col,ListGroup,ListGroupItem,} from "react-bootstrap";
 import { useState } from "react";
+import "./Planes.css"
 import emailjs from "@emailjs/browser";
 import { init } from "@emailjs/browser";
+
 init("user_dvnJ38dESp4bV8SdcMD30");
+
 
 const Planes = () => {
   // States
@@ -102,8 +105,8 @@ const Planes = () => {
       </article>
 
       {/* cards */}
-      <article className="mt-5 article-form">
-        <h1 className="text-center  form-style-t">
+      <article className="mt-5 ">
+        <h1 className="text-center form-style-t">
           Tenes dudas sobre que plan contratar?
         </h1>
         <div className="d-flex justify-content-center">
@@ -114,15 +117,15 @@ const Planes = () => {
           </p>
         </div>
       </article>
-      <article className="d-flex justify-content-center">
-        <Form className="my-5 form_style " onSubmit={handleSubmit} ref={form}>
+      <article className="d-flex justify-content-center  ">
+        <Form className="my-5 form_style article-form " onSubmit={handleSubmit} ref={form}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Nombre y apellido*</Form.Label>
             <input
               name="user_name"
               className="form-stle-inner"
               type="text"
-              placeholder="Ingrese su nombre y apellido"
+              placeholder=" Paula Sanchez"
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
@@ -130,7 +133,7 @@ const Planes = () => {
             <input
               className="form-stle-inner"
               type="text"
-              placeholder="Ingrese su email"
+              placeholder="paula@gmail.com"
               name="user_email"
             />
           </Form.Group>
@@ -139,7 +142,7 @@ const Planes = () => {
             <input
               className="form-stle-inner"
               type="text"
-              placeholder="Ingrese su numero de telefono"
+              placeholder="3815784932"
             />
           </Form.Group>
 
