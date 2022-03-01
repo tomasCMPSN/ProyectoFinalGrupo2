@@ -8,6 +8,7 @@ import Publicidad from "./Publicidad/Publicidad"
 import Comentarios from "./Comentarios/Comentarios"
 import Servicios from "./Servicios/Servicios"
 import "./Home.css"
+import Fade from "react-reveal/Fade";
 
 const Home = () => {
 
@@ -15,26 +16,24 @@ const Home = () => {
   //la logica
   return (
     <div>
-      
-      <CarouselHome />
+       <Fade bottom>
+       <CarouselHome />
       <p className="lead display-3 text-center my-5 letra">
-      Cuidando a tus mascotas por más de 45 años
-        
-      </p>
+      Cuidando a tus mascotas por más de 45 años</p>
       <Profesionales />
       <h1 className="text-center display-2 my-5 letra">Planes</h1>
       <InfoPlanes />
       <h1 className="text-center display-2 my-5  letra">Productos</h1>
       <Productos />
       <h1 className="text-center display-2 my-5   letra">Servicios</h1>
-      <Servicios />
-      
-      
+      <Servicios />    
       <h1 className="text-center display-2 my-5  letra">Ellos nos siguen elijiendo</h1>
       <Comentarios/>
       <Publicidad/>
       <Clima />
+      </Fade>
     </div>
+     
   );
 };
 

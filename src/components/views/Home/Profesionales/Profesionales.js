@@ -4,18 +4,18 @@ import "./Profesionales.css";
 
 const Profesionales = () => {
   return (
-    <Container className="mb-3">
+    <Container className="mb-3 ">
       <Row>
         <Col sm={12} md={3} className="mb-2">
           <Card
-            style={{ width: "18rem", height: "35rem" }}
+            style={{ width: "15rem", height: "35rem" }}
             className="sombras"
           >
             <Card.Img
               variant="top"
               src="https://images.pexels.com/photos/7474560/pexels-photo-7474560.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               alt="Dra.Minujin"
-              img="img-responsive"
+              className="img-responsive"
             />
             <Card.Body>
               <Card.Title className="text-center letra ">
@@ -30,14 +30,14 @@ const Profesionales = () => {
 
         <Col sm={12} md={3} className="mb-2">
           <Card
-            style={{ width: "18rem", height: "35rem" }}
+            style={{ width: "15rem", height: "35rem" }}
             className="sombras"
           >
             <Card.Img
               variant="top"
               src="https://images.pexels.com/photos/7407058/pexels-photo-7407058.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               alt="Dr.Ignacio Jorge"
-              img="img-responsive"
+              className="img-responsive"
             />
             <Card.Body>
               <Card.Title className=" text-center letra ">
@@ -53,14 +53,14 @@ const Profesionales = () => {
         <Col sm={12} md={3} className="mb-2">
           <Card
           
-            style={{ width: "18rem", height: "35rem" }}
+            style={{ width: "15rem", height: "35rem" }}
             className="sombras"
           >
             <Card.Img
               variant="top"
               src="https://i.pinimg.com/originals/be/70/2b/be702bb57ab80fadc1cf992b4f4d254a.jpg"
               alt="estudiante de veterinaria"
-              img="img-responsive"
+              className="img-responsive"
             />
             <Card.Body>
               <Card.Title className="text-center letra ">
@@ -75,7 +75,7 @@ const Profesionales = () => {
 
         <Col sm={12} md={3} className="mb-2">
           <Card
-            style={{ width: "18rem", height: "35rem" }}
+            style={{ width: "15rem", height: "35rem" }}
             className="sombras"
           >
             <Card.Img

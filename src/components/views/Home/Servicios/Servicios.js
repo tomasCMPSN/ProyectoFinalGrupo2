@@ -16,6 +16,7 @@ const Servicios = () => {
               variant="top"
               src="https://i.pinimg.com/originals/73/ed/68/73ed68a63912b33a46a4a2aefed2dce6.jpg"
               alt='perrito bañandose'
+              className="img-responsive"
             />
                 <Card.Title className="letra m-3"> <h4> Baño </h4></Card.Title>
              
@@ -35,6 +36,7 @@ const Servicios = () => {
               variant="top"
               src="https://animalesmascotas.com//wp-content/uploads/2009/11/cortar-pelo-mascota.jpg"
               alt='perrito con corte de pelo'
+              className="img-responsive"
             />
             <Card.Title className="letra m-3"> <h4> Corte </h4></Card.Title>
              
