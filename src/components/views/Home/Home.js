@@ -18,10 +18,13 @@ const Home = () => {
     <div>
        <Fade bottom>
        <CarouselHome />
+       <div className="container ">
       <p className="lead display-3 text-center my-5 letra">
       Cuidando a tus mascotas por más de 45 años</p>
+      
       <Profesionales />
       <h1 className="text-center display-2 my-5 letra">Planes</h1>
+      
       <InfoPlanes />
       <h1 className="text-center display-2 my-5  letra">Productos</h1>
       <Productos />
@@ -30,10 +33,12 @@ const Home = () => {
       <h1 className="text-center display-2 my-5  letra">Ellos nos siguen elijiendo</h1>
       <Comentarios/>
       <Publicidad/>
+      </div> 
       <Clima />
+       
       </Fade>
     </div>
-     
+       
   );
 };
 

@@ -4,10 +4,10 @@ import { Carousel } from "react-bootstrap";
 const CarouselHome = () => {
   return (
     <div>
-        <Carousel >
+        <Carousel  >
           <Carousel.Item>
             <img
-              className="d-block w-100 img-carousel img-responsive"
+              className="d-block w-100 img-carousel img-responsive "
               src="https://www.bankrate.com/2021/06/11161827/The-average-veterinarian-salary_-How-much-do-vets-make_.jpg?auto=webp&optimize=high&crop=16:9"
               alt="cafe"
             />

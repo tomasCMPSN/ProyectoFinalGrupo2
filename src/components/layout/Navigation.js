@@ -9,7 +9,7 @@ const Navigation = () => {
     <div>
       <Navbar expand="lg"  className="color-navbar">
         <Container>
-          <Navbar.Brand href="#home" className="fs-2 letra">
+          <Navbar.Brand href="/" className="fs-2 letra">
             <img
               alt="logo"
               src={logo}
@@ -21,9 +21,11 @@ const Navigation = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
 
-               <Link className="nav-link fs-4 letra" to="/login">Login</Link> 
-               <Link className="nav-link fs-4 letra" to="/contacto">Contacto</Link> 
-              <Link to="/admin" className="nav-link fs-4" >Admin</Link>
+            <Link className="nav-link fs-4 letra" to="/">Home</Link> 
+            <Link className="nav-link fs-4 letra" to="/login">Login</Link> 
+            <Link className="nav-link fs-4 letra" to="/contacto">Contacto</Link> 
+            <Link className="nav-link fs-4 letra" to="/SobreNosotros">Sobre nosotros</Link> 
+              
             </Nav>
           </Navbar.Collapse>
         </Container>

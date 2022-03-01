@@ -21,7 +21,7 @@ const InfoPlanes = () => {
               <Card.Text>
                <strong>Plan para mascotas de 0 a 6 años.</strong> 
               </Card.Text>
-              <Link to='*'  >
+              <Link to='/planes' >
                <button className="btn"> Ver más🐾</button>
               </Link>
             </Card.Body>
@@ -42,7 +42,7 @@ const InfoPlanes = () => {
               <Card.Text>
                <strong>Plan para mascotas de 7 a 10 años.</strong> 
               </Card.Text>
-              <Link to='*' >         
+              <Link to='/planes' >         
               <button className="btn"> Ver más🐾</button>
               </Link>
             </Card.Body>
@@ -63,7 +63,7 @@ const InfoPlanes = () => {
               <Card.Text>
                 <strong> Plan para mascotas de más de 10 años. </strong>
               </Card.Text>
-              <Link to='*' >
+              <Link to='/planes' >
               <button className="btn"> Ver más🐾</button>
               </Link>
             </Card.Body>

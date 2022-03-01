@@ -6,7 +6,10 @@ import { Form } from "react-bootstrap";
 const Contacto = () => {
     return (
         <div>
-        <Form className="mb-5 my-5 form_style container" >
+          <section>
+            <h2 className="letra text-center my-5"> Dejanos tu consulta y te respondemos a la brevedad 🐾</h2>
+          </section>
+        <Form className=" my-5 form-style container" >
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Nombre y Apellido</Form.Label>
             <input className='form-stle-inner' type="text"  placeholder="Pablo Rodriguez"  />

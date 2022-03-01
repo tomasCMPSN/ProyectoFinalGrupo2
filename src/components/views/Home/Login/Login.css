@@ -26,15 +26,16 @@
   
 }
 
-.form_style {
+.form-style {
   width: 70%;
-  border: solid 1px #ffc872;
+  border: solid 1px rgb(54, 168, 140);;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 10px 20px 4px 4px #ffc872;
+  box-shadow: 10px 5px 4px 4px rgb(54, 168, 140);;
   font-family: 'Patrick Hand', cursive;
- background-color: #ffe3b3;
+  background-color: #fdfdfc;
   font-family: "Nunito", sans-serif;
+
 }
 
 .form-style-title {

@@ -33,7 +33,7 @@ const Footer = () => {
               </Link>
               <Link to="*" className="text-decoration-none text-black">
                 {" "}
-                <i className="fab fa-2x  p-1 fa-facebook-square"></i>{" "}
+                <i class="fa-brands fa-facebook"></i>
               </Link>
               <Link to="*" className="text-decoration-none text-black">
                 {" "}
@@ -42,9 +42,9 @@ const Footer = () => {
             </Col>
 
             <Col sm={12} md={4}>
-              <Link to="/">
-                <img className="logo mx-auto d-block img-responsive" src={logo} alt="logo" />
-              </Link>
+            <p className=" fs-5 text-black letra">
+            &copy; Todos los derechos reservados P&C
+          </p>
             </Col>
 
             <Col sm={12} md={4}>
@@ -58,9 +58,7 @@ const Footer = () => {
                 Info@pawsclaws.com
               </p>
             </Col>
-            <p className=" fs-5 text-black letra">
-            &copy; Todos los derechos reservados
-          </p>
+            
           </Row>
           
         </Container>

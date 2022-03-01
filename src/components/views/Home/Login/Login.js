@@ -15,9 +15,9 @@ const Login = () => {
   return (
 
   <div class="wrapper ">
-   
-     
-     <Form className="m-5 form_style " onSubmit = {hundleSubmit}>
+      
+    
+     <Form className="m-5 form-style " onSubmit = {hundleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
             <input className='form-stle-inner' type="email"  placeholder="@pawsclaws.com" onChange={(e) => {

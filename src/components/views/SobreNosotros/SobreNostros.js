@@ -1,46 +1,70 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import "./SobreNosotros.css"
 
 const SobreNostros = () => {
   return (
     <>
-      <div className="container my-5">
-        <Row xs={1} md={2} className="g-4">
+    <Row className="container-fluid">
+        <Col sm={12} md={6} className="mb-4 mt-4">
+        <div className="">
           
             <Col>
               <Card>
-                <Card.Img variant="top" className="sobreNosotros" src="images/01.png" />
+                <Card.Img variant="top" className="sobreNosotros img-responsive " src="images/01.png" />
+                
+              </Card>
+              </Col>
+              </div>
+            </Col>
+            
+            
+            <Col sm={12} md={6} className="mb-4 mt-4">
+        <div className="">
+            <Col>
+              <Card>
+                <Card.Img variant="top" className="sobreNosotros img-responsive" src="images/02.png" />
                 
               </Card>
             </Col>
-            <Col>
-              <Card>
-                <Card.Img variant="top" className="sobreNosotros" src="images/02.png" />
-                
-              </Card>
+            </div>
             </Col>
-            <Col>
+            </Row>
+            
+            <Row className="container-fluid">
+        <Col sm={12} md={6} className="mb-4">
+        <div className="">
+        <Col>
               <Card>
-                <Card.Img variant="top" className="sobreNosotros" src="images/03.png" />
+                <Card.Img variant="top" className="sobreNosotros img-responsive" src="images/03.png" />
                 
                   
               </Card>
             </Col>
+            </div>
+            </Col>
+            <Col sm={12} md={6} className="mb-4">
+        <div className="">
             <Col>
               <Card>
-                <Card.Img variant="top" className="sobreNosotros" src="images/04.png" />
+                <Card.Img variant="top" className="sobreNosotros img-responsive" src="images/04.png" />
                 
               </Card>
             </Col>
+            </div>
+            </Col>
+            </Row>
+            
+            
             <Col>
               <Card>
-                <Card.Img variant="top" className="sobreNosotros" src="images/05.png" />
+                <Card.Img variant="top" className="sobreNosotros img-responsive" src="images/05.png" />
                 
               </Card>
             </Col>
           
-        </Row>
-      </div>
+      
+      
     </>
   );
 };
