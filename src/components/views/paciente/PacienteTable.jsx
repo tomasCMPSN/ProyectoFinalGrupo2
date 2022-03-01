@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Table } from "react-bootstrap";
+import { Container, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Paciente from "./Paciente";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus,faHouseUser } from "@fortawesome/free-solid-svg-icons";
 import "./Paciente.css";
 
 const PacienteTable = ({ patients, DBP , getPatient}) => {
@@ -13,6 +13,17 @@ const PacienteTable = ({ patients, DBP , getPatient}) => {
       <Container className="py-5 media-patient ">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Pacientes</h1>
+
+          <Row>
+<div>
+<Link 
+          to="/admin">
+
+          <FontAwesomeIcon icon={faHouseUser}
+            className="btn-addplus text-decoration-none text-center"
+            />        
+            </Link>
+</div>
 
           <div >
               <Link 
@@ -24,6 +35,7 @@ const PacienteTable = ({ patients, DBP , getPatient}) => {
             </Link>
           
               </div>
+            </Row>
         </div>
         <hr />
         {/* Table of products */}
