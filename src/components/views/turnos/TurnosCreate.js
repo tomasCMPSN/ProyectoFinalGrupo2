@@ -7,7 +7,7 @@ import {
 } from "../../helpers/ValidateForms";
 import "./Turnos.css";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Time from "./Time";
 
@@ -218,8 +218,14 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
 
   return (
     <section className="container mt-5 ">
-      <article>
+      <article className="d-flex align-items-center justify-content-between">
         <h1 >Administrador de turnos 📝</h1>
+        <Link 
+            to="/turnostable"
+            className="btn-addback text-decoration-none text-center ms-5"
+          >
+            Volver a Turnos
+          </Link>
         <hr />
       </article>
       <article>

@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPen, faUserXmark } from "@fortawesome/free-solid-svg-icons";
+
 const Turno = ({ turno, DB, getApi }) => {
   const handleDelete = (id) => {
     Swal.fire({
@@ -54,14 +57,10 @@ const Turno = ({ turno, DB, getApi }) => {
       <td> {turno.time}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">
-          <Link to={`/turnosedit/${turno.id}`}>Editar</Link>
-          <button
-            onClick={() => {
-              handleDelete(turno.id);
-            }}
-          >
-            Borrar
-          </button>
+          <Link to={`/turnosedit/${turno.id}`}>
+          <FontAwesomeIcon icon={faUserPen} className="btn btn-success mx-2" /> 
+          </Link>
+          <FontAwesomeIcon icon={faUserXmark} className="btn btn-danger " onClick={() =>handleDelete(turno.id)}/>
         </div>
       </td>
     </tr>

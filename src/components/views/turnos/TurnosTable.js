@@ -1,8 +1,10 @@
 import React from "react";
-import { Container, Table } from "react-bootstrap";
+import { Container, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Turnos.css";
 import Turno from "./Turno";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarPlus,faHouseUser } from "@fortawesome/free-solid-svg-icons";
 
 const TurnosTable = ({ turnos, DB, getApi }) => {
   return (
@@ -10,14 +12,31 @@ const TurnosTable = ({ turnos, DB, getApi }) => {
       <Container className="py-5">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Turnos asignados:</h1>
+          <Row>
+
+
+          <div>
+<Link 
+          to="/admin">
+
+          <FontAwesomeIcon icon={faHouseUser}
+            className="btn-addplus text-decoration-none text-center"
+            />        
+            </Link>
+</div>
+<div>
+<Link 
+          to="/turnoscreate">
+
+          <FontAwesomeIcon icon={faCalendarPlus}
+            className="btn-addplus text-decoration-none text-center"
+            />        
+            </Link>
+</div>
+
+          </Row>
         </div>
         <hr />
-
-        <div className="d-flex justify-content-end">
-          <Link to="/turnoscreate" className=" form-style-newbtn ">
-            Asignar un turno{" "}
-          </Link>
-        </div>
         {turnos.length > 0 ? (
           <Table bordered hover responsive className="table-style mt-3">
             <thead>
