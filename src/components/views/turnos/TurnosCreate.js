@@ -224,21 +224,20 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
       </article>
       <article>
         <p>
-          Para poder asignar turnos, el interesado debe estar registrado en
-          nuestra pagina de adiministrador de pacientes. Puede buscarlo por dni
-          atra vez del siguiente formulario:
+          Para poder asignar turnos, el paciente debe estar registrado en
+          nuestra pagina de adiministrador de pacientes. Ingrese el numero de DNI para buscarlo en la base de datos:
         </p>
       </article>
 
-      <article>
-        <Form onSubmit={handleSearchSubmit}>
+      <article >
+        <Form onSubmit={handleSearchSubmit} className='d-flex my-5 justify-content-center'>
           <input
-            className="form-stle-inner"
+            className=" form-style-input-search"
             type="text"
             placeholder="Ingrese dni del dueño"
             onChange={(e) => setDniBuscado(e.target.value)}
           />
-          <button>Buscar</button>
+          <button className='form-style-btn-search'>🔍</button>
         </Form>
       </article>
 

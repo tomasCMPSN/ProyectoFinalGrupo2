@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 
-/* ESTILOS PARA LA PAGINA DE TURNOS */
+/* ESTILOS PARA LA PAGINA DE TURNOS CREATE Y EDIT */
 
 .form-style-btn {
   background-color: rgb(54, 168, 140);
@@ -12,15 +12,41 @@
   width: 20%;
   width: 20%;
   font-size: 20px;
-  
-  
 }
 
 .form-style-btn:hover {
-  background: rgb(54, 168, 140); 
-   box-shadow: 0 0 10px rgb(54, 168, 140), 0 0 40px rgb(54, 168, 140) , 0 0 80px rgb(54, 168, 140);
-  transition-delay: 1s;
+  background: rgb(54, 168, 140);
+  box-shadow: 0 0 10px rgb(54, 168, 140), 0 0 40px rgb(54, 168, 140),
+    0 0 80px rgb(54, 168, 140);
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  background-color: #e9e5e0;
   
+  padding: 15px 15px 15px 8px;
+  border-left: solid 3px #303030;
+}
+
+.form-style-input-search {
+  width: 50%;
+  text-decoration: none;
+  border: none;
+  border-left: 3px solid #ffc872;
+  font-family: "Nunito", sans-serif;
+  display: block;
+  margin-top: 3px;
+  padding: 5px;
+}
+
+.form-style-input-search:focus {
+  outline: none;
+  border-bottom: 2px solid #7280ff;
+}
+
+.form-style-btn-search {
+  border: none;
+  font-size: 30px;
 }
 
 .form_style {
@@ -29,21 +55,21 @@
   padding: 30px;
   border-radius: 10px;
   box-shadow: 10px 20px 4px 4px #ffc872;
-
   background-color: #ffe3b3;
   font-family: "Nunito", sans-serif;
 }
-
-
 
 @media (max-width: 576px) {
   .form_style {
     width: 95%;
     box-shadow: none;
   }
-  .form-style-title {
-    font-size: 30px;
+
+  .form-style-input-search{
+    width: 100%;
   }
+  
+  
   .form-style-btn {
     width: 100%;
   }
@@ -53,7 +79,7 @@
   text-decoration: none;
   border: none;
   border-left: 3px solid #ffc872;
-
+  font-family: "Nunito", sans-serif;
   display: block;
   width: 100%;
   margin-top: 3px;
@@ -74,21 +100,17 @@
   font-family: "Nunito", sans-serif;
 }
 
-.form-style-newbtn{
-    text-align: center;
-    text-decoration: none;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: #7280ff;
-    color: #fff;
+.form-style-newbtn {
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #7280ff;
+  color: #fff;
+}
 
-    }
+.form-style-newbtn:hover {
+  color: #000000;
 
-    .form-style-newbtn:hover{
-       
-        color: #000000;
-
-       color: #d69456;
-        
-
-    }
+  color: #d69456;
+}
