@@ -47,12 +47,10 @@
 
 }
 
-    .wrapper {
-        height: 100vh;
-        /*This part is important for centering*/
-        display: flex, column;
-        
-        justify-content: center;
-      }
+.foot-login{
+  margin-bottom: 25vh;
+}
+
+   
+   
       
-     

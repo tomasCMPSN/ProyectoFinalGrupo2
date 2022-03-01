@@ -11,20 +11,15 @@ const Footer = () => {
       <section className=" color-navbar text-light text-center pt-5 ">
         <Container>
           <Row>
-            <Col sm={12} md={4}>
-              <h5 className="lead text-black letra">Seguinos en Nuestras redes:</h5>
-              <Link to="*" > 
-              <FontAwesomeIcon icon="fa-brands fa-instagram" /> 
-          </Link>
-            </Col>
+          
 
-            <Col sm={12} md={4}>
+            <Col sm={12} md={6}>
             <p className=" lead fs-5 text-black letra">
             &copy; Todos los derechos reservados P&C
           </p>
             </Col>
 
-            <Col sm={12} md={4} className=" lead ">
+            <Col sm={12} md={6} className=" lead ">
               <p className="fs-5 text-black letra">
                 Las Heras 852,San Miguel de Tucumán.
               </p>
