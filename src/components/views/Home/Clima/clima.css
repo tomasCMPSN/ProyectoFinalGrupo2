@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Permanent+Marker&family=Poppins&display=swap');
+
 .clima{
+
     background-color: rgb(54, 168, 140);
-    font-family: 
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
 }
   

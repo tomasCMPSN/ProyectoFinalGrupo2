@@ -1,4 +1,4 @@
-
+/* 
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 .form-style-btn {
@@ -41,4 +41,50 @@
     padding: 25px;
     
   
+  } */
+
+  /* 📌 ESTILOS PARA PAGINA DE PLANES📌 */
+
+.form-style-p{
+  font-family: "Nunito", sans-serif;
+  font-size: 25px;
+}
+
+.form-style-t{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+
+}
+
+.form-style-img{
+  position: relative;
+  opacity:0.8;
+
+
+  width: 100%;
+
+}
+
+
+
+.card-plan-style{
+  font-family: "Nunito", sans-serif;
+}
+
+
+
+
+
+/*📌 MEDIA QUERYS 📌 */
+@media (max-width: 576px) {
+  .form_style {
+    width: 95%;
+    box-shadow: none;
   }
+  .form-style-title {
+    font-size: 30px;
+  }
+  .form-style-btn {
+    width: 100%;
+  }
+}
