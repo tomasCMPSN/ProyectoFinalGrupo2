@@ -6,7 +6,7 @@ const Profesionales = () => {
   return (
     <Container className="mb-3 ">
       <Row>
-        <Col sm={12} md={6} lg={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-4">
           <Container className="d-flex justify-content-center">
 
           <Card
@@ -24,14 +24,14 @@ const Profesionales = () => {
                <h3> <strong>Dra. Marta Minujin</strong>  </h3>
               </Card.Title>
               <Card.Text className="text-center">
-              <strong> Apasionada por su profesión, siempre dispuesta a dar lo mejor para tu mascota.</strong>
+              <strong> Apasionada por su profesión, siempre dispuesta a dar lo mejor.</strong>
               </Card.Text>
             </Card.Body>
           </Card>
             </Container>
         </Col>
 
-        <Col sm={12} md={6} lg={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-4">
           <Container className="d-flex justify-content-center">
 
           <Card
@@ -57,7 +57,7 @@ const Profesionales = () => {
 
         </Col>
 
-        <Col sm={12} md={6} lg={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-4">
           <Container className="d-flex justify-content-center">
 
           <Card
@@ -84,7 +84,7 @@ const Profesionales = () => {
 
         </Col>
 
-        <Col sm={12} md={6} lg={3} className="mb-2">
+        <Col sm={12} md={6} lg={3} className="mb-4">
           <Container className="d-flex justify-content-center">
 
           <Card
@@ -102,7 +102,7 @@ const Profesionales = () => {
               <h3><strong>Micaela Arana </strong>  </h3>
               </Card.Title>
               <Card.Text className="text-center">
-               <strong> Estudiante de veterinaria, feliz de seguir aprender día a día en Paws & Claws.</strong>
+               <strong> Estudiante de veterinaria, feliz de aprender día a día.</strong>
               </Card.Text>
             </Card.Body>
           </Card>
