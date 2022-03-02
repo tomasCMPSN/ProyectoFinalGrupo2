@@ -52,7 +52,7 @@ const PacienteTable = ({ patients, DBP , getPatient}) => {
             </tr>
           </thead>
           <tbody>
-              {patients.map((paciente)=> <Paciente key={paciente.id} paciente={paciente} DBP={DBP} getPatient={getPatient}/> )}
+              {patients.map((paciente)=> <Paciente key={paciente._id} paciente={paciente} DBP={DBP} getPatient={getPatient}/> )}
           </tbody>
           
         </Table>

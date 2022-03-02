@@ -50,7 +50,7 @@ const TurnosTable = ({ turnos, DB, getApi }) => {
             </thead>
             <tbody>
               {turnos.map((turno) => (
-                <Turno key={turno.id} turno={turno} DB={DB} getApi={getApi} />
+                <Turno key={turno._id} turno={turno} DB={DB} getApi={getApi} />
               ))}
             </tbody>
           </Table>

@@ -57,10 +57,10 @@ const Turno = ({ turno, DB, getApi }) => {
       <td> {turno.time}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">
-          <Link to={`/turnosedit/${turno.id}`}>
+          <Link to={`/turnosedit/${turno._id}`}>
           <FontAwesomeIcon icon={faUserPen} className="btn btn-success mx-2" /> 
           </Link>
-          <FontAwesomeIcon icon={faUserXmark} className="btn btn-danger " onClick={() =>handleDelete(turno.id)}/>
+          <FontAwesomeIcon icon={faUserXmark} className="btn btn-danger " onClick={() =>handleDelete(turno._id)}/>
         </div>
       </td>
     </tr>

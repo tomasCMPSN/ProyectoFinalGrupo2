@@ -43,18 +43,18 @@ const Paciente = ({paciente, DBP,getPatient}) => {
   }
   return (
           <tr>
-        <td>{paciente.id} </td>
+        <td>{paciente._id} </td>
         <td> {paciente.paciente} </td>
         <td>{paciente.especie} </td>
         <td>{paciente.raza} </td>
         <td>{paciente.duenio} </td>
         <td className="w-25">
         <div className="d-flex justify-content-center">
-          <Link to={`/paciente/edit/${paciente.id}`} > 
+          <Link to={`/paciente/edit/${paciente._id}`} > 
           <FontAwesomeIcon icon={faUserPen} className="btn btn-success mx-2" /> 
           </Link>
          
-          <FontAwesomeIcon icon={faUserXmark} className="btn btn-danger " onClick={() =>handleDelete(paciente.id)}/>
+          <FontAwesomeIcon icon={faUserXmark} className="btn btn-danger " onClick={() =>handleDelete(paciente._id)}/>
           
         </div>
       </td>
