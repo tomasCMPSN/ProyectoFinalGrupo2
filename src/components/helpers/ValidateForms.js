@@ -37,11 +37,21 @@ export const validateEmail = (campo)=>{
     return false
   }
 }
-let date = new Date();
-let output = String( date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' +date.getDate()).padStart(2, '0');
+// let date = new Date();
+// let output = String( date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' +date.getDate()).padStart(2, '0');
+
+
+// let date = new Date();
+// let output = date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear()
+
+let date = new Date()
+let output = date.getFullYear()+ '-'+ `${(date.getMonth()+1)}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
+
 
 
 export const validateDate =(campo)=>{
+  console.log(output)
+  console.log(campo)
   if(campo > output){
   return true
   }else{

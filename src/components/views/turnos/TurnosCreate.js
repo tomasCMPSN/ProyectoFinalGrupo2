@@ -161,14 +161,14 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // validar datos
-    // if (!validateNames(petName) || !validateVet(vet) || !validateDate(date)) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Oops...",
-    //     text: "Ingreso algun dato incorrecto, por favor revise el formulario",
-    //   });
-    //   return;
-    // }
+    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ingreso algun dato incorrecto, por favor revise el formulario",
+      });
+      return;
+    }
 
     // Enviamos los datos para gaurdarlos
 
