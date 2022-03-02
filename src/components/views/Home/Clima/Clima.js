@@ -39,7 +39,7 @@ const Clima = () => {
         </Col>
         <Col>
           <img
-            src={`http://openweathermap.org/img/wn/${icono.icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${icono.icon}@2x.png`}
             alt="Clima"
           />
         </Col>
