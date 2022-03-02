@@ -76,6 +76,18 @@
       "telefono": "2323232",
       "email": "nico@nico.com",
       "id": 1
+    },
+    {
+      "paciente": "pruebasTres",
+      "especie": "Gato",
+      "raza": "rey",
+      "edad": "5",
+      "peso": "2000",
+      "duenio": "cleo",
+      "dni": "87654321",
+      "telefono": "4202020",
+      "email": "cleo@cleo.com",
+      "id": 2
     }
   ]
 }
