@@ -149,18 +149,18 @@ const searchAtDb=( async ()=>{
     e.preventDefault();
     // Validaciones
 
-    if (
-      !validateNames(petNameRef.current.value) ||
-      !validateVet(vetRef.current.value) ||
-      !validateDate(dateRef.current.value)
-    ) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Ingreso algun dato incorrecto, por favor revise el formulario",
-      });
-      return;
-    }
+    // if (
+    //   !validateNames(petNameRef.current.value) ||
+    //   !validateVet(vetRef.current.value) ||
+    //   !validateDate(dateRef.current.value)
+    // ) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Oops...",
+    //     text: "Ingreso algun dato incorrecto, por favor revise el formulario",
+    //   });
+    //   return;
+    // }
 
     const appUpdated = {
       petName: petNameRef.current.value,
