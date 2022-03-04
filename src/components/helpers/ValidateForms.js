@@ -34,20 +34,21 @@ export const validateVet = (campo) => {
 };
 
 
-let date = new Date();
-let output = String( date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' +date.getDate()).padStart(2, '0');
-
+let date = new Date()
+let output = date.getFullYear()+ '-'+ `${(date.getMonth()+1)}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
+let output2 = date.getFullYear()+ '-'+ `${(date.getMonth()+1) + 1}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
 
 
 
 export const validateDate =(campo)=>{
-  if(campo > output){
+  console.log(campo)
+  console.log(output2)
+  
+  if( campo <= output2 && campo > output) {
   return true
   }else{
     return false
   }
 }
-
-
 
 
