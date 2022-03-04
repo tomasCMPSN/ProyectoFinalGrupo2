@@ -118,7 +118,7 @@ const TurnosCreate = ({ DB, getApi }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // validar datos
-    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date)  ) {
+    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date) || !validateTime(time) ) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -228,7 +228,7 @@ const TurnosCreate = ({ DB, getApi }) => {
 
             
               
-              <option value='s'  >Seleccione una opcion</option>
+              <option value='seleccione'  >Seleccione una opcion</option>
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}

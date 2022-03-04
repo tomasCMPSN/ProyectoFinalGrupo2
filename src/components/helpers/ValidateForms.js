@@ -34,6 +34,7 @@ export const validateVet = (campo) => {
 };
 
 
+
 let date = new Date()
 let output = date.getFullYear()+ '-'+ `${(date.getMonth()+1)}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
 let output2 = date.getFullYear()+ '-'+ `${(date.getMonth()+1) + 1}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
@@ -41,9 +42,8 @@ let output2 = date.getFullYear()+ '-'+ `${(date.getMonth()+1) + 1}`.padStart(2,'
 
 
 export const validateDate =(campo)=>{
-  console.log(campo)
-  console.log(output2)
-  
+
+ 
   if( campo <= output2 && campo > output) {
   return true
   }else{
@@ -51,4 +51,25 @@ export const validateDate =(campo)=>{
   }
 }
 
+
+
+
+
+export const validateTime = (campo)=>{
+  
+  if(campo === '08:00' ||
+ campo === '09:00' ||
+ campo === '10:00' ||
+ campo === '11:00' ||
+ campo === '12:00' ||
+ campo === '17:00' ||
+ campo === '18:00' ||
+ campo === '19:00' ||
+ campo === '20:00' )
+  {
+  return true
+  }else if(campo === 'seleccione'){
+    return false
+  }
+}
 
