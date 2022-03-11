@@ -23,6 +23,8 @@ const TurnosCreate = ({ DB, getApi }) => {
   //State para trabajar fechas
   const [turnos, setTurnos] = useState([]);
   const [horas, setHoras] = useState([]);
+  const [horasMarta, setHorasMarta]=useState([]);
+  const [horasIgnacio, setHorasIgnacio]=useState([]);
   // Ref
   const timeRef = useRef();
   const martaRef = useRef();
@@ -32,7 +34,10 @@ const TurnosCreate = ({ DB, getApi }) => {
   //Use navigate
   const navigate = useNavigate();
 
+  // let horasMarta = []
+
   // Arreglo de horarios
+
 
   const timePicker = [
     "08:00",
@@ -68,51 +73,61 @@ const TurnosCreate = ({ DB, getApi }) => {
     }
   }, []);
 
+  
+
   const handleDateChange = (e) => {
     // Realizamos filtrado de fecha
     const busquedaFechas = turnos.filter(
       (fechas) => fechas.date === e.target.value
     );
+
+    // Nuevo filtrado de veterianrios y horas
+
+    const buscarVeterinario = busquedaFechas.filter((doc)=> doc.vet === marta)
+    const buscarVeterinario1= buscarVeterinario.map((horas)=>horas.time);
+    setHorasMarta(buscarVeterinario1)
+    const buscarVeterinarioI = busquedaFechas.filter((doc)=> doc.vet === ignacio)
+    const buscarVeterinario2= buscarVeterinarioI.map((horas)=>horas.time);
+   setHorasIgnacio(buscarVeterinario2)
+   
+  
+
+     if (buscarVeterinario.length >= 8) {
+       martaRef.current.disabled = true;
+      
+     }else{
+       martaRef.current.disabled= false
+     }
+     if (buscarVeterinarioI.length >= 8) {
+       ignacioRef.current.disabled = true;
+     }else{
+       ignacioRef.current.disabled = false;
+     }
+
     
 
-    // Buscamos por veterinario en esa fecha
-    const buscarveterio = busquedaFechas.map((turno) => turno.vet);
-    console.log(buscarveterio);
-
-    const filtradovet1 = buscarveterio.filter((buscada) => {
-      return buscada === marta;
-    });
-    console.log(filtradovet1);
-
-    const filtradovet2 = buscarveterio.filter((buscado) => {
-      return buscado === ignacio;
-    });
-    console.log(filtradovet2);
-
-    if (filtradovet1.length >= 8) {
-      martaRef.current.disabled = true;
-      
-    }else{
-      martaRef.current.disabled= false
-    }
-    if (filtradovet2.length >= 8) {
-      ignacioRef.current.disabled = true;
-    }else{
-      ignacioRef.current.disabled = false;
-    }
-
-    // Buscammos horas disponibles para ese dia
-    const buscarHoras = busquedaFechas.map((turno) => turno.time);
-    const filtradoHoras = timePicker.filter(
-      (hora) => !buscarHoras.includes(hora)
-    );
-
-    setHoras(filtradoHoras);
-
     //  Habilitar el input de horas
-    timeRef.current.disabled = false;
+ 
     vetRef.current.disabled = false;
   };
+
+
+  const handleVetChange=(e)=>{
+     
+    if(e.target.value === marta){
+     
+      const vet1filtrado =  timePicker.filter((hora)=> !horasMarta.includes(hora))
+      console.log('filtrado',vet1filtrado)
+      setHoras(vet1filtrado);
+    }else if(e.target.value === ignacio){
+      const vet2filtrado = timePicker.filter((hora)=> !horasIgnacio.includes(hora))
+      console.log(vet2filtrado)
+      setHoras(vet2filtrado);
+    }
+
+    timeRef.current.disabled = false;
+
+  }
 
   //Funcion para crear un turno
   const handleSubmit = (e) => {
@@ -205,6 +220,7 @@ const TurnosCreate = ({ DB, getApi }) => {
               ref={vetRef}
               className="form-stle-inner"
               onChange={({ target }) => setVet(target.value)}
+              onBlur= {handleVetChange}
             >
               <option>Seleccione un profesional </option>
 
