@@ -7,6 +7,7 @@ import {
   validateNames,
   validateVet,
   validateDate,
+  validateTime,
 } from "../../helpers/ValidateForms";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
@@ -149,18 +150,19 @@ const searchAtDb=( async ()=>{
     e.preventDefault();
     // Validaciones
 
-    // if (
-    //   !validateNames(petNameRef.current.value) ||
-    //   !validateVet(vetRef.current.value) ||
-    //   !validateDate(dateRef.current.value)
-    // ) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Oops...",
-    //     text: "Ingreso algun dato incorrecto, por favor revise el formulario",
-    //   });
-    //   return;
-    // }
+    if (
+      !validateNames(petNameRef.current.value) ||
+      !validateVet(vetRef.current.value) ||
+      !validateDate(dateRef.current.value) ||
+      !validateTime(timeRef.current.value)
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ingreso algun dato incorrecto, por favor revise el formulario",
+      });
+      return;
+    }
 
     const appUpdated = {
       petName: petNameRef.current.value,
