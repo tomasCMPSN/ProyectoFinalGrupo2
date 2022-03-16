@@ -30,29 +30,16 @@ export const validateVet = (campo) => {
 
 
 
-export const validateEmail = (campo)=>{
-  if(regExp4Email.test(campo)){
-    return true
-  }else{
-    return false
-  }
-}
-// let date = new Date();
-// let output = String( date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' +date.getDate()).padStart(2, '0');
-
-
-// let date = new Date();
-// let output = date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear()
-
 let date = new Date()
 let output = date.getFullYear()+ '-'+ `${(date.getMonth()+1)}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
+let output2 = date.getFullYear()+ '-'+ `${(date.getMonth()+1) + 1}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
 
 
 
 export const validateDate =(campo)=>{
-  console.log(output)
-  console.log(campo)
-  if(campo > output){
+
+ 
+  if( campo <= output2 && campo > output) {
   return true
   }else{
     return false
@@ -91,4 +78,23 @@ export const validateMesage = (campo)=>{
   }
 }
 
+
+
+export const validateTime = (campo)=>{
+  
+  if(campo === '08:00' ||
+ campo === '09:00' ||
+ campo === '10:00' ||
+ campo === '11:00' ||
+ campo === '12:00' ||
+ campo === '17:00' ||
+ campo === '18:00' ||
+ campo === '19:00' ||
+ campo === '20:00' )
+  {
+  return true
+  }else if(campo === 'seleccione'){
+    return false
+  }
+}
 

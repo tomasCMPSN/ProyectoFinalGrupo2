@@ -27,6 +27,8 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   const [dniBuscado, setDniBuscado] = useState("");
   const [datosP, setDatosP] = useState([]);
 
+  const [horasMarta, setHorasMarta]=useState([]);
+  const [horasIgnacio, setHorasIgnacio]=useState([]);
   // Ref
   const timeRef = useRef("");
   const martaRef = useRef("");
@@ -38,7 +40,10 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   //Use navigate
   const navigate = useNavigate();
 
+  // let horasMarta = []
+
   // Arreglo de horarios
+
 
   const timePicker = [
     "08:00",
@@ -118,50 +123,59 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
       (fechas) => fechas.date === e.target.value
     );
 
-    // Buscamos por veterinario en esa fecha
-    const buscarveterio = busquedaFechas.map((turno) => turno.vet);
-    console.log(buscarveterio);
+    // Nuevo filtrado de veterianrios y horas
 
-    const filtradovet1 = buscarveterio.filter((buscada) => {
-      return buscada === marta;
-    });
-    console.log(filtradovet1);
+    const buscarVeterinario = busquedaFechas.filter((doc)=> doc.vet === marta)
+    const buscarVeterinario1= buscarVeterinario.map((horas)=>horas.time);
+    setHorasMarta(buscarVeterinario1)
+    const buscarVeterinarioI = busquedaFechas.filter((doc)=> doc.vet === ignacio)
+    const buscarVeterinario2= buscarVeterinarioI.map((horas)=>horas.time);
+   setHorasIgnacio(buscarVeterinario2)
+   
+  
 
-    const filtradovet2 = buscarveterio.filter((buscado) => {
-      return buscado === ignacio;
-    });
-    console.log(filtradovet2);
+     if (buscarVeterinario.length >= 8) {
+       martaRef.current.disabled = true;
+      
+     }else{
+       martaRef.current.disabled= false
+     }
+     if (buscarVeterinarioI.length >= 8) {
+       ignacioRef.current.disabled = true;
+     }else{
+       ignacioRef.current.disabled = false;
+     }
 
-    if (filtradovet1.length >= 8) {
-      martaRef.current.disabled = true;
-    } else {
-      martaRef.current.disabled = false;
-    }
-
-    if (filtradovet2.length >= 8) {
-      ignacioRef.current.disabled = true;
-    } else {
-      ignacioRef.current.disabled = false;
-    }
-
-    // Buscammos horas disponibles para ese dia
-    const buscarHoras = busquedaFechas.map((turno) => turno.time);
-    const filtradoHoras = timePicker.filter(
-      (hora) => !buscarHoras.includes(hora)
-    );
-
-    setHoras(filtradoHoras);
+    
 
     //  Habilitar el input de horas
-    timeRef.current.disabled = false;
+ 
     vetRef.current.disabled = false;
   };
+
+
+  const handleVetChange=(e)=>{
+     
+    if(e.target.value === marta){
+     
+      const vet1filtrado =  timePicker.filter((hora)=> !horasMarta.includes(hora))
+      console.log('filtrado',vet1filtrado)
+      setHoras(vet1filtrado);
+    }else if(e.target.value === ignacio){
+      const vet2filtrado = timePicker.filter((hora)=> !horasIgnacio.includes(hora))
+      console.log(vet2filtrado)
+      setHoras(vet2filtrado);
+    }
+
+    timeRef.current.disabled = false;
+
+  }
 
   //Funcion para crear un turno
   const handleSubmit = (e) => {
     e.preventDefault();
     // validar datos
-    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date)) {
+    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date) || !validateTime(time) ) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -277,6 +291,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
               ref={vetRef}
               className="form-stle-inner"
               onChange={({ target }) => setVet(target.value)}
+              onBlur= {handleVetChange}
             >
               <option>Seleccione un profesional </option>
 
@@ -297,7 +312,10 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
               className="form-stle-inner"
               onChange={({ target }) => setTime(target.value)}
             >
-              <option value="seleccione">Seleccione una opcion</option>
+
+            
+              
+              <option value='seleccione'  >Seleccione una opcion</option>
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}
