@@ -98,3 +98,10 @@ export const validateTime = (campo)=>{
   }
 }
 
+export const validateEmail = (campo)=>{
+  if(regExp4Email.test(campo)){
+    return true
+  }else{
+    return false
+  }
+}

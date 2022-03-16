@@ -4,6 +4,7 @@ import {
   validateNames,
   validateVet,
   validateDate,
+  validateTime
 } from "../../helpers/ValidateForms";
 import "./Turnos.css";
 import Swal from "sweetalert2";
