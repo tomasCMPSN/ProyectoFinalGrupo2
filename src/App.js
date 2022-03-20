@@ -16,6 +16,7 @@ import Planes from "./components/views/planes/Planes";
 import Error404 from "./components/views/Error404/Error404";
 import SobreNosotros from "./components/views/SobreNosotros/SobreNostros";
 import { useState, useEffect } from "react";
+import GlobalStyle from "./globalStyles"
 
 import React from "react";
 import PacienteEdit from "./components/views/paciente/PacienteEdit";
@@ -59,7 +60,9 @@ function App() {
   {
     return (
       <div>
+
         <BrowserRouter>
+        <GlobalStyle/>
           <Navigation />
 
           <main>

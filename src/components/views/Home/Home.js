@@ -1,4 +1,5 @@
 import React from "react";
+import Hero from "./Hero/Hero"
 import CarouselHome from "./CarouselHome/CarouselHome";
 import Clima from "./Clima/Clima";
 import InfoPlanes from "./InfoPlanes/InfoPlanes";
@@ -17,7 +18,10 @@ const Home = () => {
   return (
     <div>
        <Fade bottom>
+       <Hero />
        <CarouselHome />
+       </Fade>
+       <Fade bottom>
        <div className="container ">
       <p className="lead display-3 text-center my-5 letra-titulo">
       Cuidando a tus mascotas por más de 45 años</p>

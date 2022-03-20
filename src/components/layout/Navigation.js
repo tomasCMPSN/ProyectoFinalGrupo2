@@ -6,8 +6,8 @@ import "./Navigation.css"
 
 const Navigation = () => {
   return (
-    <div>
-      <Navbar expand="lg"  className="color-navbar">
+    <div >
+      <Navbar expand="lg" fixed='top'   bg="dark" variant="dark" >
         <Container>
           <Navbar.Brand href="/" className="fs-2 ">
             <img
@@ -17,11 +17,11 @@ const Navigation = () => {
             />{" "}
             
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto letra-nav ">
+          <Navbar.Toggle aria-controls="basic-navbar-nav"  />
+          <Navbar.Collapse id="basic-navbar-nav" >
+            <Nav className="ms-auto letra-nav">
 
-            <Link className="nav-link fs-4 " to="/">Home</Link> 
+            <Link className="nav-link fs-4" to="/">Home</Link> 
             <Link className="nav-link fs-4 " to="/login">Login</Link> 
             <Link className="nav-link fs-4 " to="/contacto">Contacto</Link> 
             <Link className="nav-link fs-4 " to="/SobreNosotros">Sobre nosotros</Link> 
