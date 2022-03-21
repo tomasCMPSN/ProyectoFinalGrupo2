@@ -12,6 +12,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,255,148,1) 0%, rg
 	height: 640px;
 	position: relative;
 	display: flex;
+	margin-bottom: 50px;
 
 	@media screen and (min-width: 768px) {
 		height: 592px;

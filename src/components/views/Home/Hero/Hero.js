@@ -14,10 +14,18 @@ import {
 } from './HeroStyles';
 import { useInView } from 'react-intersection-observer';
 import Modal from '../Modal/Modal';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Hero = () => {
 	const [showModal, setShowModal] = useState(false);
 	const dragConstraints = { top: 0, bottom: 0, right: 0, left: 0 };
+
+
+	
+	const navigate = useNavigate();
+
 
 	const toggleModal = () => {
 		if (!showModal) {
@@ -43,11 +51,11 @@ const Hero = () => {
 	});
 
 	useEffect(() => {
-		console.log(inView);
+		
 	}, [inView]);
 
 	return (
-		<>
+		<div className="">
 			<HeroSection id="hero">
 				<HeroImage className="pattern" src="./images/hero-pattern-bg-lg.png" />
 				<HeroImage className="guy" src="./images/hero-guy-1.png" />
@@ -78,7 +86,7 @@ const Hero = () => {
 					</HeroText>
 					<ButtonContainer ref={ref}>
 						<ButtonWrapper>
-							<HeroButton onClick={toggleModal} className={inView ? '' : 'corner'}>
+							<HeroButton onClick={() => navigate("/contacto")} className={inView ? '' : 'corner'}>
 								{inView ? (
 									<> Contáctate con nosotros </>
 								) : (
@@ -90,7 +98,7 @@ const Hero = () => {
 				</HeroContent>
 			</HeroSection>
 			<Modal showModal={showModal} toggleModal={toggleModal} />
-		</>
+		</div>
 	);
 };
 

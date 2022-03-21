@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
        <Fade bottom>
-       <Hero />
+       <Hero/>
        <CarouselHome />
        </Fade>
        <Fade bottom>
