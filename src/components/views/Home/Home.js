@@ -17,12 +17,12 @@ const Home = () => {
   //la logica
   return (
     <>
-       <Fade bottom>
+       
        <Hero/>
+       
       
       <Profesionales />
        <CarouselHome />
-       </Fade>
        <Fade bottom>
        
       <h1 className="text-center display-2 my-5 letra-titulo">Planes</h1>

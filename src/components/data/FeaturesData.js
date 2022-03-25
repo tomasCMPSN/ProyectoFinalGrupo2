@@ -1,49 +1,53 @@
 import React from 'react';
 import { BsPhone } from 'react-icons/bs';
 import { GiConcentrationOrb } from 'react-icons/gi';
-import { IoLogoXing } from 'react-icons/io';
+import { IoIosPaw } from 'react-icons/io';
+import { IoIosSchool } from 'react-icons/io';
 import { HiCode } from 'react-icons/hi';
 import { MdSlowMotionVideo } from 'react-icons/md';
-import { FaPhotoVideo } from 'react-icons/fa';
+import { FaAmbulance } from 'react-icons/fa';
+import { BsFillHouseFill } from 'react-icons/bs';
+import { FiActivity } from "react-icons/fi";
+import { FiMapPin } from "react-icons/fi";
 
 const iconStyle = (Icon) => <Icon size="3rem" color="#fefefe" />;
 
 export const featuresData = [
 	{
-		name: 'UI/UX',
+		name: 'Tecnología de Vanguardia    ',
 		description:
-			'Landing Pages, User Flow, Wireframing, Prototyping, Mobile App Design, Web App',
-		icon: iconStyle(BsPhone),
+			'Instalaciones de última generación para terapias   ',
+		icon: iconStyle(FiActivity),
 		imgClass: 'one',
 	},
 	{
-		name: 'Icon/Illustration',
-		description: 'Character Design, Icon Set, Illustration Guide, Illustration Set',
-		icon: iconStyle(GiConcentrationOrb),
+		name: 'Nuevas Sucursales',
+		description: 'Estamos expandiéndonos a lo largo del país',
+		icon: iconStyle(FiMapPin),
 		imgClass: 'two',
 	},
 	{
-		name: 'Branding',
-		description: 'Visual Identity, Stationary Kit, Marketing Materials',
-		icon: iconStyle(IoLogoXing),
+		name: 'Arca de Noe',
+		description: 'Nos especializamos en diferentes especies',
+		icon: iconStyle(IoIosPaw),
 		imgClass: 'three',
 	},
 	{
-		name: 'Development',
-		description: 'HTML/CSS, JavaScript Animation, WordPress, Responsive Website',
-		icon: iconStyle(HiCode),
+		name: 'Educación',
+		description: 'Brindamos programas de educación gratuitos',
+		icon: iconStyle(IoIosSchool),
 		imgClass: 'four',
 	},
 	{
-		name: 'Motion',
-		description: '2D Animation, UI Motion',
-		icon: iconStyle(MdSlowMotionVideo),
+		name: 'Emergencias',
+		description: 'Emergencias 24/7 los 365 días del año',
+		icon: iconStyle(FaAmbulance),
 		imgClass: 'five',
 	},
 	{
-		name: 'Photography',
-		description: 'Travel Photography, Product Photography',
-		icon: iconStyle(FaPhotoVideo),
+		name: 'Alojamiento',
+		description: 'Contamos con alojamientos para mascotas',
+		icon: iconStyle(BsFillHouseFill),
 		imgClass: 'six',
 	},
 ];

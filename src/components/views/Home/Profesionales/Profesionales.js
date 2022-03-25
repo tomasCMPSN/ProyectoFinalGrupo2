@@ -117,10 +117,8 @@ const Profesionales = () => {
 
     <FeatureSection id="about">
 			<Container>
-      <p className="lead display-3 text-center my-5 letra-titulo">
-      Cuidando a tus mascotas por más de 45 años</p>
 				<FeatureTextWrapper>
-					<FeatureTitle>What We Do</FeatureTitle>
+					<FeatureTitle>Cuidando a tus mascotas por más de 45 años</FeatureTitle>
 				</FeatureTextWrapper>
 				<FeatureWrapper>
 					{featuresData.map((el, index) => (

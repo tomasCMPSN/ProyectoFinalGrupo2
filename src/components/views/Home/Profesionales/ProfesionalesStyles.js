@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const FeatureSection = styled.div`
-background: rgb(2,0,36);
-background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 82%, rgba(155,247,155,1) 100%);
+background: rgb(255,255,255);
+
 	padding: 140px;
 	position: relative;
 	margin: 0 auto;
 
 	@media screen and (max-width: 768px) {
 		padding: 70px 0;
-		margin-top: 10rem;
+		margin-top: -1rem;
 	}
 `;
 
