@@ -75,7 +75,7 @@ const Planes = () => {
   };
 
   return (
-    <section>
+    <section className="BoxPlanes">
       <article>
         <img
           src="https://petdoctors.co.uk/wp-content/uploads/sites/5/2018/04/springer-spaniel-cross-with-vet.jpg"
@@ -85,7 +85,7 @@ const Planes = () => {
         <h1 className="text-center mt-5">Conoce nuestros planes</h1>
       </article>
 
-      <article className="container mt-5 card-plan-style">
+      <article className="container mt-5 card-plan-style ">
         <Row xs={1} md={3} className="g-4 ">
           <Col>
             <Card className="text-center">

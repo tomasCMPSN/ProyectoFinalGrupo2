@@ -154,7 +154,7 @@ export const HeroButton = styled(motion.button)`
 	&.corner {
 		position: fixed;
 		bottom: 3rem;
-		right: 3rem;
+		right: 6rem;
 		width: 64px;
 		height: 64px;
 		padding: 10px;

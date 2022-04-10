@@ -25,7 +25,7 @@ const Navigation = () => {
 
             <NavLinks className="nav-link fs-4" to="/">Home</NavLinks> 
             <NavLinks className="nav-link fs-4 " to="/SobreNosotros">Nosotros</NavLinks> 
-            <NavLinks className="nav-link fs-4 " to="/login">Login</NavLinks> 
+            <NavLinks className="nav-link fs-4  text-warning" to="/login">Login</NavLinks> 
               
             </Nav>
           </Navbar.Collapse>

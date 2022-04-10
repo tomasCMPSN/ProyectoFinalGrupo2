@@ -5,7 +5,8 @@ import "./InfoPlanes.css"
 
 const InfoPlanes = () => {
   return (
-    <div className="container-fluid mx-0 "> 
+    <div className="container-fluid mx-0 BoxInfoPlanes"> 
+    <h1 className="text-center display-2 mb-5 letra-titulo">Planes</h1>
       <Row  >
         <Col sm={12} md={4} className="mb-3 mx-0 ">
         <div className="d-flex justify-content-center container">

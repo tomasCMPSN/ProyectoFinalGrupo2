@@ -24,8 +24,6 @@ const Home = () => {
       <Profesionales />
        <CarouselHome />
        <Fade bottom>
-       
-      <h1 className="text-center display-2 my-5 letra-titulo">Planes</h1>
       
       <InfoPlanes />
       <h1 className="text-center display-2 my-5  letra-titulo">Productos</h1>
