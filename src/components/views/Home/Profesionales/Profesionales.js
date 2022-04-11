@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '../../../../globalStyles';
-import { featuresData } from "../../../data/FeaturesData";
+import { featuresData } from "../../../../data/FeaturesData";
 import "./Profesionales.css";
 import { FeatureColumn, FeatureImageWrapper, FeatureName, FeatureSection, FeatureText, FeatureTextWrapper, FeatureTitle, FeatureWrapper } from "./ProfesionalesStyles";
 

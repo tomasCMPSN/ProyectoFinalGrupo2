@@ -1,10 +1,10 @@
 import React from "react";
-import { Carousel , Row, Col, Container} from "react-bootstrap";
+import { Carousel} from "react-bootstrap";
 import "./CarouselHome.css"
 
 const CarouselHome = () => {
   return (
-    <div className="BoxCarousel">
+    <div className="BoxCarousel mb-4">
      
 
      
