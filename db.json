@@ -89,5 +89,14 @@
       "email": "cleo@cleo.com",
       "id": 2
     }
+
+  ],
+
+  
+    "user": [{
+      "email":"admin@admin.com",
+      "password":"rollingcode"
+    }
+
   ]
 }

@@ -20,19 +20,23 @@ import GlobalStyle from "./globalStyles"
 
 import React from "react";
 import PacienteEdit from "./components/views/paciente/PacienteEdit";
+import { faVolumeControlPhone } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   //  states para la logica
 
   const [turnos, setTurnos] = useState([]);
   const [patients, setPatients] = useState([]);
+  const [user, setUser]=useState([])
 
   const DB = process.env.REACT_APP_APPI_APPOINTMENT;
   const DBP = process.env.REACT_APP_APPI_PATIENTS;
+  const DBU= process.env.REACT_APP_APPI_USERS
   
   useEffect(() => {
     getApi();
     getPatient();
+    getUsuario();
   }, []);
 
   const getPatient = async () => {
@@ -57,6 +61,18 @@ function App() {
     }
   };
 
+  const getUsuario = async()=>{
+    try {
+      
+      const res = await fetch(DBU);
+      const app = await res.json()
+      setUser(app)
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+
   {
     return (
       <div>
@@ -68,7 +84,7 @@ function App() {
           <main className="marginMain">
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/login" element={<Login user={user}/>} />
               <Route exact path="/contacto" element={<Contacto />} />
               <Route exact path="/admin" element={<AdminHome />} />
               <Route exact path="/planes" element={<Planes />} />
