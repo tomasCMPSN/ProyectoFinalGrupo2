@@ -10,7 +10,7 @@ import Comentarios from "./Comentarios/Comentarios"
 import Servicios from "./Servicios/Servicios"
 import "./Home.css"
 import Fade from "react-reveal/Fade";
-import { heroOne, heroTwo, heroThree, heroFour } from '../../../data/HeroData';
+import { heroOne, heroTwo, heroThree } from '../../../data/HeroData';
 import Content from "./InfoPlanes/Content";
 import { Heading } from "../../../globalStyles";
 
@@ -31,13 +31,6 @@ const Home = () => {
 			<Content {...heroOne} />
 			<Content {...heroTwo} />
 			<Content {...heroThree} />
-			
-      
-      {/* <InfoPlanes />
-      <h1 className="text-center display-2 my-5  letra-titulo">Productos</h1>
-      <Productos />
-      <h1 className="text-center display-2 my-5   letra-titulo">Servicios</h1>
-      <Servicios />     */}
       <h1 className="text-center display-2 my-5  letra-titulo">Ellos nos siguen elijiendo</h1>
       <Comentarios/>
       <Publicidad/>

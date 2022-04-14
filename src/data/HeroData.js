@@ -6,6 +6,7 @@ export const heroOne = {
 	headline: 'Juguetes, Accesorios y mas',
 	description: 'Desde juegos interactivos , hasta disfraces y accesorios de cuidado',
 	buttonLabel: '+Info',
+	linkTo: '*',
 	imgStart: 'start',
 	
 	backgroundColor: 'linear-gradient(	150deg,#c99fff -20%,#4a4eff)',
@@ -23,7 +24,7 @@ export const heroTwo = {
 		"Un seguro medico el cual te cubre en todas nuestras sucursales los 365 días del año",
 	buttonLabel: '+Info',
 
-	linkTo: '/more',
+	linkTo: '/planes',
 	imgStart: 'start',
 	img: './images/vet.svg',
 	backgroundColor: 'linear-gradient(	140deg	,#ffaf73 30%,#fffecc 120%)',
@@ -40,7 +41,7 @@ export const heroThree = {
 		'Nuestro equipo esta altamente capacitado para brindar una sesion placentera y relajada a tu mascota',
 	buttonLabel: '+Info',
 
-	linkTo: '/download',
+	linkTo: '*',
 	imgStart: '',
 	backgroundColor: 'linear-gradient(225deg,#0abac2,#b2de94)',
 	img: './images/hair-salon.svg',

@@ -8,7 +8,7 @@ import { faUserPen, faUserXmark } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
   return (
     <>
-      <section className=" color-navbar text-light text-center pt-5 ">
+      <section className="text-light text-center pt-5 footerStyle ">
         <Container>
           <Row>
           

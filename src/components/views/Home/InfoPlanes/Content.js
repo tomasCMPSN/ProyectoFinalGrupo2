@@ -86,7 +86,7 @@ const Content = ({
 								{description}
 							</Subtitle>
 
-							<ContentButton onClick={() => navigate("*")} 
+							<ContentButton onClick={() => navigate(linkTo)} 
 								initial={initial}
 								transition={{ delay: 1, duration: 0.6 }}
 								animate={animation}
