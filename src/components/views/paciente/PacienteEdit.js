@@ -9,6 +9,20 @@ import {
 } from "../../helpers/ValidateForms";
 
 const PacienteEdit = ({ DBP, getPatient }) => {
+
+  const redirect = useNavigate();
+  const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
+
+  const checkSession=()=>{
+    if (!session) {
+      redirect("/Login");
+    }      
+  }
+
+  useEffect(()=>{
+    checkSession();
+  },[]);
+
   // state
   const [paciente, setPaciente] = useState({});
 

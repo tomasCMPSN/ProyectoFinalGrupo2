@@ -14,6 +14,19 @@ import { useNavigate } from "react-router-dom";
 import Time from "./Time";
 
 const TurnosEdit = ({ DB, getApi }) => {
+  const redirect = useNavigate();
+  const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
+
+  const checkSession=()=>{
+    if (!session) {
+      redirect("/Login");
+    }      
+  }
+
+  useEffect(()=>{
+    checkSession();
+  },[]);
+
   
   // state
   const [turno, setTurno] = useState({});

@@ -2,7 +2,8 @@
 const regEx4Names = /^[A-Za-z\s?]+$/;
 const regEx4Selector = /^[A-Za-z\-\s?]+$/;
 const regExp4Email = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-const regExp4Number = /^([0-9])*$/
+const regExp4Number = /^([0-9])*$/;
+const regExp4Pass =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,30}$/;
 
 export const validateNames = (campo) => {
   if (
@@ -104,4 +105,14 @@ export const validateEmail = (campo)=>{
   }else{
     return false
   }
+}
+
+
+export const validatePassword = (campo)=>{
+  if(regExp4Pass.test(campo)){
+    return true
+  }else{
+    return false
+  }
+
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -9,6 +9,22 @@ import {
 } from "../../helpers/ValidateForms";
 
 const PacienteCreate = ({ DBP, getPatient }) => {
+  const redirect = useNavigate();
+  const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
+
+  const checkSession=()=>{
+    if (!session) {
+      redirect("/Login");
+    }      
+  }
+
+  useEffect(()=>{
+    checkSession();
+  },[]);
+
+
+
+
   // states
   const [paciente, setPaciente] = useState("");
   const [especie, setEspecie] = useState("");

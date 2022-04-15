@@ -1,12 +1,25 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Container, Row, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Turnos.css";
 import Turno from "./Turno";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarPlus,faHouseUser } from "@fortawesome/free-solid-svg-icons";
 
 const TurnosTable = ({ turnos, DB, getApi }) => {
+  const redirect = useNavigate();
+  const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
+
+  const checkSession=()=>{
+    if (!session) {
+      redirect("/Login");
+    }      
+  }
+
+  useEffect(()=>{
+    checkSession();
+  },[]);
+
   return (
     <div>
       <Container className="py-5">

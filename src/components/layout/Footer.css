@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
 
-.footerStyle {
+ .footerStyle {
     
     background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,255,148,1) 0%, rgba(23,223,144,0.9612219887955182) 50%, rgba(0,255,154,1) 76%);
     
     
-    
-}
+
+
+ }

@@ -13,6 +13,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Time from "./Time";
 
 const TurnosCreate = ({ DB, getApi, DBP }) => {
+
+  const redirect = useNavigate();
+  const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
+
+  const checkSession=()=>{
+    if (!session) {
+      redirect("/Login");
+    }      
+  }
+
+  useEffect(()=>{
+    checkSession();
+  },[]);
+
   // States
 
   const [petName, setPetName] = useState("");

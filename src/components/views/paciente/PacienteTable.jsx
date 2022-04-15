@@ -1,6 +1,6 @@
-import React from "react";
+import React ,{useEffect}from "react";
 import { Container, Row, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Paciente from "./Paciente";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,20 @@ import { faUserPlus,faHouseUser } from "@fortawesome/free-solid-svg-icons";
 import "./Paciente.css";
 
 const PacienteTable = ({ patients, DBP , getPatient}) => {
+
+  const redirect = useNavigate();
+  const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
+
+  const checkSession=()=>{
+    if (!session) {
+      redirect("/Login");
+    }      
+  }
+
+  useEffect(()=>{
+    checkSession();
+  },[]);
+
   return (
     <div>
       <Container className="py-5 media-patient ">

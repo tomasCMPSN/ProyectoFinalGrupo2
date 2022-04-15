@@ -16,7 +16,7 @@ import Planes from "./components/views/planes/Planes";
 import Error404 from "./components/views/Error404/Error404";
 import SobreNosotros from "./components/views/SobreNosotros/SobreNostros";
 import { useState, useEffect } from "react";
-import GlobalStyle from "./globalStyles"
+import GlobalStyle from "./globalStyles";
 
 import React from "react";
 import PacienteEdit from "./components/views/paciente/PacienteEdit";
@@ -26,13 +26,16 @@ function App() {
 
   const [turnos, setTurnos] = useState([]);
   const [patients, setPatients] = useState([]);
+  const [user, setUser] = useState([]);
 
   const DB = process.env.REACT_APP_APPI_APPOINTMENT;
   const DBP = process.env.REACT_APP_APPI_PATIENTS;
-  
+  const DBU = process.env.REACT_APP_APPI_USER;
+
   useEffect(() => {
     getApi();
     getPatient();
+    getUser();
   }, []);
 
   const getPatient = async () => {
@@ -48,10 +51,20 @@ function App() {
   const getApi = async () => {
     try {
       const res = await fetch(DB);
-    const appApi = await res.json();
-    
-    setTurnos(appApi);
-    console.log(turnos)
+      const appApi = await res.json();
+
+      setTurnos(appApi);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getUser = async () => {
+    try {
+      const res = await fetch(DBU);
+
+      const userApi = await res.json();
+      setUser(userApi);
     } catch (error) {
       console.log(error);
     }
@@ -60,16 +73,16 @@ function App() {
   {
     return (
       <div>
-
         <BrowserRouter>
-        <GlobalStyle/>
+          <GlobalStyle />
           <Navigation />
 
           <main className="marginMain">
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/login" element={<Login />} />
+            
               <Route exact path="/contacto" element={<Contacto />} />
+              <Route exact path="/login" element={<Login user={user} />} />
               <Route exact path="/admin" element={<AdminHome />} />
               <Route exact path="/planes" element={<Planes />} />
               <Route exact path="*" element={<Error404 />} />
@@ -77,18 +90,24 @@ function App() {
               <Route
                 exact
                 path="/paciente/table"
-                element={<PacienteTable patients={patients} getPatient={getPatient} DBP={DBP} />}
+                element={
+                  <PacienteTable
+                    patients={patients}
+                    getPatient={getPatient}
+                    DBP={DBP}
+                  />
+                }
               />
               <Route
                 exact
                 path="/paciente/create"
-                element={
-                  <PacienteCreate DBP={DBP}
-                    getPatient={getPatient}
-                  />
-                }
+                element={<PacienteCreate DBP={DBP} getPatient={getPatient} />}
               />
-              <Route exact path="/paciente/edit/:id" element={<PacienteEdit DBP={DBP} getPatient={getPatient}/>} />
+              <Route
+                exact
+                path="/paciente/edit/:id"
+                element={<PacienteEdit DBP={DBP} getPatient={getPatient} />}
+              />
 
               <Route
                 exact
@@ -110,6 +129,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+
         </BrowserRouter>
       </div>
     );
