@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import './Login.css'
 
 
+
 const Login = ({ user }) => {
   const [logEmail, setLogEmail] = useState("");
   const [logPassword, setLogPassword] = useState("");
@@ -52,7 +53,7 @@ const Login = ({ user }) => {
   const gralTesting = () => {
     if (
       logEmail === user[0].email 
-      //  && bcrypt.compareSync(logPassword, user[0].password)
+       && bcrypt.compareSync(logPassword, user[0].password)
       
     ) {
       console.log("validado");
@@ -74,6 +75,7 @@ const Login = ({ user }) => {
     if (gralTesting()) {
       session = true;
       sessionStorage.setItem("stateSession", JSON.stringify(session));
+      Swal.fire('Bienvenido "ADMINISTRADOR"!', "Veterinaria PawsAndClaws v.2.0.0", "success");
      
       setTimeout(() => {
         navigate("/admin");

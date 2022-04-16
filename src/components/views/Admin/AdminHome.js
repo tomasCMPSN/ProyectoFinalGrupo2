@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 import { Container } from "react-bootstrap";
 import Cards from "./Card/Cards";
-import WelcomeToast from "./Card/WelcomeToast";
 import {useNavigate} from 'react-router-dom'
 
 const AdminHome = () => {
@@ -21,7 +20,8 @@ const AdminHome = () => {
 
   return (
     <Container className="mb-1 mt-1">
-      <WelcomeToast />
+      
+     
       <div className="media-card">
         <Cards></Cards>
       </div>
