@@ -1,52 +1,47 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Table } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./Turnos.css";
 import Turno from "./Turno";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarPlus,faHouseUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarPlus, faHouseUser } from "@fortawesome/free-solid-svg-icons";
 
 const TurnosTable = ({ turnos, DB, getApi }) => {
   const redirect = useNavigate();
   const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
 
-  const checkSession=()=>{
+  const checkSession = () => {
     if (!session) {
       redirect("/Login");
-    }      
-  }
+    }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     checkSession();
-  },[]);
+  }, []);
 
   return (
-    <div>
+    <div className='style-appointment'>
       <Container className="py-5">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Turnos asignados:</h1>
           <Row>
-
-
-          <div>
-<Link 
-          to="/admin">
-
-          <FontAwesomeIcon icon={faHouseUser}
-            className="btn-addplus text-decoration-none text-center"
-            />        
-            </Link>
-</div>
-<div>
-<Link 
-          to="/turnoscreate">
-
-          <FontAwesomeIcon icon={faCalendarPlus}
-            className="btn-addplus text-decoration-none text-center"
-            />        
-            </Link>
-</div>
-
+            <div>
+              <Link to="/admin">
+                <FontAwesomeIcon
+                  icon={faHouseUser}
+                  className="btn-addplus text-decoration-none text-center"
+                />
+              </Link>
+            </div>
+            <div>
+              <Link to="/turnoscreate">
+                <FontAwesomeIcon
+                  icon={faCalendarPlus}
+                  className="btn-addplus text-decoration-none text-center"
+                />
+              </Link>
+            </div>
           </Row>
         </div>
         <hr />

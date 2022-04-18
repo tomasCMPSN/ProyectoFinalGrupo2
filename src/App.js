@@ -52,6 +52,7 @@ function App() {
     try {
       const res = await fetch(DB);
       const appApi = await res.json();
+      autoDelete(appApi)
 
       setTurnos(appApi);
     } catch (error) {
@@ -70,6 +71,27 @@ function App() {
     }
   };
 
+ 
+  // funcion para eliminar turnos viejos
+  const autoDelete = (turnos) => {
+    const borrar = async (turno) => {
+      if (new Date(turno.date) < new Date()) {
+        const res = await fetch(`${DB}/${turno._id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (res.status===200) {
+          console.log('Turnos viejos, eliminados');
+        }else{
+          console.log('No se eliminaron los turnos, error al conectar la bd');
+        }
+      }
+    };
+    turnos.map((turno) => borrar(turno));
+  };
+
   {
     return (
       <div>
@@ -83,7 +105,7 @@ function App() {
             
               <Route exact path="/contacto" element={<Contacto />} />
               <Route exact path="/login" element={<Login user={user} />} />
-              <Route exact path="/admin" element={<AdminHome />} />
+              <Route exact path="/admin" element={<AdminHome turnos={turnos} DB={DB} getApi={getApi}/>} />
               <Route exact path="/planes" element={<Planes />} />
               <Route exact path="*" element={<Error404 />} />
               <Route exact path="/sobrenosotros" element={<SobreNosotros />} />

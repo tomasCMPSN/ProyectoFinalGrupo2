@@ -114,3 +114,11 @@
 
   color: #d69456;
 }
+
+
+.style-appointment{
+  
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }

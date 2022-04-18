@@ -43,7 +43,7 @@ const Paciente = ({paciente, DBP,getPatient}) => {
   }
   return (
           <tr>
-        <td>{paciente._id} </td>
+        {/* <td>{paciente._id} </td> */}
         <td> {paciente.paciente} </td>
         <td>{paciente.especie} </td>
         <td>{paciente.raza} </td>
