@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Form } from "react-bootstrap";
+import { Container, Form , Breadcrumb} from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import {
@@ -102,29 +102,45 @@ const navigate = useNavigate();
 
   return (
     <div>
-      <Container className="py-5">
-        <div className="d-flex align-items-center justify-content-between">
-          <h1>Nuevo Paciente</h1>
-          <hr />
-          <Link 
-            to="/paciente/table"
-            className="btn-addback text-decoration-none text-center"
-          >
-            Volver a Pacientes
-          </Link>
-        </div>
+      <Container >
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/admin">Administrador</Breadcrumb.Item>
+        <Breadcrumb.Item href="/paciente/table">
+          Pacientes
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Nuevo paciente</Breadcrumb.Item>
+      </Breadcrumb>
+      <article className="botones-back">
+        <Link to="/turnostable" className="my-2 ">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Ir a turnos</span>
+          </button>
+        </Link>
+       
+  
+      </article>
+      <article className="title-style-form">
+        <h1 className="title-h1">Administrador de pacientes</h1>
+        <hr />
+      </article>
         {/* Form Product */}
-        <Form className="my-5" onSubmit={handleSubmit}>
+        <article className="d-flex justify-content-center mb-5 ">
+        <Form className="mb-5 form_style" onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Nombre Paciente*</Form.Label>
+            <Form.Label className='etiqueta'>🐶 Nombre Paciente*</Form.Label>
             <Form.Control
+          
               type="text"
               placeholder="..."
               onChange={({ target }) => setPaciente(target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Especie*</Form.Label>
+            <Form.Label className='etiqueta'>🦄 Especie*</Form.Label>
             <Form.Select onChange={({ target }) => setEspecie(target.value)}>
               <option value="">Selecciona una opción</option>
               <option value="Perro">Perro</option>
@@ -135,7 +151,7 @@ const navigate = useNavigate();
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Raza*</Form.Label>
+            <Form.Label className='etiqueta'>🐰 Raza*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -143,7 +159,7 @@ const navigate = useNavigate();
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Edad*</Form.Label>
+            <Form.Label className='etiqueta'>🔞 Edad*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -151,7 +167,7 @@ const navigate = useNavigate();
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Peso*</Form.Label>
+            <Form.Label className='etiqueta'>⚖️ Peso*</Form.Label>
             <Form.Control
               type="text"
               placeholder="Gr"
@@ -159,7 +175,7 @@ const navigate = useNavigate();
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Dueño*</Form.Label>
+            <Form.Label className='etiqueta'>👩🏽‍🎤 Dueño*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -167,7 +183,7 @@ const navigate = useNavigate();
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Dni*</Form.Label>
+            <Form.Label className='etiqueta'>🆔 Dni*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -175,7 +191,7 @@ const navigate = useNavigate();
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Telefono*</Form.Label>
+            <Form.Label className='etiqueta'>📱 Telefono*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -183,7 +199,7 @@ const navigate = useNavigate();
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email*</Form.Label>
+            <Form.Label className='etiqueta'>📩 Email*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -191,10 +207,11 @@ const navigate = useNavigate();
             />
           </Form.Group>
 
-          <div className="text-end">
-            <button className="btn btn-addsave">Guardar</button>
+          <div className="text-center">
+            <button className="btn-carga">Guardar</button>
           </div>
         </Form>
+        </article>
       </Container>
     </div>
   );

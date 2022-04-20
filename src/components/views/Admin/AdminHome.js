@@ -22,8 +22,11 @@ const AdminHome = ({getApi, DB, turnos}) => {
   },[]);
 
   return (
-    <Container className="mb-1 mt-1">
-      <h1 className='my-5'>Turnos asignados:</h1>
+    <Container className="mb-1 mt-5">
+       <article className="title-style-form">
+        <h1 className="title-h1">Turnos asignados:</h1>
+        <hr />
+      </article>
      
        {turnos.length > 0 ? (
           <Table bordered hover responsive className="table-style mt-3">
@@ -47,7 +50,7 @@ const AdminHome = ({getApi, DB, turnos}) => {
             <h1> No hay turnos asignados por el momento</h1>
           </div>
         )}
-      <hr/>
+    
       <div className="media-card">
        
         <Cards></Cards>

@@ -141,7 +141,7 @@ const Login = ({ user }) => {
             </Form.Control.Feedback>
           </Form.Group>
           <div className="d-flex justify-content-end">
-            <Button className="form-style-btn" type="submit">
+            <Button className="btn-carga" type="submit">
               Ingresar
             </Button>
           </div>

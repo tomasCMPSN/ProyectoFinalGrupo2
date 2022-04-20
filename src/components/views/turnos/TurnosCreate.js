@@ -1,31 +1,31 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button, Breadcrumb } from "react-bootstrap";
 import {
   validateNames,
   validateVet,
   validateDate,
-  validateTime
+  validateTime,
 } from "../../helpers/ValidateForms";
 import "./Turnos.css";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 
+import { FiArrowLeftCircle } from "react-icons/fi";
 import Time from "./Time";
 
 const TurnosCreate = ({ DB, getApi, DBP }) => {
-
   const redirect = useNavigate();
   const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
 
-  const checkSession=()=>{
+  const checkSession = () => {
     if (!session) {
       redirect("/Login");
-    }      
-  }
+    }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     checkSession();
-  },[]);
+  }, []);
 
   // States
 
@@ -42,8 +42,8 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   const [dniBuscado, setDniBuscado] = useState("");
   const [datosP, setDatosP] = useState([]);
 
-  const [horasMarta, setHorasMarta]=useState([]);
-  const [horasIgnacio, setHorasIgnacio]=useState([]);
+  const [horasMarta, setHorasMarta] = useState([]);
+  const [horasIgnacio, setHorasIgnacio] = useState([]);
   // Ref
   const timeRef = useRef("");
   const martaRef = useRef("");
@@ -58,7 +58,6 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   // let horasMarta = []
 
   // Arreglo de horarios
-
 
   const timePicker = [
     "08:00",
@@ -121,7 +120,11 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
       dateRef.current.disabled = false;
       nameRef.current.disabled = false;
 
-      alert('Cliente encontrado. Ya puede asignarle un turno.')
+      Swal.fire(
+        "Paciente encontrado!",
+        "Podes asignar un turno a este paciente",
+        "success"
+      );
     } else {
       Swal.fire({
         icon: "error",
@@ -140,57 +143,59 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
 
     // Nuevo filtrado de veterianrios y horas
 
-    const buscarVeterinario = busquedaFechas.filter((doc)=> doc.vet === marta)
-    const buscarVeterinario1= buscarVeterinario.map((horas)=>horas.time);
-    setHorasMarta(buscarVeterinario1)
-    const buscarVeterinarioI = busquedaFechas.filter((doc)=> doc.vet === ignacio)
-    const buscarVeterinario2= buscarVeterinarioI.map((horas)=>horas.time);
-   setHorasIgnacio(buscarVeterinario2)
-   
-  
+    const buscarVeterinario = busquedaFechas.filter((doc) => doc.vet === marta);
+    const buscarVeterinario1 = buscarVeterinario.map((horas) => horas.time);
+    setHorasMarta(buscarVeterinario1);
+    const buscarVeterinarioI = busquedaFechas.filter(
+      (doc) => doc.vet === ignacio
+    );
+    const buscarVeterinario2 = buscarVeterinarioI.map((horas) => horas.time);
+    setHorasIgnacio(buscarVeterinario2);
 
-     if (buscarVeterinario.length >= 8) {
-       martaRef.current.disabled = true;
-      
-     }else{
-       martaRef.current.disabled= false
-     }
-     if (buscarVeterinarioI.length >= 8) {
-       ignacioRef.current.disabled = true;
-     }else{
-       ignacioRef.current.disabled = false;
-     }
-
-    
+    if (buscarVeterinario.length >= 8) {
+      martaRef.current.disabled = true;
+    } else {
+      martaRef.current.disabled = false;
+    }
+    if (buscarVeterinarioI.length >= 8) {
+      ignacioRef.current.disabled = true;
+    } else {
+      ignacioRef.current.disabled = false;
+    }
 
     //  Habilitar el input de horas
- 
+
     vetRef.current.disabled = false;
   };
 
-
-  const handleVetChange=(e)=>{
-     
-    if(e.target.value === marta){
-     
-      const vet1filtrado =  timePicker.filter((hora)=> !horasMarta.includes(hora))
-      console.log('filtrado',vet1filtrado)
+  const handleVetChange = (e) => {
+    if (e.target.value === marta) {
+      const vet1filtrado = timePicker.filter(
+        (hora) => !horasMarta.includes(hora)
+      );
+      console.log("filtrado", vet1filtrado);
       setHoras(vet1filtrado);
-    }else if(e.target.value === ignacio){
-      const vet2filtrado = timePicker.filter((hora)=> !horasIgnacio.includes(hora))
-      console.log(vet2filtrado)
+    } else if (e.target.value === ignacio) {
+      const vet2filtrado = timePicker.filter(
+        (hora) => !horasIgnacio.includes(hora)
+      );
+      console.log(vet2filtrado);
       setHoras(vet2filtrado);
     }
 
     timeRef.current.disabled = false;
-
-  }
+  };
 
   //Funcion para crear un turno
   const handleSubmit = (e) => {
     e.preventDefault();
     // validar datos
-    if (!validateNames(petName) || !validateVet(vet) || !validateDate(date) || !validateTime(time) ) {
+    if (
+      !validateNames(petName) ||
+      !validateVet(vet) ||
+      !validateDate(date) ||
+      !validateTime(time)
+    ) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -246,41 +251,63 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   };
 
   return (
-    <section className="container mt-5 ">
-      <article className="d-flex align-items-center justify-content-between">
-        <h1 >Administrador de turnos 📝</h1>
-        <Link 
-            to="/turnostable"
-            className="btn-addback text-decoration-none text-center ms-5"
-          >
-            Volver a Turnos
-          </Link>
+    <section className="container  ">
+     
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/admin">Administrador</Breadcrumb.Item>
+        <Breadcrumb.Item href="/turnostable">
+          Turnos
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Asignar turnos</Breadcrumb.Item>
+      </Breadcrumb>
+      <article className="botones-back">
+        <Link to="/paciente/table" className="my-2 ">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Ir a pacientes</span>
+          </button>
+        </Link>
+  
+      </article>
+      <article className="title-style-form">
+        <h1 className="title-h1">Administrador de turnos</h1>
         <hr />
       </article>
       <article>
-        <p className='form-style-paragraph'>
+        <p className="form-style-paragraph">
           Para poder asignar turnos, el paciente debe estar registrado en
-          nuestra pagina de adiministrador de pacientes. Ingrese el numero de DNI para buscarlo en la base de datos:
+          nuestra pagina de adiministrador de pacientes. Ingrese el numero de
+          DNI para buscarlo en la base de datos:
         </p>
       </article>
 
-      <article >
-        <Form onSubmit={handleSearchSubmit} className='d-flex my-5 justify-content-center'>
-          <input
+      <article>
+        <Form
+          onSubmit={handleSearchSubmit}
+          className="d-flex my-5 justify-content-center"
+        >
+          <Form.Control
             className=" form-style-input-search"
             type="text"
             placeholder="Ingrese dni del dueño"
             onChange={(e) => setDniBuscado(e.target.value)}
           />
-          <button className='form-style-btn-search'>🔍</button>
+          <button className="form-style-btn-search">🔍</button>
         </Form>
+   
+      
       </article>
 
       <article className="d-flex justify-content-center mb-5 ">
         <Form className="mb-5 form_style" onSubmit={handleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
-            <Form.Label>🐶 Nombre del paciente*</Form.Label>
-            <input
+            <Form.Label className="etiqueta">
+              🐶 Nombre del paciente*
+            </Form.Label>
+            <Form.Control
               ref={nameRef}
               className="form-stle-inner"
               type="text"
@@ -289,7 +316,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>📅 Fecha </Form.Label>
+            <Form.Label className="etiqueta">📅 Fecha </Form.Label>
             <input
               ref={dateRef}
               type="date"
@@ -301,12 +328,12 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>👩🏻‍⚕️ Veterinario*</Form.Label>
+            <Form.Label className="etiqueta">👩🏻‍⚕️ Veterinario*</Form.Label>
             <select
               ref={vetRef}
               className="form-stle-inner"
               onChange={({ target }) => setVet(target.value)}
-              onBlur= {handleVetChange}
+              onBlur={handleVetChange}
             >
               <option>Seleccione un profesional </option>
 
@@ -320,17 +347,14 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>⏰ Horario </Form.Label>
+            <Form.Label className="etiqueta">⏰ Horario </Form.Label>
 
             <select
               ref={timeRef}
               className="form-stle-inner"
               onChange={({ target }) => setTime(target.value)}
             >
-
-            
-              
-              <option value='seleccione'  >Seleccione una opcion</option>
+              <option value="seleccione">Seleccione una opcion</option>
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}
@@ -338,7 +362,9 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
           </Form.Group>
 
           <div className="text-center mt-4">
-            <button className="form-style-btn ">Cargar 🐾</button>
+            <button className="btn-carga text-decoration-none ">
+              Cargar 🐾
+            </button>
           </div>
         </Form>
       </article>

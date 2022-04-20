@@ -1,98 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 
 /* ESTILOS PARA LA PAGINA DE TURNOS CREATE Y EDIT */
 
-.form-style-btn {
-  background-color: rgb(54, 168, 140);
-  color: #fff;
-  border-radius: 10px;
-  border: none;
-  padding: 6px 10px;
-  width: 20%;
-  width: 20%;
-  font-size: 20px;
+/* titulo */
+.title-style-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+.title-h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  line-height: 1.06;
+  letter-spacing: 0.4rem;
+  text-align: center;
 }
 
-.form-style-btn:hover {
-  background: rgb(54, 168, 140);
-  box-shadow: 0 0 10px rgb(54, 168, 140), 0 0 40px rgb(54, 168, 140),
-    0 0 80px rgb(54, 168, 140);
+hr {
+  width: 100%;
+  color: #ef4b6c;
+  padding: 3px;
+  margin-top: none;
 }
 
-.form-style-paragraph {
-  font-family: "Nunito", sans-serif;
-  background-color: #e9e5e0;
-  
-  padding: 15px 15px 15px 8px;
-  border-left: solid 3px #303030;
-}
-
-.form-style-input-search {
-  width: 50%;
-  text-decoration: none;
-  border: none;
-  border-left: 3px solid #ffc872;
-  font-family: "Nunito", sans-serif;
-  display: block;
-  margin-top: 3px;
-  padding: 5px;
-}
-
-.form-style-input-search:focus {
-  outline: none;
-  border-bottom: 2px solid #7280ff;
-}
-
-.form-style-btn-search {
-  border: none;
-  font-size: 30px;
-}
+/*formulario  */
 
 .form_style {
   width: 70%;
-  border: solid 1px #ffc872;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 10px 20px 4px 4px #ffc872;
-  background-color: #ffe3b3;
+ 
+
   font-family: "Nunito", sans-serif;
 }
 
-@media (max-width: 576px) {
-  .form_style {
-    width: 95%;
-    box-shadow: none;
-  }
 
-  .form-style-input-search{
-    width: 100%;
-  }
-  
-  
-  .form-style-btn {
-    width: 100%;
-  }
-}
 
-.form-stle-inner {
-  text-decoration: none;
-  border: none;
-  border-left: 3px solid #ffc872;
-  font-family: "Nunito", sans-serif;
-  display: block;
-  width: 100%;
-  margin-top: 3px;
-  padding: 5px;
-}
-
-.form-stle-inner:focus {
-  outline: none;
-  border-bottom: 2px solid #7280ff;
-}
 
 /* Formatos para la table */
-
+.etiqueta {
+  font-size: 20px;
+  font-weight: bold;
+}
 .table-style {
   text-align: center;
   padding: 35px;
@@ -100,25 +53,212 @@
   font-family: "Nunito", sans-serif;
 }
 
-.form-style-newbtn {
-  text-align: center;
+
+
+.style-appointment {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-style-paragraph {
+  font-family: "Nunito", sans-serif;
+  background-color: #e9e5e0;
+
+  padding: 15px 15px 15px 8px;
+  border-left: solid 3px #303030;
+}
+
+.form-style-input-search {
+  width: 50%;
   text-decoration: none;
-  border-radius: 20px;
-  padding: 10px;
-  background-color: #7280ff;
+
+  font-family: "Nunito", sans-serif;
+  display: block;
+  margin-top: 3px;
+  padding: 5px;
+}
+
+
+/* formato para boton de cargar */
+.form-style-btn-search {
+  border: none;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.btn-carga {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  
+ }
+ 
+ .btn-carga::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #9cb3ff;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+ 
+ .btn-carga:hover {
+  color: #e8e8e8;
+ }
+ 
+ .btn-carga:hover::before {
+  width: 100%;
+ }
+
+
+
+/* BOTONES PARA VOVER ATRAS */
+
+.botones-back {
+  display: flex;
+
+  justify-content: start;
+
+  margin-bottom: 4rem;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  text-align: center;
+  font-size: 1rem;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+button.learn-more {
+  width: 15rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #9cb3ff;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #7e808b;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
   color: #fff;
 }
 
-.form-style-newbtn:hover {
-  color: #000000;
+/* MEDIAS QUERYS */
 
-  color: #d69456;
+@media (max-width: 576px) {
+  .form_style {
+    width: 95%;
+    box-shadow: none;
+  }
+
+  .form-style-input-search {
+    width: 100%;
+  }
+
+  .form-style-btn {
+    width: 100%;
+  }
+
+  .btn-back {
+    display: none;
+  }
+  .title-h1 {
+    font-size: 2rem;
+  }
+
+  .botones-back {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }
 
-
-.style-appointment{
-  
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-  }

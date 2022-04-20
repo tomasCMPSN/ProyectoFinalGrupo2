@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Row, Table } from "react-bootstrap";
+import { Container, Row, Table, Breadcrumb } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Paciente from "./Paciente";
 
@@ -22,47 +22,45 @@ const PacienteTable = ({ patients, DBP, getPatient }) => {
   }, []);
 
   return (
-    <div>
-      <Container className="py-5 media-patient ">
-        <div className="d-flex align-items-center justify-content-between">
-          <h1>Pacientes</h1>
-
-          <Row>
-            <div>
-              <Link to="/admin">
-                <FontAwesomeIcon
-                  icon={faHouseUser}
-                  className="btn-addplus text-decoration-none text-center"
-                />
-              </Link>
-            </div>
-
-            <div>
-              <Link to="/paciente/create">
-                <FontAwesomeIcon
-                  icon={faUserPlus}
-                  className="btn-addplus text-decoration-none text-center"
-                />
-              </Link>
-            </div>
-          </Row>
-        </div>
+    <div className='style-appointment'>
+      <Container className=" media-patient ">
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/admin">
+          Administrador
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Lista de pacientes</Breadcrumb.Item>
+      </Breadcrumb>
+      
+      <article className="title-style-form">
+        <h1 className="title-h1">Lista de pacientes</h1>
         <hr />
-        {/* Table of products */}
+      </article>
+      <article className="boton-add">
+        <Link to="/paciente/create" className="my-2 ">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text ml-5">Agregar paciente</span>
+          </button>
+        </Link>
+      </article>
 
-        <Table
+
+        <Table 
           bordered
           hover
           responsive
-          className="align-middle mt-3 text-center"
+          className="table-style mt-3"
         >
           <thead>
             <tr>
         
-              <th>Paciente</th>
-              <th>Especie</th>
-              <th>Raza</th>
-              <th>Dueño</th>
+              <th>🐶 Paciente</th>
+              <th>🦄 Especie</th>
+              <th>🐰 Raza</th>
+              <th>👩🏽‍🎤 Dueño</th>
               <th>Actions</th>
             </tr>
           </thead>

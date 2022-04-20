@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Form } from "react-bootstrap";
+import { Container, Form, Breadcrumb } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import {
@@ -119,22 +119,26 @@ const PacienteEdit = ({ DBP, getPatient }) => {
 
   return (
     <div>
-      <Container className="py-5">
-        <div className="d-flex align-items-center justify-content-between">
-          <h1>Ficha Paciente</h1>
-          <hr />
-          <Link
-            to="/paciente/table"
-            className="btn-addback text-decoration-none text-center"
-          >
-            Volver a Pacientes
-          </Link>
-        </div>
+      <Container >
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/admin">Administrador</Breadcrumb.Item>
+        <Breadcrumb.Item href="/paciente/table">
+          Pacientes
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Editar paciente</Breadcrumb.Item>
+      </Breadcrumb>
+     
+      <article className="title-style-form">
+        <h1 className="title-h1">Editar paciente</h1>
+        <hr />
+      </article>
         {/* Form Product */}
-        <Form className="my-5" onSubmit={handleSubmit}>
+        <article className="d-flex justify-content-center mb-5 ">
+
+        <Form className="mb-5 form_style" onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Nombre Paciente*</Form.Label>
-            <Form.Control
+          <Form.Label className='etiqueta'>🐶 Nombre Paciente*</Form.Label>            <Form.Control
               type="text"
               placeholder="..."
               defaultValue={paciente.paciente}
@@ -142,7 +146,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Especie*</Form.Label>
+          <Form.Label className='etiqueta'>🦄 Especie*</Form.Label>
             <Form.Select
               value={paciente.especie}
               onChange={({ target }) =>
@@ -158,7 +162,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Raza*</Form.Label>
+          <Form.Label className='etiqueta'>🐰 Raza*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -167,7 +171,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Edad*</Form.Label>
+          <Form.Label className='etiqueta'>🔞 Edad*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -176,7 +180,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Peso*</Form.Label>
+          <Form.Label className='etiqueta'>⚖️ Peso*</Form.Label>
             <Form.Control
               type="text"
               placeholder="Gr"
@@ -185,7 +189,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Dueño*</Form.Label>
+          <Form.Label className='etiqueta'>👩🏽‍🎤 Dueño*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -194,7 +198,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Dni*</Form.Label>
+          <Form.Label className='etiqueta'>🆔 Dni*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -203,7 +207,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Telefono*</Form.Label>
+          <Form.Label className='etiqueta'>📱 Telefono*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -212,7 +216,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email*</Form.Label>
+          <Form.Label className='etiqueta'>📩 Email*</Form.Label>
             <Form.Control
               type="text"
               placeholder="..."
@@ -221,10 +225,11 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             />
           </Form.Group>
 
-          <div className="text-end">
-            <button className="btn btn-addsave">Guardar</button>
+          <div className="text-center">
+            <button className="btn-carga">Guardar</button>
           </div>
         </Form>
+        </article>
       </Container>
     </div>
   );
