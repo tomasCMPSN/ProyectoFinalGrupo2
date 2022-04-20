@@ -262,7 +262,7 @@ const searchAtDb=( async ()=>{
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Label className='etiqueta'>👩🏻‍⚕️ Veterinario*</Form.Label>
-            <select
+            <Form.Select
               ref={vetRef}
               className="form-stle-inner"
               value={turno.vet}
@@ -278,13 +278,13 @@ const searchAtDb=( async ()=>{
               <option ref={martaRef} value="Dra Marta Minujin">
                 Dra. Marta Minujin
               </option>
-            </select>
+            </Form.Select>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className='etiqueta'>⏰ Horario </Form.Label>
 
-            <select ref={timeRef}
+            <Form.Select ref={timeRef}
             value={turno.time}
             onChange={({ target }) =>
                 setTurno({ ...turno, time: target.value })
@@ -294,7 +294,7 @@ const searchAtDb=( async ()=>{
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}
-            </select>
+            </Form.Select>
           </Form.Group>
 
           <div className="text-center mt-4">

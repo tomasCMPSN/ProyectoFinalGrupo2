@@ -317,7 +317,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="etiqueta">📅 Fecha </Form.Label>
-            <input
+            <Form.Control
               ref={dateRef}
               type="date"
               className="form-stle-inner"
@@ -329,7 +329,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Label className="etiqueta">👩🏻‍⚕️ Veterinario*</Form.Label>
-            <select
+            <Form.Select
               ref={vetRef}
               className="form-stle-inner"
               onChange={({ target }) => setVet(target.value)}
@@ -343,13 +343,13 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
               <option ref={martaRef} value="Dra Marta Minujin">
                 Dra. Marta Minujin
               </option>
-            </select>
+            </Form.Select>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="etiqueta">⏰ Horario </Form.Label>
 
-            <select
+            <Form.Select
               ref={timeRef}
               className="form-stle-inner"
               onChange={({ target }) => setTime(target.value)}
@@ -358,7 +358,7 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
               {horas.map((hora, index) => {
                 return <Time hora={hora} key={index} />;
               })}
-            </select>
+            </Form.Select>
           </Form.Group>
 
           <div className="text-center mt-4">
