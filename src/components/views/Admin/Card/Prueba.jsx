@@ -18,10 +18,10 @@ const CardUI = (props) => {
           <Card.Img src={props.img} variant='top' className='' />
         
         <Card.Body className="card-body text-dark">
-          <Card.Title className="card-title">{props.title}</Card.Title>
+          <Card.Title className="card-title ">{props.title}</Card.Title>
           <Card.Text className="card-text text-secondary">{props.description}</Card.Text>
-          <Link to={props.url} className="btn btn-outline-success">
-            Ir a
+          <Link to={props.url}>
+            <button className="btn-carga">Ir a</button>
           </Link>
         </Card.Body>
       </Card>

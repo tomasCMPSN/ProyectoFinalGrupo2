@@ -123,3 +123,16 @@
   color: #fff;
   border: 2px solid #fff;
 }
+
+.boton-add{
+  display: flex;
+  justify-content: end;
+}
+
+/* medias */
+
+@media (max-width: 576px) {
+  .boton-add{
+    justify-content: center;
+  }
+}

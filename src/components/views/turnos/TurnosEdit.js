@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Breadcrumb } from "react-bootstrap";
 import "./Turnos.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -10,7 +10,7 @@ import {
   validateTime,
 } from "../../helpers/ValidateForms";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Time from "./Time";
 
 const TurnosEdit = ({ DB, getApi }) => {
@@ -218,17 +218,29 @@ const searchAtDb=( async ()=>{
     });
   };
   return (
-    <section className="container mt-5 ">
-      <article className='my-5'>
-        <h1 >Editor de turnos </h1>
-        <hr/>
+    <section className="container ">
+     <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/admin">Administrador</Breadcrumb.Item>
+        <Breadcrumb.Item href="/turnostable">
+          Turnos
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Editar turno</Breadcrumb.Item>
+      </Breadcrumb>
+      <article className="botones-back">
+       
+  
+      </article>
+      <article className="title-style-form">
+        <h1 className="title-h1">Administrador de turnos</h1>
+        <hr />
       </article>
 
       <article className="d-flex justify-content-center mb-5 ">
         <Form className="mb-5 form_style" onSubmit={handleSubmit}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
-            <Form.Label>🐶Nombre del paciente*</Form.Label>
-            <input
+            <Form.Label className='etiqueta'>🐶 Nombre del paciente*</Form.Label>
+            <Form.Control
               className="form-stle-inner"
               type="text"
               defaultValue={turno.petName}
@@ -237,8 +249,8 @@ const searchAtDb=( async ()=>{
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>📅 Fecha </Form.Label>
-            <input
+            <Form.Label className='etiqueta'>📅 Fecha </Form.Label>
+            <Form.Control
               type="date"
               ref={dateRef}
               className="form-stle-inner"
@@ -249,7 +261,7 @@ const searchAtDb=( async ()=>{
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>👩🏻‍⚕️Veterinario*</Form.Label>
+            <Form.Label className='etiqueta'>👩🏻‍⚕️ Veterinario*</Form.Label>
             <select
               ref={vetRef}
               className="form-stle-inner"
@@ -270,7 +282,7 @@ const searchAtDb=( async ()=>{
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>⏰ Horario </Form.Label>
+            <Form.Label className='etiqueta'>⏰ Horario </Form.Label>
 
             <select ref={timeRef}
             value={turno.time}
@@ -286,7 +298,7 @@ const searchAtDb=( async ()=>{
           </Form.Group>
 
           <div className="text-center mt-4">
-            <button className="form-style-btn ">Cargar 🐾</button>
+            <button className="btn-carga ">Cargar 🐾</button>
           </div>
         </Form>
       </article>

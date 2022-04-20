@@ -16,12 +16,7 @@
   
 }
 
-.form-style-btn:hover {
-  background: rgb(54, 168, 140); 
-   box-shadow: 0 0 10px rgb(54, 168, 140), 0 0 40px rgb(54, 168, 140) , 0 0 80px rgb(54, 168, 140);
-  transition-delay: 1s;
-  
-}
+
 
 .form-style {
   width: 70%;
