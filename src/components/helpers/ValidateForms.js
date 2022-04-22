@@ -50,7 +50,7 @@ export const validateDate =(campo)=>{
 
 
 export const validateNumber= (campo)=>{
-  if(regExp4Number.test(campo)&& campo.length<13){
+  if(regExp4Number.test(campo)&& campo.length<13 && campo.length>0){
     return true
   }else{
     return false

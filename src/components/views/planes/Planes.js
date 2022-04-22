@@ -161,8 +161,8 @@ const Planes = () => {
       <article className="d-flex justify-content-center">
         <Form className="my-5 form_style " onSubmit={handleSubmit} ref={form}>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
-            <Form.Label>Nombre y apellido*</Form.Label>
-            <input
+            <Form.Label className="etiqueta">Nombre y apellido*</Form.Label>
+            <Form.Control
               value={name}
               name="user_name"
               className="form-stle-inner"
@@ -172,8 +172,8 @@ const Planes = () => {
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
-            <Form.Label>Email*</Form.Label>
-            <input
+            <Form.Label className="etiqueta">Email*</Form.Label>
+            <Form.Control
               value={email}
               className="form-stle-inner"
               type="text"
@@ -183,8 +183,8 @@ const Planes = () => {
             />
           </Form.Group>
           <Form.Group className="mb-3 " controlId="formBasicEmail">
-            <Form.Label>Telefono</Form.Label>
-            <input
+            <Form.Label className="etiqueta">Telefono</Form.Label>
+            <Form.Control
               className="form-stle-inner"
               type="text"
               placeholder="Ingrese su numero de telefono"
@@ -194,8 +194,8 @@ const Planes = () => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Label>Mascota</Form.Label>
-            <select className="form-stle-inner" value={specie}>
+            <Form.Label className="etiqueta">Mascota</Form.Label>
+            <Form.Select className="form-stle-inner" value={specie}>
               <option value="">Seleccione una especie</option>
               <option value="ave">Ave</option>
               <option value="gato">Gato</option>
@@ -203,11 +203,11 @@ const Planes = () => {
               <option value="pez">Pez</option>
               <option value="reptil">Reptil</option>
               <option value="roedor">Roedor</option>
-            </select>
+            </Form.Select>
           </Form.Group>
 
           <Form.Group className="mb-3 ">
-            <Form.Label>Consulta*</Form.Label>
+            <Form.Label className="etiqueta">Consulta*</Form.Label>
 
             <FormControl
               value={mesage}

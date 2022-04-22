@@ -87,7 +87,7 @@ hr {
   padding: 4px;
 }
 
-.btn-carga {
+/* .btn-carga {
   padding: 15px 25px;
   border: unset;
   border-radius: 15px;
@@ -126,8 +126,32 @@ hr {
  
  .btn-carga:hover::before {
   width: 100%;
+ } */
+
+ .btn-carga{
+  
+	width: 250px;
+	margin: 0 auto;
+	padding: 15px 20px;
+
+
+	font-weight: 700;
+	font-size: 0.688rem;
+	line-height: 18px;
+	letter-spacing: 1.54px;
+	text-transform: uppercase;
+	border-radius: 25px;
+	border: none;
+	background-color: white;
+	color: #5238b1;
+	cursor: pointer;
+	transition: all 0.4s ease-in;
  }
 
+ .btn-carga:hover{
+  box-shadow: 0 0 9px 9px #f78b06;
+  transition: box-shadow 0.3s ease-in;
+ }
 
 
 /* BOTONES PARA VOVER ATRAS */
