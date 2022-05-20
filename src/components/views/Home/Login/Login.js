@@ -21,7 +21,6 @@ const Login = ({ user }) => {
   useEffect(() => {
     setInEmail(document.getElementById("inEmail"));
     setInPassword(document.getElementById("inPassword"));
-    console.log(user);
   }, []);
 
   // test de email
@@ -44,23 +43,6 @@ const Login = ({ user }) => {
       return true;
     } else {
       inPassword.className = "form-control is-invalid";
-      return false;
-    }
-  };
-
-  // test general
-
-  const gralTesting = () => {
-    if (
-      logEmail === user[0].email &&
-      bcrypt.compareSync(logPassword, user[0].password)
-    ) {
-      console.log("validado");
-
-      return true;
-    } else {
-      console.log("no cumple validacion");
-
       return false;
     }
   };

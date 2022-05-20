@@ -52,14 +52,6 @@ const Planes = () => {
       // Email js
       emailjs
         .sendForm("service_5kuzhii", "template_t9etbyq", form.current)
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
       setName("");
       setEmail("");
       setPhone("");

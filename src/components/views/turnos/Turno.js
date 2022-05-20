@@ -17,7 +17,6 @@ const Turno = ({ turno, DB, getApi }) => {
       confirmButtonText: "Si",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        try {
           const res = await fetch(`${DB}/${id}`, {
             method: "DELETE",
             headers: {
@@ -32,16 +31,6 @@ const Turno = ({ turno, DB, getApi }) => {
             );
             getApi();
           }
-          
- 
-        
-        
-        } catch (error) {
-          console.log(error)
-          
-        }
-
-
   }})
 }
     

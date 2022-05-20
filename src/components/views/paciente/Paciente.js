@@ -19,8 +19,7 @@ const Paciente = ({paciente, DBP,getPatient}) => {
       confirmButtonText: "Borrar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        try {
-          const res = await fetch(`${DBP}/${id}`, {
+         const res = await fetch(`${DBP}/${id}`, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
             
@@ -34,9 +33,6 @@ const Paciente = ({paciente, DBP,getPatient}) => {
             getPatient();
            
           }
-        } catch (error) {
-          console.log(error);
-        }
       }
     });
 

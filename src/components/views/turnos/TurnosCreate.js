@@ -85,36 +85,23 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
   }, []);
 
   useEffect(async () => {
-    try {
       const res = await fetch(DB);
       const resultado = await res.json();
       // Guardamos la db en un state
       setTurnos(resultado);
-    } catch (error) {
-      console.log(error);
-    }
   }, []);
 
   // Funcio para buscar dni
 
   useEffect(async () => {
-    try {
       const res = await fetch(DBP);
       const resultado = await res.json();
       setDatosP(resultado);
-      console.log(resultado);
-    } catch (error) {
-      console.log(error);
-    }
   }, []);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     const buscarDni = datosP.filter((paciente) => paciente.dni === dniBuscado);
-
-    console.log(buscarDni);
-    console.log(dniBuscado);
-    console.log(buscarDni.length);
 
     if (buscarDni.length === 1) {
       dateRef.current.disabled = false;
@@ -173,13 +160,11 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
       const vet1filtrado = timePicker.filter(
         (hora) => !horasMarta.includes(hora)
       );
-      console.log("filtrado", vet1filtrado);
       setHoras(vet1filtrado);
     } else if (e.target.value === ignacio) {
       const vet2filtrado = timePicker.filter(
         (hora) => !horasIgnacio.includes(hora)
       );
-      console.log(vet2filtrado);
       setHoras(vet2filtrado);
     }
 
@@ -223,7 +208,6 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
       confirmButtonText: "Si",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        try {
           const res = await fetch(DB, {
             method: "POST",
             headers: {
@@ -232,7 +216,6 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
             body: JSON.stringify(newAppointment),
           });
 
-          console.log(res);
           if (res.status === 201) {
             Swal.fire(
               "Creado!",
@@ -242,10 +225,6 @@ const TurnosCreate = ({ DB, getApi, DBP }) => {
             getApi();
             navigate("../turnostable");
           }
-        } catch (error) {
-          console.log(error);
-        }
-        console.log(newAppointment.time);
       }
     });
   };

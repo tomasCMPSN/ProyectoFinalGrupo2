@@ -66,33 +66,23 @@ const TurnosEdit = ({ DB, getApi }) => {
 
 
   useEffect(async () => {
-    try {
     const res = await fetch(`${DB}/${id}`);
     const  appointmentAppi = await res.json();
     setTurno(appointmentAppi);
     searchAtDb()
-
-    } catch (error) {
-      console.log(error);
-    }
   }, []);
 
 
 
 const searchAtDb=( async ()=>{
 
-  try {
     const res = await fetch(DB);
     const resultado= await res.json()
     setTurnos(resultado);
-    console.log(turnos)
     const busquedaFechas = turnos.filter(
       (fechas) => fechas.date === dateRef.current.value );
-      console.log(dateRef.current.value)
-      console.log(busquedaFechas)
      
       const buscarveterio = busquedaFechas.map((turnos) => turnos.vet);
-      console.log(buscarveterio)
      
       const filtradovet1 = buscarveterio.filter((buscada) => {
         return buscada === marta;
@@ -112,24 +102,13 @@ const searchAtDb=( async ()=>{
       const filtradoHoras = timePicker.filter(
         (hora) => !buscarHoras.includes(hora)
       );
-      console.log(filtradoHoras)
-       
-     
+            
       setHoras(filtradoHoras);
- 
-
-  
-  } catch (error) {
-    console.log(error);
-  }
-
-
  })
 
 
 
   const handleDateChange =  (e) => {
-    console.log(turnos)
 
     const busquedaFechas = turnos.filter(
       (fechas) => fechas.date === e.target.value
@@ -194,7 +173,6 @@ const searchAtDb=( async ()=>{
       confirmButtonText: "Si",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        try {
           const res = await fetch(`${DB}/${id}`, {
             method: "PUT",
             headers: {
@@ -211,9 +189,6 @@ const searchAtDb=( async ()=>{
             getApi();
             navigate("../../turnostable");
           }
-        } catch (error) {
-          console.log(error);
-        }
       }
     });
   };

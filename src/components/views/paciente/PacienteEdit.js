@@ -44,14 +44,9 @@ const PacienteEdit = ({ DBP, getPatient }) => {
 
   // useEffect
   useEffect(async () => {
-    try {
       const res = await fetch(`${DBP}/${id}`);
       const patientApi = await res.json();
-
       setPaciente(patientApi);
-    } catch (error) {
-        console.log(error);
-    }
   }, []);
 
   //   funcion para actulizar los datos
@@ -95,8 +90,7 @@ const PacienteEdit = ({ DBP, getPatient }) => {
       confirmButtonText: "Si",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        try {
-          const res = await fetch(`${DBP}/${id}`, {
+         const res = await fetch(`${DBP}/${id}`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(pacienteUpdate),
@@ -110,9 +104,6 @@ const PacienteEdit = ({ DBP, getPatient }) => {
             getPatient();
             navigate("/paciente/table");
           }
-        } catch (error) {
-          console.log(error);
-        }
       }
     });
   };

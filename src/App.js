@@ -39,36 +39,22 @@ function App() {
   }, []);
 
   const getPatient = async () => {
-    try {
       const res = await fetch(DBP);
       const patientApi = await res.json();
       setPatients(patientApi);
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const getApi = async () => {
-    try {
       const res = await fetch(DB);
       const appApi = await res.json();
       autoDelete(appApi)
-
       setTurnos(appApi);
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const getUser = async () => {
-    try {
       const res = await fetch(DBU);
-
       const userApi = await res.json();
       setUser(userApi);
-    } catch (error) {
-      console.log(error);
-    }
   };
 
  
@@ -82,11 +68,6 @@ function App() {
             "Content-Type": "application/json",
           },
         });
-        if (res.status===200) {
-          console.log('Turnos viejos, eliminados');
-        }else{
-          console.log('No se eliminaron los turnos, error al conectar la bd');
-        }
       }
     };
     turnos.map((turno) => borrar(turno));
